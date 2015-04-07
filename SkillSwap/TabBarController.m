@@ -23,22 +23,22 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (![PFUser currentUser]) {
-        // Customize the Log In View Controller
-        MyLogInViewController *logInViewController = [[MyLogInViewController alloc] init];
-        logInViewController.delegate = self;
-        
-        logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsSignUpButton | PFLogInFieldsLogInButton;
-        
-        // Customize the Sign Up View Controller
-        MySignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
-        signUpViewController.delegate = self;
-        signUpViewController.fields = PFSignUpFieldsDefault | PFSignUpFieldsAdditional;
-        logInViewController.signUpController = signUpViewController;
-        
-        // Present Log In View Controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-    }
+//    if (![PFUser currentUser]) {
+//        // Customize the Log In View Controller
+//        MyLogInViewController *logInViewController = [[MyLogInViewController alloc] init];
+//        logInViewController.delegate = self;
+//        
+//        logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsSignUpButton | PFLogInFieldsLogInButton;
+//        
+//        // Customize the Sign Up View Controller
+//        MySignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+//        signUpViewController.delegate = self;
+//        signUpViewController.fields = PFSignUpFieldsDefault | PFSignUpFieldsAdditional;
+//        logInViewController.signUpController = signUpViewController;
+//        
+//        // Present Log In View Controller
+//        [self presentViewController:logInViewController animated:YES completion:NULL];
+//    }
     
 }
 
