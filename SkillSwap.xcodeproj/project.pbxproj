@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
 		5F9EEAD41ACA48C400D6D23E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EEAD31ACA48C400D6D23E /* main.m */; };
 		5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EEAD61ACA48C400D6D23E /* AppDelegate.m */; };
 		5F9EEADD1ACA48C400D6D23E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EEADB1ACA48C400D6D23E /* Main.storyboard */; };
@@ -48,7 +49,6 @@
 		5FCAFFF81ACCED3C001951E0 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFE71ACCED3C001951E0 /* Facebook.png */; };
 		5FCAFFF91ACCED3C001951E0 /* FacebookDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFE81ACCED3C001951E0 /* FacebookDown.png */; };
 		5FCAFFFA1ACCED3C001951E0 /* LoginFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFE91ACCED3C001951E0 /* LoginFieldBG.png */; };
-		5FCAFFFB1ACCED3C001951E0 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFEA1ACCED3C001951E0 /* Logo.png */; };
 		5FCAFFFC1ACCED3C001951E0 /* MainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFEB1ACCED3C001951E0 /* MainBG.png */; };
 		5FCAFFFD1ACCED3C001951E0 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFEC1ACCED3C001951E0 /* SignUp.png */; };
 		5FCAFFFE1ACCED3C001951E0 /* SignUpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFED1ACCED3C001951E0 /* SignUpDown.png */; };
@@ -66,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5F9EEACE1ACA48C400D6D23E /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9EEAD21ACA48C400D6D23E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9EEAD31ACA48C400D6D23E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		5FCAFFE71ACCED3C001951E0 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
 		5FCAFFE81ACCED3C001951E0 /* FacebookDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookDown.png; sourceTree = "<group>"; };
 		5FCAFFE91ACCED3C001951E0 /* LoginFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginFieldBG.png; sourceTree = "<group>"; };
-		5FCAFFEA1ACCED3C001951E0 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5FCAFFEB1ACCED3C001951E0 /* MainBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBG.png; sourceTree = "<group>"; };
 		5FCAFFEC1ACCED3C001951E0 /* SignUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUp.png; sourceTree = "<group>"; };
 		5FCAFFED1ACCED3C001951E0 /* SignUpDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpDown.png; sourceTree = "<group>"; };
@@ -267,8 +267,8 @@
 				5FCAFFE71ACCED3C001951E0 /* Facebook.png */,
 				5FCAFFE81ACCED3C001951E0 /* FacebookDown.png */,
 				5FCAFFE91ACCED3C001951E0 /* LoginFieldBG.png */,
-				5FCAFFEA1ACCED3C001951E0 /* Logo.png */,
 				5FCAFFEB1ACCED3C001951E0 /* MainBG.png */,
+				5D8115D11ACFB31900C877D9 /* Logo.png */,
 				5FCAFFEC1ACCED3C001951E0 /* SignUp.png */,
 				5FCAFFED1ACCED3C001951E0 /* SignUpDown.png */,
 				5FCAFFEE1ACCED3C001951E0 /* SignUpFieldBG.png */,
@@ -371,7 +371,7 @@
 				5F9EEADD1ACA48C400D6D23E /* Main.storyboard in Resources */,
 				5FCAFFFF1ACCED3C001951E0 /* SignUpFieldBG.png in Resources */,
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
-				5FCAFFFB1ACCED3C001951E0 /* Logo.png in Resources */,
+				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
 				5F9EEADF1ACA48C400D6D23E /* Images.xcassets in Resources */,
 				5FCAFFF51ACCED3C001951E0 /* Default-568h@2x.png in Resources */,
 				5FCAFFFE1ACCED3C001951E0 /* SignUpDown.png in Resources */,

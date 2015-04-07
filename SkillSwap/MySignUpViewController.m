@@ -21,11 +21,13 @@
     [super viewDidLoad];
     
     [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainBG.png"]]];
+    
+    // !!!!!!TO CHANGE TO OUR LOGO LATER
     [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
     
     // Change button apperance
-    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"Exit.png"] forState:UIControlStateNormal];
-    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"ExitDown.png"] forState:UIControlStateHighlighted];
+//    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"Exit.png"] forState:UIControlStateNormal];
+//    [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"ExitDown.png"] forState:UIControlStateHighlighted];
     
     [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"SignUp.png"] forState:UIControlStateNormal];
     [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"SignUpDown.png"] forState:UIControlStateHighlighted];
@@ -59,39 +61,47 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    // Move all fields down on smaller screen sizes
-    float yOffset = [UIScreen mainScreen].bounds.size.height <= 480.0f ? 30.0f : 0.0f;
 
-    CGRect fieldFrame = self.signUpView.usernameField.frame;
+    CGRect fieldFrame = self.signUpView.frame;
 
-    [self.signUpView.dismissButton setFrame:CGRectMake(10.0f, 10.0f, 87.5f, 45.5f)];
-    [self.signUpView.logo setFrame:CGRectMake(66.5f, 70.0f, 187.0f, 58.5f)];
-    [self.signUpView.signUpButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
-    [self.fieldsBackground setFrame:CGRectMake(35.0f, fieldFrame.origin.y + yOffset, 250.0f, 174.0f)];
+    [self.signUpView.dismissButton setFrame:CGRectMake(10.0f, 10.0f, 0, 0)];
+    [self.fieldsBackground setFrame:CGRectMake(fieldFrame.origin.x, fieldFrame.origin.y, 0, 0)];
     
-    [self.signUpView.usernameField setFrame:CGRectMake(fieldFrame.origin.x + 5.0f,
-                                                       fieldFrame.origin.y + yOffset,
-                                                       fieldFrame.size.width - 10.0f,
-                                                       fieldFrame.size.height)];
-    yOffset += fieldFrame.size.height;
+//    [self.signUpView.logo setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+//                                                       fieldFrame.origin.y + fieldFrame.size.height * 0.05,
+//                                                       fieldFrame.size.width * 0.8,
+//                                                       fieldFrame.size.height * 0.2)];
     
-    [self.signUpView.passwordField setFrame:CGRectMake(fieldFrame.origin.x + 5.0f,
-                                                       fieldFrame.origin.y + yOffset,
-                                                       fieldFrame.size.width - 10.0f,
-                                                       fieldFrame.size.height)];
-    yOffset += fieldFrame.size.height;
+    [self.signUpView.logo setFrame:CGRectMake(fieldFrame.origin.x,
+                                              fieldFrame.origin.y + fieldFrame.size.height * 0.05,
+                                              fieldFrame.size.width,
+                                              fieldFrame.size.height * 0.3)];
     
-    [self.signUpView.emailField setFrame:CGRectMake(fieldFrame.origin.x + 5.0f,
-                                                    fieldFrame.origin.y + yOffset,
-                                                    fieldFrame.size.width - 10.0f,
-                                                    fieldFrame.size.height)];
-    yOffset += fieldFrame.size.height;
+    [self.signUpView.usernameField setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+                                                       fieldFrame.origin.y + fieldFrame.size.height * 0.4,
+                                                       fieldFrame.size.width * 0.8,
+                                                       fieldFrame.size.height * 0.08)];
     
-    [self.signUpView.additionalField setFrame:CGRectMake(fieldFrame.origin.x + 5.0f,
-                                                         fieldFrame.origin.y + yOffset,
-                                                         fieldFrame.size.width - 10.0f,
-                                                         fieldFrame.size.height)];
+    [self.signUpView.passwordField setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+                                                       fieldFrame.origin.y + fieldFrame.size.height * 0.48,
+                                                       fieldFrame.size.width * 0.8,
+                                                       fieldFrame.size.height * 0.08)];
+    
+    [self.signUpView.emailField setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+                                                    fieldFrame.origin.y + fieldFrame.size.height * 0.56,
+                                                    fieldFrame.size.width * 0.8,
+                                                    fieldFrame.size.height * 0.08)];
+    
+    [self.signUpView.additionalField setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+                                                         fieldFrame.origin.y + fieldFrame.size.height * 0.64,
+                                                         fieldFrame.size.width * 0.8,
+                                                         fieldFrame.size.height * 0.08)];
+    
+    [self.signUpView.signUpButton setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.15,
+                                                      fieldFrame.origin.y + fieldFrame.size.height * 0.82,
+                                                      fieldFrame.size.width * 0.7,
+                                                      fieldFrame.size.height * 0.08)];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

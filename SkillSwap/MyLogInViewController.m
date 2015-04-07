@@ -21,30 +21,21 @@
     [super viewDidLoad];
     
     [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"MainBG.png"]]];
+    
+    // !!!!!!!!!!!!!TO CHANGE TO OUR LOGO
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo.png"]]];
-    
-    // Set buttons appearance
-    [self.logInView.dismissButton setImage:[UIImage imageNamed:@"Exit.png"] forState:UIControlStateNormal];
-    [self.logInView.dismissButton setImage:[UIImage imageNamed:@"ExitDown.png"] forState:UIControlStateHighlighted];
-    
-    [self.logInView.facebookButton setImage:nil forState:UIControlStateNormal];
-    [self.logInView.facebookButton setImage:nil forState:UIControlStateHighlighted];
-    [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"FacebookDown.png"] forState:UIControlStateHighlighted];
-    [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"Facebook.png"] forState:UIControlStateNormal];
-    [self.logInView.facebookButton setTitle:@"" forState:UIControlStateNormal];
-    [self.logInView.facebookButton setTitle:@"" forState:UIControlStateHighlighted];
-    
-    [self.logInView.twitterButton setImage:nil forState:UIControlStateNormal];
-    [self.logInView.twitterButton setImage:nil forState:UIControlStateHighlighted];
-    [self.logInView.twitterButton setBackgroundImage:[UIImage imageNamed:@"Twitter.png"] forState:UIControlStateNormal];
-    [self.logInView.twitterButton setBackgroundImage:[UIImage imageNamed:@"TwitterDown.png"] forState:UIControlStateHighlighted];
-    [self.logInView.twitterButton setTitle:@"" forState:UIControlStateNormal];
-    [self.logInView.twitterButton setTitle:@"" forState:UIControlStateHighlighted];
     
     [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"Signup.png"] forState:UIControlStateNormal];
     [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"SignupDown.png"] forState:UIControlStateHighlighted];
     [self.logInView.signUpButton setTitle:@"" forState:UIControlStateNormal];
     [self.logInView.signUpButton setTitle:@"" forState:UIControlStateHighlighted];
+    
+    // ADDED - need customized logInButton for logInView
+    [self.logInView.logInButton setBackgroundImage:[UIImage imageNamed:@"Signup.png"] forState:UIControlStateNormal];
+    [self.logInView.logInButton setBackgroundImage:[UIImage imageNamed:@"SignupDown.png"] forState:UIControlStateHighlighted];
+    
+    [self.logInView.logInButton setTitle:@"" forState:UIControlStateNormal];
+    [self.logInView.logInButton setTitle:@"" forState:UIControlStateHighlighted];
     
     // Add login field background
     fieldsBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LoginFieldBG.png"]];
@@ -67,14 +58,41 @@
     [super viewDidLayoutSubviews];
     
     // Set frame for elements
-    [self.logInView.dismissButton setFrame:CGRectMake(10.0f, 10.0f, 87.5f, 45.5f)];
-    [self.logInView.logo setFrame:CGRectMake(66.5f, 70.0f, 187.0f, 58.5f)];
-    [self.logInView.facebookButton setFrame:CGRectMake(35.0f, 287.0f, 120.0f, 40.0f)];
-    [self.logInView.twitterButton setFrame:CGRectMake(35.0f+130.0f, 287.0f, 120.0f, 40.0f)];
-    [self.logInView.signUpButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
-    [self.logInView.usernameField setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 50.0f)];
-    [self.logInView.passwordField setFrame:CGRectMake(35.0f, 195.0f, 250.0f, 50.0f)];
-    [self.fieldsBackground setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 100.0f)];
+    CGRect fieldFrame = self.logInView.frame;
+    
+    [self.logInView.dismissButton setFrame:CGRectMake(fieldFrame.origin.x, fieldFrame.origin.y, 0, 0)];
+    [self.fieldsBackground setFrame:CGRectMake(fieldFrame.origin.x, fieldFrame.origin.y, 0, 0)];
+    
+//    [self.logInView.logo setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+//                                              fieldFrame.origin.y + fieldFrame.size.height * 0.05,
+//                                              fieldFrame.size.width * 0.8,
+//                                              fieldFrame.size.height * 0.2)];
+    
+    [self.logInView.logo setFrame:CGRectMake(fieldFrame.origin.x,
+                                             fieldFrame.origin.y + fieldFrame.size.height * 0.05,
+                                             fieldFrame.size.width,
+                                             fieldFrame.size.height * 0.3)];
+    
+    [self.logInView.usernameField setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+                                                       fieldFrame.origin.y + fieldFrame.size.height * 0.4,
+                                                       fieldFrame.size.width * 0.8,
+                                                       fieldFrame.size.height * 0.08)];
+    
+    [self.logInView.passwordField setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.1,
+                                                       fieldFrame.origin.y + fieldFrame.size.height * 0.48,
+                                                       fieldFrame.size.width * 0.8,
+                                                       fieldFrame.size.height * 0.08)];
+    
+    [self.logInView.signUpButton setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.15,
+                                                     fieldFrame.origin.y + fieldFrame.size.height * 0.62,
+                                                     fieldFrame.size.width * 0.7,
+                                                     fieldFrame.size.height * 0.08)];
+    
+    [self.logInView.logInButton setFrame:CGRectMake(fieldFrame.origin.x + fieldFrame.size.width * 0.15,
+                                                    fieldFrame.origin.y + fieldFrame.size.height * 0.75,
+                                                    fieldFrame.size.width * 0.7,
+                                                    fieldFrame.size.height * 0.08)];    
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
