@@ -69,10 +69,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="gcT-Jj-1U4" kind="relationship" relationship="viewControllers" id="G0W-Ve-dMz"/>
                         <segue destination="vhL-Pf-6yR" kind="relationship" relationship="viewControllers" id="EhD-BH-xEj"/>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="f8b-e4-L8p"/>
                         <segue destination="4rb-7z-blv" kind="relationship" relationship="viewControllers" id="wwz-rd-Ngw"/>
-                        <segue destination="gcT-Jj-1U4" kind="relationship" relationship="viewControllers" id="G0W-Ve-dMz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UM9-U7-aTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
