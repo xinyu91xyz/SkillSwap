@@ -34,22 +34,36 @@
 }
 
 - (PFQuery *) queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:@"Stuff"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     
     [query orderByAscending:@"evenDate"];
     return query;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"EventCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [object objectForKey:@"Event"];
+    cell.textLabel.text = [object objectForKey:@"eventName"];
+    
     return cell;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showEventDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+//        Observation *selectedObservation = self.survey.observations[indexPath.row];
+//        ObservationEditorViewController *destination = segue.destinationViewController;
+//        destination.theObservation = selectedObservation;
+    }
+    
 }
 
 @end
