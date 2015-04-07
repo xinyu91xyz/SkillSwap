@@ -121,5 +121,27 @@
     NSLog(@"User dismissed the signUpViewController");
 }
 
+// Don't Delete - Chen Zhu
+//#pragma mark - ()
+//
+//- (IBAction)logOutButtonTapAction:(id)sender {
+//    [PFUser logOut];
+//    
+//    MyLogInViewController *logInViewController = [[MyLogInViewController alloc] init];
+//    logInViewController.delegate = self;
+//    logInViewController.facebookPermissions = @[@"friends_about_me"];
+//    logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsSignUpButton | PFLogInFieldsLogInButton;
+//    
+//    // Customize the Sign Up View Controller
+//    MySignUpViewController *signUpViewController = [[MySignUpViewController alloc] init];
+//    signUpViewController.delegate = self;
+//    signUpViewController.fields = PFSignUpFieldsDefault | PFSignUpFieldsAdditional;
+//    logInViewController.signUpController = signUpViewController;
+//    
+//    // Present Log In View Controller
+//    [self presentViewController:logInViewController animated:YES completion:NULL];
+//    
+//    //[self.navigationController popViewControllerAnimated:YES];
+//}
 
 @end
