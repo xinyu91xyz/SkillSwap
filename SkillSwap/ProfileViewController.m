@@ -7,8 +7,6 @@
 //
 
 #import "ProfileViewController.h"
-#import "MyLogInViewController.h"
-#import "MySignUpViewController.h"
 #import <Parse/Parse.h>
 @interface ProfileViewController ()
 
@@ -16,20 +14,32 @@
 
 @implementation ProfileViewController
 
-- (PFQuery *) queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
-    
-    [query orderByAscending:@"UserId"];
-    return query;
-}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if ([PFUser currentUser]) {
-        self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome %@!", nil), [[PFUser currentUser] username]];
-    } else {
-        self.welcomeLabel.text = NSLocalizedString(@"Not logged in", nil);
-    }
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
+    [query whereKey:@"userId" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            PFObject *object = [objects objectAtIndex:0];
+            self.welcomeLabel.text = object[@"userName"];
+        } else {
+            
+        }
+    }];
+    
+    
+    
+    
+    
+//    if ([PFUser currentUser]) {
+//        self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome %@!", nil), [[PFUser currentUser] username]];
+//    } else {
+//        self.welcomeLabel.text = NSLocalizedString(@"Not logged in", nil);
+//    }
     
 //    [[PFUser currentUser] setObject:UserName forKey:@"UserId"];
     

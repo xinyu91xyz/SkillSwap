@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
 		5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEB5F501AD4820C007A222F /* ProfileViewController.m */; };
+		5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108211AD6328600E47080 /* SignInViewController.xib */; };
+		5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108221AD6328600E47080 /* SignUpViewController.xib */; };
+		5F1108291AD6345100E47080 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108261AD6345100E47080 /* SignInViewController.m */; };
+		5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108281AD6345100E47080 /* SignUpViewController.m */; };
+		5F11082E1AD6386E00E47080 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11082D1AD6386E00E47080 /* FacebookSDK.framework */; };
+		5F1108311AD6395D00E47080 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108301AD6395D00E47080 /* ActivityView.m */; };
 		5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */; };
 		5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */; };
 		5F9EEAD41ACA48C400D6D23E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EEAD31ACA48C400D6D23E /* main.m */; };
@@ -36,8 +42,6 @@
 		5F9EEB191ACA49E600D6D23E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9EEB181ACA49E600D6D23E /* libsqlite3.dylib */; };
 		5FCA00001ACCED3C001951E0 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFEF1ACCED3C001951E0 /* Twitter.png */; };
 		5FCA00011ACCED3C001951E0 /* TwitterDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFF01ACCED3C001951E0 /* TwitterDown.png */; };
-		5FCA00061ACCED4F001951E0 /* MyLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA00031ACCED4F001951E0 /* MyLogInViewController.m */; };
-		5FCA00071ACCED4F001951E0 /* MySignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA00051ACCED4F001951E0 /* MySignUpViewController.m */; };
 		5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA00091ACCF36E001951E0 /* TabBarController.m */; };
 		5FCAFFD61ACCEAD3001951E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCAFFD51ACCEAD3001951E0 /* Social.framework */; };
 		5FCAFFD81ACCEAE1001951E0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCAFFD71ACCEAE1001951E0 /* Accounts.framework */; };
@@ -71,6 +75,15 @@
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		5DEB5F501AD4820C007A222F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5F1108211AD6328600E47080 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		5F1108221AD6328600E47080 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		5F1108251AD6345100E47080 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		5F1108261AD6345100E47080 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		5F1108271AD6345100E47080 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		5F1108281AD6345100E47080 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		5F11082D1AD6386E00E47080 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Downloads/FacebookSDK.framework; sourceTree = "<group>"; };
+		5F11082F1AD6395D00E47080 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityView.h; path = "../../../Downloads/ParsePlatform-AnyWall-3fcf0f9/AnyWall-iOS/AnyWall/ActivityView.h"; sourceTree = "<group>"; };
+		5F1108301AD6395D00E47080 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityView.m; path = "../../../Downloads/ParsePlatform-AnyWall-3fcf0f9/AnyWall-iOS/AnyWall/ActivityView.m"; sourceTree = "<group>"; };
 		5F7E03071AD38BAB00CDBF42 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
@@ -103,10 +116,6 @@
 		5F9EEB141ACA49D700D6D23E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F9EEB161ACA49DF00D6D23E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5F9EEB181ACA49E600D6D23E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		5FCA00021ACCED4F001951E0 /* MyLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLogInViewController.h; sourceTree = "<group>"; };
-		5FCA00031ACCED4F001951E0 /* MyLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLogInViewController.m; sourceTree = "<group>"; };
-		5FCA00041ACCED4F001951E0 /* MySignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignUpViewController.h; sourceTree = "<group>"; };
-		5FCA00051ACCED4F001951E0 /* MySignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignUpViewController.m; sourceTree = "<group>"; };
 		5FCA00081ACCF36E001951E0 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		5FCA00091ACCF36E001951E0 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		5FCAFFD51ACCEAD3001951E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -134,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F11082E1AD6386E00E47080 /* FacebookSDK.framework in Frameworks */,
 				5FCAFFD81ACCEAE1001951E0 /* Accounts.framework in Frameworks */,
 				5FCAFFD61ACCEAD3001951E0 /* Social.framework in Frameworks */,
 				5F9EEB191ACA49E600D6D23E /* libsqlite3.dylib in Frameworks */,
@@ -166,6 +176,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F1108201AD6325F00E47080 /* SignUpImg */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SignUpImg;
+			sourceTree = "<group>";
+		};
 		5F9EEAC51ACA48C400D6D23E = {
 			isa = PBXGroup;
 			children = (
@@ -198,13 +215,17 @@
 				5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */,
 				5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */,
 				5DEB5F501AD4820C007A222F /* ProfileViewController.m */,
-				5FCA00021ACCED4F001951E0 /* MyLogInViewController.h */,
-				5FCA00031ACCED4F001951E0 /* MyLogInViewController.m */,
-				5FCA00041ACCED4F001951E0 /* MySignUpViewController.h */,
-				5FCA00051ACCED4F001951E0 /* MySignUpViewController.m */,
+				5F11082F1AD6395D00E47080 /* ActivityView.h */,
+				5F1108301AD6395D00E47080 /* ActivityView.m */,
+				5F1108251AD6345100E47080 /* SignInViewController.h */,
+				5F1108261AD6345100E47080 /* SignInViewController.m */,
+				5F1108271AD6345100E47080 /* SignUpViewController.h */,
+				5F1108281AD6345100E47080 /* SignUpViewController.m */,
 				5F9EEADB1ACA48C400D6D23E /* Main.storyboard */,
 				5F9EEADE1ACA48C400D6D23E /* Images.xcassets */,
 				5F9EEAE01ACA48C400D6D23E /* LaunchScreen.xib */,
+				5F1108211AD6328600E47080 /* SignInViewController.xib */,
+				5F1108221AD6328600E47080 /* SignUpViewController.xib */,
 				5FCAFFDF1ACCED2A001951E0 /* Assets */,
 				5F9EEAD11ACA48C400D6D23E /* Supporting Files */,
 			);
@@ -240,6 +261,7 @@
 		5F9EEAF71ACA48DA00D6D23E /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
+				5F11082D1AD6386E00E47080 /* FacebookSDK.framework */,
 				5FCAFFD71ACCEAE1001951E0 /* Accounts.framework */,
 				5FCAFFD51ACCEAD3001951E0 /* Social.framework */,
 				5F9EEB181ACA49E600D6D23E /* libsqlite3.dylib */,
@@ -267,6 +289,7 @@
 		5FCAFFDF1ACCED2A001951E0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5F1108201AD6325F00E47080 /* SignUpImg */,
 				5FCAFFE01ACCED3C001951E0 /* Icon.png */,
 				5FCAFFE11ACCED3C001951E0 /* Icon@2x.png */,
 				5FCAFFE21ACCED3C001951E0 /* Default.png */,
@@ -370,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCAFFF61ACCED3C001951E0 /* Exit.png in Resources */,
+				5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */,
 				5FCAFFF71ACCED3C001951E0 /* ExitDown.png in Resources */,
 				5FCAFFFA1ACCED3C001951E0 /* LoginFieldBG.png in Resources */,
 				5FCAFFFD1ACCED3C001951E0 /* SignUp.png in Resources */,
@@ -383,6 +407,7 @@
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
 				5F9EEADF1ACA48C400D6D23E /* Images.xcassets in Resources */,
+				5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */,
 				5FCAFFF51ACCED3C001951E0 /* Default-568h@2x.png in Resources */,
 				5FCAFFFE1ACCED3C001951E0 /* SignUpDown.png in Resources */,
 				5FCAFFF91ACCED3C001951E0 /* FacebookDown.png in Resources */,
@@ -407,13 +432,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
-				5FCA00061ACCED4F001951E0 /* MyLogInViewController.m in Sources */,
 				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
-				5FCA00071ACCED4F001951E0 /* MySignUpViewController.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,
+				5F1108311AD6395D00E47080 /* ActivityView.m in Sources */,
+				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
+				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +564,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkillSwap",
+					"/Users/zzzc/Downloads/ParsePlatform-AnyWall-3fcf0f9/AnyWall-iOS",
+					/Users/zzzc/Downloads,
 				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -552,6 +580,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SkillSwap",
+					"/Users/zzzc/Downloads/ParsePlatform-AnyWall-3fcf0f9/AnyWall-iOS",
+					/Users/zzzc/Downloads,
 				);
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

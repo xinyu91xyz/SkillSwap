@@ -12,7 +12,6 @@
 @interface ProfileViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *welcomeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 
 
 //- (PFQuery *) queryForTable;
