@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
+		5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEB5F501AD4820C007A222F /* ProfileViewController.m */; };
 		5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */; };
 		5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */; };
 		5F9EEAD41ACA48C400D6D23E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EEAD31ACA48C400D6D23E /* main.m */; };
@@ -68,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5DEB5F501AD4820C007A222F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		5F7E03071AD38BAB00CDBF42 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */,
 				5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */,
 				5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */,
+				5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */,
+				5DEB5F501AD4820C007A222F /* ProfileViewController.m */,
 				5FCA00021ACCED4F001951E0 /* MyLogInViewController.h */,
 				5FCA00031ACCED4F001951E0 /* MyLogInViewController.m */,
 				5FCA00041ACCED4F001951E0 /* MySignUpViewController.h */,
@@ -403,6 +408,7 @@
 			files = (
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
 				5FCA00061ACCED4F001951E0 /* MyLogInViewController.m in Sources */,
+				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5FCA00071ACCED4F001951E0 /* MySignUpViewController.m in Sources */,
