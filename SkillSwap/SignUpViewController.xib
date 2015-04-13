@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -34,21 +34,21 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="gMj-zh-3EH">
-                            <rect key="frame" x="118" y="170" width="85" height="20"/>
+                            <rect key="frame" x="118" y="178" width="85" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <view alpha="0.5" contentMode="scaleToFill" id="cmH-Dz-EDE">
-                            <rect key="frame" x="0.0" y="255" width="320" height="43"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="0.0" y="248" width="320" height="43"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user" id="c9e-bx-al0">
-                            <rect key="frame" x="20" y="269" width="16" height="16"/>
+                            <rect key="frame" x="20" y="262" width="16" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" id="8">
-                            <rect key="frame" x="44" y="262" width="256" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="44" y="255" width="256" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.29411764705882354" green="0.34509803921568627" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -57,17 +57,17 @@
                             </connections>
                         </textField>
                         <view alpha="0.5" contentMode="scaleToFill" id="pCE-Rh-iRo">
-                            <rect key="frame" x="0.0" y="299" width="320" height="43"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="0.0" y="293" width="320" height="43"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock" id="hEj-ch-H4c">
-                            <rect key="frame" x="22" y="312" width="12" height="18"/>
+                            <rect key="frame" x="22" y="306" width="12" height="18"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="9">
-                            <rect key="frame" x="44" y="306" width="256" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="44" y="300" width="256" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="textColor" red="0.29411764709999999" green="0.34509803919999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -75,27 +75,8 @@
                                 <outlet property="delegate" destination="-1" id="24"/>
                             </connections>
                         </textField>
-                        <view alpha="0.5" contentMode="scaleToFill" id="v8I-UV-Bhf">
-                            <rect key="frame" x="0.0" y="343" width="320" height="43"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock" id="Vsx-vV-wuH">
-                            <rect key="frame" x="22" y="354" width="12" height="18"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password Confirmation" minimumFontSize="17" clearButtonMode="whileEditing" id="10">
-                            <rect key="frame" x="44" y="348" width="256" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" red="0.29411764709999999" green="0.34509803919999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="25"/>
-                            </connections>
-                        </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rsu-wB-i8z">
-                            <rect key="frame" x="0.0" y="394" width="320" height="62"/>
+                            <rect key="frame" x="0.0" y="431" width="320" height="62"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.42745098040000001" green="0.69411764710000001" blue="0.29803921570000003" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -107,6 +88,25 @@
                                 <action selector="createAccountPressed:" destination="-1" eventType="touchUpInside" id="5Fi-11-Jvs"/>
                             </connections>
                         </button>
+                        <view alpha="0.5" contentMode="scaleToFill" id="v8I-UV-Bhf">
+                            <rect key="frame" x="0.0" y="338" width="320" height="43"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock" id="Vsx-vV-wuH">
+                            <rect key="frame" x="22" y="349" width="12" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password Confirmation" minimumFontSize="17" clearButtonMode="whileEditing" id="10">
+                            <rect key="frame" x="44" y="343" width="256" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" red="0.29411764709999999" green="0.34509803919999998" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="25"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.42745098040000001" green="0.69411764710000001" blue="0.29803921570000003" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
                     <connections>
