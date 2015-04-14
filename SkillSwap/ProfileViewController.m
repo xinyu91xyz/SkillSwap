@@ -26,6 +26,7 @@
         if (!error) {
             PFObject *object = [objects objectAtIndex:0];
             self.welcomeLabel.text = object[@"userName"];
+//            NSLog(@"%@", self.welcomeLabel.text);
         } else {
             
         }
@@ -86,4 +87,38 @@
 }
 */
 
+- (IBAction)addBtnPressed:(id)sender {
+    if (![self.realName.text isEqualToString:@""]) {
+        
+        // update user real name
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
+        [query whereKey:@"userId" equalTo:[PFUser currentUser]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                PFObject *object = [objects objectAtIndex:0];
+                object[@"userName"] = self.realName.text;
+                [object saveInBackground];
+                NSLog(@"1, %@", object[@"userName"]);
+            } else {
+                
+            }
+        }];
+
+        // query and display user real name
+        
+        PFQuery *queryback = [PFQuery queryWithClassName:@"UserProfile"];
+        [queryback whereKey:@"userId" equalTo:[PFUser currentUser]];
+        [queryback findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                PFObject *objectback = [objects objectAtIndex:0];
+                self.welcomeLabel.text = objectback[@"userName"];
+                NSLog(@"2, %@", objectback[@"userName"]);
+            } else {
+                
+            }
+        }];
+
+    }
+}
 @end

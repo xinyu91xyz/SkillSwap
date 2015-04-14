@@ -12,8 +12,11 @@
 @interface ProfileViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *welcomeLabel;
+@property (strong, nonatomic) IBOutlet UITextField *realName;
+@property (weak, nonatomic) IBOutlet UIButton *addNewName;
 
 
 //- (PFQuery *) queryForTable;
+- (IBAction)addBtnPressed:(id)sender;
 
 @end
