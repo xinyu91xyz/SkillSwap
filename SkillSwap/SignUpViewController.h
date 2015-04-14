@@ -22,5 +22,6 @@
 @property (nonatomic, strong) IBOutlet UITextField *usernameField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordAgainField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @end

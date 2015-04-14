@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
+		5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */; };
+		5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */; };
+		5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FB1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png */; };
+		5DC742001ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FC1ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png */; };
+		5DC742051ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742011ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png */; };
+		5DC742061ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742021ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png */; };
+		5DC742071ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742031ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png */; };
+		5DC742081ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742041ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png */; };
 		5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEB5F501AD4820C007A222F /* ProfileViewController.m */; };
 		5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108211AD6328600E47080 /* SignInViewController.xib */; };
 		5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108221AD6328600E47080 /* SignUpViewController.xib */; };
@@ -73,6 +81,14 @@
 
 /* Begin PBXFileReference section */
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Event_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Message_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC741FB1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_People_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC741FC1ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_User_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC742011ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Add_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC742021ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Password_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC742031ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Email Address_Page 1@3x.png"; sourceTree = "<group>"; };
+		5DC742041ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_User Name_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		5DEB5F501AD4820C007A222F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		5F1108211AD6328600E47080 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
@@ -294,7 +310,15 @@
 				5FCAFFE11ACCED3C001951E0 /* Icon@2x.png */,
 				5FCAFFE21ACCED3C001951E0 /* Default.png */,
 				5FCAFFE31ACCED3C001951E0 /* Default@2x.png */,
+				5DC742011ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png */,
+				5DC742021ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png */,
+				5DC742031ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png */,
+				5DC742041ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png */,
 				5FCAFFE41ACCED3C001951E0 /* Default-568h@2x.png */,
+				5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */,
+				5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */,
+				5DC741FB1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png */,
+				5DC741FC1ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png */,
 				5FCAFFE51ACCED3C001951E0 /* Exit.png */,
 				5FCAFFE61ACCED3C001951E0 /* ExitDown.png */,
 				5FCAFFE71ACCED3C001951E0 /* Facebook.png */,
@@ -393,24 +417,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCAFFF61ACCED3C001951E0 /* Exit.png in Resources */,
+				5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */,
+				5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */,
 				5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */,
 				5FCAFFF71ACCED3C001951E0 /* ExitDown.png in Resources */,
 				5FCAFFFA1ACCED3C001951E0 /* LoginFieldBG.png in Resources */,
 				5FCAFFFD1ACCED3C001951E0 /* SignUp.png in Resources */,
+				5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */,
 				5FCAFFF11ACCED3C001951E0 /* Icon.png in Resources */,
 				5FCA00011ACCED3C001951E0 /* TwitterDown.png in Resources */,
+				5DC742071ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png in Resources */,
 				5FCAFFF31ACCED3C001951E0 /* Default.png in Resources */,
 				5FCAFFFC1ACCED3C001951E0 /* MainBG.png in Resources */,
 				5FCAFFF81ACCED3C001951E0 /* Facebook.png in Resources */,
+				5DC742081ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png in Resources */,
 				5F9EEADD1ACA48C400D6D23E /* Main.storyboard in Resources */,
 				5FCAFFFF1ACCED3C001951E0 /* SignUpFieldBG.png in Resources */,
+				5DC742051ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png in Resources */,
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
+				5DC742061ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png in Resources */,
 				5F9EEADF1ACA48C400D6D23E /* Images.xcassets in Resources */,
 				5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */,
 				5FCAFFF51ACCED3C001951E0 /* Default-568h@2x.png in Resources */,
 				5FCAFFFE1ACCED3C001951E0 /* SignUpDown.png in Resources */,
 				5FCAFFF91ACCED3C001951E0 /* FacebookDown.png in Resources */,
+				5DC742001ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png in Resources */,
 				5FCAFFF41ACCED3C001951E0 /* Default@2x.png in Resources */,
 				5FCA00001ACCED3C001951E0 /* Twitter.png in Resources */,
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,

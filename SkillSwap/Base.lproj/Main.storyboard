@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="1387.7333333333333" y="-1556.3199999999999"/>
         </scene>
-        <!--Item-->
+        <!--Message-->
         <scene sceneID="XNw-Sf-4Fp">
             <objects>
                 <viewController id="vhL-Pf-6yR" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Item" id="HtC-QY-U7d"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Message" image="ui element_Message_Page 1@3x.png" id="HtC-QY-U7d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S78-kS-kvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,26 +99,26 @@
             <objects>
                 <viewController id="4rb-7z-blv" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dvb-nP-eCD">
-                        <rect key="frame" x="0.0" y="64" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bj6-gB-Vib">
-                                <rect key="frame" x="68" y="212" width="213" height="21"/>
+                                <rect key="frame" x="48" y="199" width="213" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Real Name" minimumFontSize="17" id="ULK-Er-Z1Q">
-                                <rect key="frame" x="68" y="151" width="388" height="30"/>
+                                <rect key="frame" x="48" y="142" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cg5-FU-c1L">
-                                <rect key="frame" x="493" y="150" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cg5-FU-c1L">
+                                <rect key="frame" x="239" y="142" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add">
+                                <state key="normal" title="Add" image="ui element_Add_Page 1@3x.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -128,9 +128,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Profile" id="hjz-nc-zJG"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Profile" image="ui element_User_Page 1@3x.png" id="hjz-nc-zJG"/>
                     <connections>
                         <outlet property="addNewName" destination="cg5-FU-c1L" id="2Cl-Jb-LdU"/>
                         <outlet property="realName" destination="ULK-Er-Z1Q" id="c5G-qy-UcM"/>
@@ -141,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="187" y="909"/>
         </scene>
-        <!--Item-->
+        <!--People-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -159,7 +157,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Item" id="DYv-vL-dTP"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="People" image="ui element_People_Page 1@3x.png" id="DYv-vL-dTP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,7 +167,7 @@
         <scene sceneID="QXX-gQ-J7G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acp-A1-6IP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Event" id="xEy-Hs-N7o"/>
+                    <tabBarItem key="tabBarItem" title="Event" image="ui element_Event_Page 1@3x.png" id="xEy-Hs-N7o"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qVs-N9-teq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -185,6 +183,13 @@
             <point key="canvasLocation" x="614.39999999999998" y="-1544.96"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ui element_Add_Page 1@3x.png" width="66" height="66"/>
+        <image name="ui element_Event_Page 1@3x.png" width="66" height="66"/>
+        <image name="ui element_Message_Page 1@3x.png" width="66" height="66"/>
+        <image name="ui element_People_Page 1@3x.png" width="66" height="66"/>
+        <image name="ui element_User_Page 1@3x.png" width="66" height="66"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

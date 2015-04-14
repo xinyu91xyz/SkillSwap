@@ -49,7 +49,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    
     // For dismissing keyboard
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(dismissKeyboard)];
@@ -94,6 +94,9 @@
         [self.passwordAgainField resignFirstResponder];
         [self processFieldEntries];
     }
+    if (textField == self.emailField) {
+        [self.emailField becomeFirstResponder];
+    }
 
     return YES;
 }
@@ -122,19 +125,26 @@
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     NSString *passwordAgain = self.passwordAgainField.text;
+    NSString *email = self.emailField.text;
     NSString *errorText = @"Please ";
     NSString *usernameBlankText = @"enter a username";
     NSString *passwordBlankText = @"enter a password";
     NSString *joinText = @", and ";
+//    NSString *joinText2 = @", ";
     NSString *passwordMismatchText = @"enter the same password twice";
+    NSString *emailBlankText = @"enter an email";
 
     BOOL textError = NO;
 
     // Messaging nil will return 0, so these checks implicitly check for nil text.
-    if (username.length == 0 || password.length == 0 || passwordAgain.length == 0) {
+    if (username.length == 0 || password.length == 0 || passwordAgain.length == 0 || email.length == 0) {
         textError = YES;
 
         // Set up the keyboard for the first field missing input:
+        if (email.length == 0) {
+            [self.emailField becomeFirstResponder];
+        }
+        
         if (passwordAgain.length == 0) {
             [self.passwordAgainField becomeFirstResponder];
         }
@@ -155,6 +165,14 @@
             }
             errorText = [errorText stringByAppendingString:passwordBlankText];
         }
+        
+        if (email.length == 0) {
+            if (username.length == 0 || password.length == 0 || passwordAgain.length == 0) {
+                errorText = [errorText stringByAppendingString:joinText];
+            }
+            errorText = [errorText stringByAppendingString:emailBlankText];
+        }
+        
     } else if ([password compare:passwordAgain] != NSOrderedSame) {
         // We have non-zero strings.
         // Check for equal password strings.
@@ -186,6 +204,7 @@
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = password;
+    user.email = email;
     
     NSLog(@"A PFUser is Initiated");
     NSLog(@"%@",user);
