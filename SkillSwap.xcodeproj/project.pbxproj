@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D64086E1ADF165B009D1F56 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D64086D1ADF165B009D1F56 /* ProfileTableViewController.m */; };
+		5D6408711ADF16D6009D1F56 /* ProfileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6408701ADF16D6009D1F56 /* ProfileDetailViewController.m */; };
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
 		5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */; };
 		5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */; };
@@ -82,6 +84,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D64086C1ADF165B009D1F56 /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		5D64086D1ADF165B009D1F56 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
+		5D64086F1ADF16D6009D1F56 /* ProfileDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailViewController.h; sourceTree = "<group>"; };
+		5D6408701ADF16D6009D1F56 /* ProfileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailViewController.m; sourceTree = "<group>"; };
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Event_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Message_Page 1@3x.png"; sourceTree = "<group>"; };
@@ -234,8 +240,20 @@
 				5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */,
 				5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */,
 				5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */,
+<<<<<<< Updated upstream
 				5F42FAA21ADF2A5900362C54 /* EventTableViewCell.h */,
 				5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */,
+=======
+<<<<<<< HEAD
+				5D64086C1ADF165B009D1F56 /* ProfileTableViewController.h */,
+				5D64086D1ADF165B009D1F56 /* ProfileTableViewController.m */,
+				5D64086F1ADF16D6009D1F56 /* ProfileDetailViewController.h */,
+				5D6408701ADF16D6009D1F56 /* ProfileDetailViewController.m */,
+=======
+				5F42FAA21ADF2A5900362C54 /* EventTableViewCell.h */,
+				5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */,
+>>>>>>> origin/ChenZhu
+>>>>>>> Stashed changes
 				5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */,
 				5DEB5F501AD4820C007A222F /* ProfileViewController.m */,
 				9DC2497F1ADB198A00BC4544 /* ActivityView.h */,
@@ -474,7 +492,9 @@
 			files = (
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
 				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
+				5D6408711ADF16D6009D1F56 /* ProfileDetailViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
+				5D64086E1ADF165B009D1F56 /* ProfileTableViewController.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,

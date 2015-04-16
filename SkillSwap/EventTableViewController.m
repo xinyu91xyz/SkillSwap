@@ -8,14 +8,22 @@
 
 #import "EventTableViewController.h"
 #import <Parse/Parse.h>
+<<<<<<< Updated upstream
 #import "EventTableViewCell.h"
 #import "EventDetailViewController.h"
+=======
+<<<<<<< HEAD
+
+=======
+#import "EventTableViewCell.h"
+#import "EventDetailViewController.h"
+>>>>>>> origin/ChenZhu
+>>>>>>> Stashed changes
 @implementation EventTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
     if (self) {
-
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"text";
@@ -38,7 +46,7 @@
 - (PFQuery *) queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
     
-    [query orderByAscending:@"evenDate"];
+    [query orderByAscending:@"eventDate"];
     return query;
 }
 
