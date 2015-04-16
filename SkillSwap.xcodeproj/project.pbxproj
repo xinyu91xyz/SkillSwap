@@ -21,6 +21,8 @@
 		5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108221AD6328600E47080 /* SignUpViewController.xib */; };
 		5F1108291AD6345100E47080 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108261AD6345100E47080 /* SignInViewController.m */; };
 		5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108281AD6345100E47080 /* SignUpViewController.m */; };
+		5F42FAA11ADF16E700362C54 /* noImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F42FAA01ADF16E700362C54 /* noImg.png */; };
+		5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */; };
 		5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */; };
 		5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */; };
 		5F9EEAD41ACA48C400D6D23E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EEAD31ACA48C400D6D23E /* main.m */; };
@@ -97,6 +99,9 @@
 		5F1108261AD6345100E47080 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		5F1108271AD6345100E47080 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		5F1108281AD6345100E47080 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		5F42FAA01ADF16E700362C54 /* noImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImg.png; sourceTree = "<group>"; };
+		5F42FAA21ADF2A5900362C54 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
+		5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		5F7E03071AD38BAB00CDBF42 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
@@ -229,6 +234,8 @@
 				5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */,
 				5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */,
 				5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */,
+				5F42FAA21ADF2A5900362C54 /* EventTableViewCell.h */,
+				5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */,
 				5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */,
 				5DEB5F501AD4820C007A222F /* ProfileViewController.m */,
 				9DC2497F1ADB198A00BC4544 /* ActivityView.h */,
@@ -307,6 +314,7 @@
 			children = (
 				5F1108201AD6325F00E47080 /* SignUpImg */,
 				5FCAFFE01ACCED3C001951E0 /* Icon.png */,
+				5F42FAA01ADF16E700362C54 /* noImg.png */,
 				5FCAFFE11ACCED3C001951E0 /* Icon@2x.png */,
 				5FCAFFE21ACCED3C001951E0 /* Default.png */,
 				5FCAFFE31ACCED3C001951E0 /* Default@2x.png */,
@@ -437,6 +445,7 @@
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
 				5DC742061ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png in Resources */,
+				5F42FAA11ADF16E700362C54 /* noImg.png in Resources */,
 				5F9EEADF1ACA48C400D6D23E /* Images.xcassets in Resources */,
 				5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */,
 				5FCAFFF51ACCED3C001951E0 /* Default-568h@2x.png in Resources */,
@@ -467,6 +476,7 @@
 				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
+				5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,
 				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,

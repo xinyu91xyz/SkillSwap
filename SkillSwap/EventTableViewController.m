@@ -8,6 +8,8 @@
 
 #import "EventTableViewController.h"
 #import <Parse/Parse.h>
+#import "EventTableViewCell.h"
+#import "EventDetailViewController.h"
 @implementation EventTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style{
@@ -42,13 +44,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     static NSString *CellIdentifier = @"EventCell";
+    EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[EventTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+    cell.eventTitleLabel.text = [object objectForKey:@"eventName"];
+    cell.eventDescLabel.text = [object objectForKey:@"eventDesc"];
     
-    cell.textLabel.text = [object objectForKey:@"eventName"];
+    PFFile *file = [object objectForKey:@"eventImg"];
+    
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.eventImage.image = image;
+            // image can now be set on a UIImageView
+        }
+    }];
+
     
     return cell;
 }
@@ -56,12 +69,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"showEventDetail"]) {
+    if ([segue.identifier isEqualToString:@"ShowEventDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
-//        Observation *selectedObservation = self.survey.observations[indexPath.row];
-//        ObservationEditorViewController *destination = segue.destinationViewController;
-//        destination.theObservation = selectedObservation;
+        PFObject *selectedObject = self.objects[indexPath.row];
+        EventDetailViewController *destiation = segue.destinationViewController;
+        destiation.object = selectedObject;
     }
     
 }
