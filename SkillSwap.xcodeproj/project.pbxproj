@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F0675E01AE1B9B4004BB7C1 /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675DC1AE1B9B4004BB7C1 /* PeopleTableViewController.m */; };
-		4F0675E11AE1B9B4004BB7C1 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675DF1AE1B9B4004BB7C1 /* PeopleViewController.m */; };
 		4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */; };
+		4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */; };
+		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
 		5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */; };
 		5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */; };
@@ -88,12 +88,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F0675DC1AE1B9B4004BB7C1 /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeopleTableViewController.m; path = ../../../Documents/SkillSwap/SkillSwap/PeopleTableViewController.m; sourceTree = "<group>"; };
-		4F0675DD1AE1B9B4004BB7C1 /* PeopleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeopleTableViewController.h; path = ../../../Documents/SkillSwap/SkillSwap/PeopleTableViewController.h; sourceTree = "<group>"; };
-		4F0675DE1AE1B9B4004BB7C1 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeopleViewController.h; path = ../../../Documents/SkillSwap/SkillSwap/PeopleViewController.h; sourceTree = "<group>"; };
-		4F0675DF1AE1B9B4004BB7C1 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeopleViewController.m; path = ../../../Documents/SkillSwap/SkillSwap/PeopleViewController.m; sourceTree = "<group>"; };
 		4F0675E31AE1BB77004BB7C1 /* PeopleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleDetailViewController.h; sourceTree = "<group>"; };
 		4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleDetailViewController.m; sourceTree = "<group>"; };
+		4F1F9BFB1AE1C181009564DE /* PeopleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleTableViewController.h; sourceTree = "<group>"; };
+		4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
+		4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
+		4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Event_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Message_Page 1@3x.png"; sourceTree = "<group>"; };
@@ -217,10 +217,10 @@
 		4F0675E21AE1B9C1004BB7C1 /* People */ = {
 			isa = PBXGroup;
 			children = (
-				4F0675DF1AE1B9B4004BB7C1 /* PeopleViewController.m */,
-				4F0675DE1AE1B9B4004BB7C1 /* PeopleViewController.h */,
-				4F0675DD1AE1B9B4004BB7C1 /* PeopleTableViewController.h */,
-				4F0675DC1AE1B9B4004BB7C1 /* PeopleTableViewController.m */,
+				4F1F9BFB1AE1C181009564DE /* PeopleTableViewController.h */,
+				4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */,
+				4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */,
+				4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */,
 				4F0675E31AE1BB77004BB7C1 /* PeopleDetailViewController.h */,
 				4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */,
 			);
@@ -526,15 +526,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
-				4F0675E11AE1B9B4004BB7C1 /* PeopleViewController.m in Sources */,
 				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
+				4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */,
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */,
 				5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,
-				4F0675E01AE1B9B4004BB7C1 /* PeopleTableViewController.m in Sources */,
+				4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */,
 				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
