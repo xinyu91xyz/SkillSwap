@@ -14,6 +14,12 @@
 
 @implementation EventTableViewController
 
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
     if (self) {

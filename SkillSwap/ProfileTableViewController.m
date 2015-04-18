@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     PFRelation *knownRelation = [[PFUser currentUser] relationForKey:@"knownSkills"];
     knownSkills = [[knownRelation query] findObjects];
     
@@ -117,6 +118,13 @@
     return 32.0f;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0)
+        return 200.0f;
+    return 44.0f;
+}
+
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     
@@ -161,16 +169,16 @@
     return cell;
 }
 
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    //  return animalSectionTitles;
-    return animalIndexTitles;
-}
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+//{
+//    //  return animalSectionTitles;
+//    return animalIndexTitles;
+//}
 
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    return [animalSectionTitles indexOfObject:title];
-}
+//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+//{
+//    return [animalSectionTitles indexOfObject:title];
+//}
 
 
 
