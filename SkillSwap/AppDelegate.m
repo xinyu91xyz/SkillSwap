@@ -23,6 +23,8 @@
                   clientKey:@"sg1Wit6lKp3LuT5bOduSyYYcKEk52E38mJx1WcTL"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 

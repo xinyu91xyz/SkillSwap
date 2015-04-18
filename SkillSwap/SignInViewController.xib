@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -23,11 +23,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_picture" id="21">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="loginBackground.png" id="21">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImg.png" id="6BF-bi-RAa">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" id="6BF-bi-RAa">
                             <rect key="frame" x="111" y="61" width="99" height="99"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -54,37 +54,11 @@
                                 <outlet property="delegate" destination="-1" id="14"/>
                             </connections>
                         </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_checkmark" id="3Jr-XC-stB">
-                            <rect key="frame" x="123" y="355" width="19" height="19"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IxI-bV-GKa">
-                            <rect key="frame" x="150" y="348" width="47" height="34"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <state key="normal" title="Login">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="awQ-Nm-ryt"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d9t-p8-ToN">
-                            <rect key="frame" x="32" y="418" width="256" height="46"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                            <state key="normal" title="Log in with Facebook" backgroundImage="fb_login"/>
-                            <state key="highlighted" backgroundImage="fb_login_pressed"/>
-                            <connections>
-                                <action selector="loginWithFacebookPressed:" destination="-1" eventType="touchUpInside" id="3JR-SR-zUI"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Zg-VG-8ef">
-                            <rect key="frame" x="0.0" y="506" width="320" height="62"/>
+                            <rect key="frame" x="0.0" y="472" width="320" height="62"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <color key="backgroundColor" red="0.42745098039215684" green="0.69411764705882351" blue="0.29803921568627451" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                            <state key="normal" title="Sign up">
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Not a member yet? Sign up">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -111,6 +85,26 @@
                                 <outlet property="delegate" destination="-1" id="15"/>
                             </connections>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d9t-p8-ToN">
+                            <rect key="frame" x="39" y="404" width="242" height="46"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <state key="normal" title="Log in with Facebook" backgroundImage="fb_login"/>
+                            <state key="highlighted" backgroundImage="fb_login_pressed"/>
+                            <connections>
+                                <action selector="loginWithFacebookPressed:" destination="-1" eventType="touchUpInside" id="3JR-SR-zUI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IxI-bV-GKa">
+                            <rect key="frame" x="19" y="329" width="281" height="76"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Login" image="Sign In button.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="awQ-Nm-ryt"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.42745098040000001" green="0.69411764710000001" blue="0.29803921570000003" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
                 </scrollView>
@@ -120,10 +114,11 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_picture" width="320" height="568"/>
+        <image name="Logo.png" width="465" height="336"/>
+        <image name="Sign In button.png" width="969" height="249"/>
         <image name="fb_login" width="39" height="46"/>
         <image name="fb_login_pressed" width="39" height="46"/>
-        <image name="icon_checkmark" width="19" height="19"/>
+        <image name="loginBackground.png" width="1080" height="1920"/>
         <image name="noImg.png" width="80" height="60"/>
         <image name="ui element_Password_Page 1@3x.png" width="66" height="66"/>
         <image name="ui element_User Name_Page 1@3x.png" width="66" height="66"/>

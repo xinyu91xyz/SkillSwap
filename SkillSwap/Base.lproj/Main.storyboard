@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dI6-KB-DU5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dI6-KB-DU5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Event Table View Controller-->
+        <!--Events-->
         <scene sceneID="Dnh-3a-YuS">
             <objects>
                 <tableViewController id="gcT-Jj-1U4" customClass="EventTableViewController" sceneMemberID="viewController">
@@ -18,15 +18,15 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ode-us-Weq" id="zk8-W3-HbD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-VL-NYs">
-                                            <rect key="frame" x="8" y="8" width="120" height="90"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-VL-NYs">
+                                            <rect key="frame" x="32" y="8" width="90" height="90"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="CDB-jd-OMC"/>
+                                                <constraint firstAttribute="width" constant="90" id="CDB-jd-OMC"/>
                                                 <constraint firstAttribute="height" constant="90" id="xRd-2i-P9b"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJQ-N0-xfV">
-                                            <rect key="frame" x="136" y="8" width="423" height="21"/>
+                                            <rect key="frame" x="145" y="8" width="423" height="21"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="cBV-hz-Ayb"/>
@@ -36,7 +36,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2m-9z-kEj">
-                                            <rect key="frame" x="136" y="37" width="423" height="60.5"/>
+                                            <rect key="frame" x="145" y="37" width="423" height="60.5"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,13 +69,13 @@
                             <outlet property="delegate" destination="gcT-Jj-1U4" id="KBD-AX-9TK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qJC-Vd-EsQ"/>
+                    <navigationItem key="navigationItem" title="Events" id="qJC-Vd-EsQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQX-mR-v2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1887" y="-1929"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Events-->
         <scene sceneID="e6U-Bo-GxA">
             <objects>
                 <viewController id="t8e-sn-v32" customClass="EventDetailViewController" sceneMemberID="viewController">
@@ -105,7 +105,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZLa-px-aPR"/>
+                    <navigationItem key="navigationItem" title="Events" id="ZLa-px-aPR"/>
                     <connections>
                         <outlet property="eventDescLabel" destination="T70-Gm-dp0" id="yDX-Fe-CPA"/>
                         <outlet property="eventImage" destination="R91-TG-1Rk" id="oSN-M5-eHU"/>
@@ -157,7 +157,7 @@
                             <outlet property="delegate" destination="dM1-Bq-re9" id="tv2-PJ-JIc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="S3Y-lZ-6d1"/>
+                    <navigationItem key="navigationItem" title="People" id="S3Y-lZ-6d1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7N-bk-CYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="D5U-HY-TBs"/>
+                    <navigationItem key="navigationItem" title="People" id="D5U-HY-TBs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCi-S7-1c7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,7 +276,7 @@
             </objects>
             <point key="canvasLocation" x="350.625" y="960.21126760563345"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--My Profile-->
         <scene sceneID="qoa-jV-BFb">
             <objects>
                 <tableViewController id="MIV-oO-gIB" customClass="ProfileTableViewController" sceneMemberID="viewController">
@@ -314,7 +314,7 @@
                             <outlet property="delegate" destination="MIV-oO-gIB" id="OgX-eY-mI1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yut-Ba-cbn"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="yut-Ba-cbn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q42-Ji-TBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
