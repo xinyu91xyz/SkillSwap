@@ -71,6 +71,9 @@
 		5F9EEB191ACA49E600D6D23E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9EEB181ACA49E600D6D23E /* libsqlite3.dylib */; };
 		5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF802C1AE190CC00FA3A16 /* ProfileTableViewController.m */; };
 		5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF802F1AE1A71C00FA3A16 /* TestTableViewController.m */; };
+		5FBF80341AE31DD300FA3A16 /* MoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF80311AE31DD300FA3A16 /* MoreButton.png */; };
+		5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF80321AE31DD300FA3A16 /* MoreButton@2x.png */; };
+		5FBF80361AE31DD300FA3A16 /* MoreButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF80331AE31DD300FA3A16 /* MoreButton@3x.png */; };
 		5FCA00001ACCED3C001951E0 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFEF1ACCED3C001951E0 /* Twitter.png */; };
 		5FCA00011ACCED3C001951E0 /* TwitterDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFF01ACCED3C001951E0 /* TwitterDown.png */; };
 		5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA00091ACCF36E001951E0 /* TabBarController.m */; };
@@ -185,6 +188,9 @@
 		5FBF802C1AE190CC00FA3A16 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
 		5FBF802E1AE1A71C00FA3A16 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		5FBF802F1AE1A71C00FA3A16 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		5FBF80311AE31DD300FA3A16 /* MoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoreButton.png; sourceTree = "<group>"; };
+		5FBF80321AE31DD300FA3A16 /* MoreButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MoreButton@2x.png"; sourceTree = "<group>"; };
+		5FBF80331AE31DD300FA3A16 /* MoreButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MoreButton@3x.png"; sourceTree = "<group>"; };
 		5FCA00081ACCF36E001951E0 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		5FCA00091ACCF36E001951E0 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		5FCAFFD51ACCEAD3001951E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -398,6 +404,9 @@
 		5FCAFFDF1ACCED2A001951E0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5FBF80311AE31DD300FA3A16 /* MoreButton.png */,
+				5FBF80321AE31DD300FA3A16 /* MoreButton@2x.png */,
+				5FBF80331AE31DD300FA3A16 /* MoreButton@3x.png */,
 				5D3B638C1AE223D100890A83 /* Event1.png */,
 				5D3B638D1AE223D100890A83 /* Event2.png */,
 				5D3B638E1AE223D100890A83 /* Event3.png */,
@@ -531,6 +540,8 @@
 				5D3B63A51AE223D100890A83 /* Sign In button.png in Resources */,
 				5D3B639D1AE223D100890A83 /* Event2.png in Resources */,
 				5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */,
+				5FBF80341AE31DD300FA3A16 /* MoreButton.png in Resources */,
+				5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */,
 				5D3B639F1AE223D100890A83 /* Event4.png in Resources */,
 				5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */,
 				5D3B639C1AE223D100890A83 /* Event1.png in Resources */,
@@ -571,6 +582,7 @@
 				5FCAFFF91ACCED3C001951E0 /* FacebookDown.png in Resources */,
 				5DC742001ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png in Resources */,
 				5FCAFFF41ACCED3C001951E0 /* Default@2x.png in Resources */,
+				5FBF80361AE31DD300FA3A16 /* MoreButton@3x.png in Resources */,
 				5FCA00001ACCED3C001951E0 /* Twitter.png in Resources */,
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
 				5D3B63AD1AE2261500890A83 /* logo.png in Resources */,

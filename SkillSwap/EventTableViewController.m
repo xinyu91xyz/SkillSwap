@@ -28,11 +28,11 @@
     self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:223/255.0 green:62/255.0 blue:125/255.0 alpha:1];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style{
-    self = [super initWithStyle:style];
-    if (self) {
 
-        
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"text";
         
@@ -46,12 +46,39 @@
         self.paginationEnabled = YES;
         
         // The number of objects to show per page
-        self.objectsPerPage = 25;
+        self.objectsPerPage = 10;
         
         NSLog(@"run");
+
+        
     }
     return self;
 }
+
+//- (id)initWithStyle:(UITableViewStyle)style{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//
+//        
+//        // The key of the PFObject to display in the label of the default cell style
+//        self.textKey = @"text";
+//        
+//        // Uncomment the following line to specify the key of a PFFile on the PFObject to display in the imageView of the default cell style
+//        // self.imageKey = @"image";
+//        
+//        // Whether the built-in pull-to-refresh is enabled
+//        self.pullToRefreshEnabled = YES;
+//        
+//        // Whether the built-in pagination is enabled
+//        self.paginationEnabled = YES;
+//        
+//        // The number of objects to show per page
+//        self.objectsPerPage = 25;
+//        
+//        NSLog(@"run");
+//    }
+//    return self;
+//}
 
 - (PFQuery *) queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];

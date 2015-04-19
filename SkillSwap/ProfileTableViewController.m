@@ -7,9 +7,10 @@
 //
 
 #import "ProfileTableViewController.h"
-#import <Parse/Parse.h>
+#import "SignInViewController.h"
+#import "SignUpViewController.h"
 
-@interface ProfileTableViewController () {
+@interface ProfileTableViewController () <SignInViewControllerDelegate> {
     NSDictionary *animals;
     NSArray *animalSectionTitles;
     NSArray *animalIndexTitles;
@@ -18,6 +19,7 @@
     NSArray *toLearnSkills;
     NSString *userEmail;
     NSString *userRealName;
+
 }
 @end
 
@@ -36,6 +38,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIImage *moreImage = [UIImage imageNamed:@"MoreButton.png"];
+    UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithImage:moreImage  landscapeImagePhone:moreImage style:UIBarButtonItemStylePlain target:self action:@selector(showMoreOptions:)];
+    self.navigationItem.rightBarButtonItem = moreButton;
+    
+    
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
@@ -188,6 +197,50 @@
 //{
 //    return [animalSectionTitles indexOfObject:title];
 //}
+
+
+- (void)showMoreOptions:(id)sender {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Edit profile" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Add a skill" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [PFUser logOut];
+        [self presentLoginViewController];
+    }]];
+    
+    // Configure the alert controller's popover presentation controller if it has one.
+    UIPopoverPresentationController *popoverPresentationController = [alertController popoverPresentationController];
+    if (popoverPresentationController) {
+        popoverPresentationController.sourceView = self.view;
+        popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    }
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+
+}
+
+
+#pragma mark -
+#pragma mark LoginViewController
+
+- (void)presentLoginViewController {
+    // Go to the welcome screen and have them log in or create an account.
+    SignInViewController *viewController = [[SignInViewController alloc] initWithNibName:nil bundle:nil];
+    viewController.delegate = self;
+    [self presentViewController:viewController animated:YES completion:NULL];
+    //    [self.navigationController setViewControllers:@[ viewController ] animated:NO];
+}
+
+#pragma mark Delegate
+
+- (void)loginViewControllerDidLogin:(SignInViewController *)controller {
+    //    [self presentWallViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 
 
