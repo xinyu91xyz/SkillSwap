@@ -50,6 +50,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+//    [self.scrollView setScrollEnabled:YES];
     // For dismissing keyboard
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(dismissKeyboard)];
@@ -65,7 +66,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.usernameField becomeFirstResponder];
+//    [self.usernameField becomeFirstResponder];
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
@@ -84,6 +85,7 @@
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.usernameField becomeFirstResponder];
     if (textField == self.usernameField) {
         [self.passwordField becomeFirstResponder];
     }
@@ -92,10 +94,11 @@
     }
     if (textField == self.passwordAgainField) {
         [self.passwordAgainField resignFirstResponder];
-        [self processFieldEntries];
+//        [self processFieldEntries];
     }
     if (textField == self.emailField) {
         [self.emailField becomeFirstResponder];
+        [self processFieldEntries];
     }
 
     return YES;
@@ -285,9 +288,17 @@
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
 
-    CGFloat scrollViewOffsetY = (keyboardFrame.size.height -
+//    CGFloat scrollViewOffsetY = (keyboardFrame.size.height -
+//                                 (CGRectGetHeight(self.view.bounds) -
+//                                  CGRectGetMaxY(self.createAccountButton.frame) - 10.0f));
+    
+    CGFloat scrollViewOffsetY = (CGRectGetHeight(keyboardFrame) -
                                  (CGRectGetHeight(self.view.bounds) -
-                                  CGRectGetMaxY(self.createAccountButton.frame)));
+                                  CGRectGetMaxY(self.createAccountButton.frame) + 120.0f));
+    
+//    CGRectGetHeight(keyboardFrame) -
+//    (CGRectGetMaxY(self.view.bounds) -
+//     CGRectGetMaxY(self.loginButton.frame) - 10.0f)
     // Check if scrolling needed
     if (scrollViewOffsetY < 0) {
         return;

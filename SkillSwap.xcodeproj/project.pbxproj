@@ -10,13 +10,13 @@
 		4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */; };
 		4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */; };
 		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
+		5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D12ACDD1AE6F30C005540D9 /* logo.png */; };
 		5D3B639C1AE223D100890A83 /* Event1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638C1AE223D100890A83 /* Event1.png */; };
 		5D3B639D1AE223D100890A83 /* Event2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638D1AE223D100890A83 /* Event2.png */; };
 		5D3B639E1AE223D100890A83 /* Event3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638E1AE223D100890A83 /* Event3.png */; };
 		5D3B639F1AE223D100890A83 /* Event4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638F1AE223D100890A83 /* Event4.png */; };
 		5D3B63A01AE223D100890A83 /* Event5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63901AE223D100890A83 /* Event5.png */; };
 		5D3B63A11AE223D100890A83 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63911AE223D100890A83 /* loginBackground.png */; };
-		5D3B63A21AE223D100890A83 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63921AE223D100890A83 /* logo.png */; };
 		5D3B63A31AE223D100890A83 /* Next button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63931AE223D100890A83 /* Next button.png */; };
 		5D3B63A41AE223D100890A83 /* Save button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63941AE223D100890A83 /* Save button.png */; };
 		5D3B63A51AE223D100890A83 /* Sign In button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63951AE223D100890A83 /* Sign In button.png */; };
@@ -26,7 +26,6 @@
 		5D3B63A91AE223D100890A83 /* user image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63991AE223D100890A83 /* user image3.png */; };
 		5D3B63AA1AE223D100890A83 /* user image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B639A1AE223D100890A83 /* user image4.png */; };
 		5D3B63AB1AE223D100890A83 /* user image5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B639B1AE223D100890A83 /* user image5.png */; };
-		5D3B63AD1AE2261500890A83 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63AC1AE2261500890A83 /* logo.png */; };
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
 		5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */; };
 		5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */; };
@@ -114,13 +113,13 @@
 		4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
 		4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
+		5D12ACDD1AE6F30C005540D9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		5D3B638C1AE223D100890A83 /* Event1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event1.png; path = SkillSwap/Event1.png; sourceTree = "<group>"; };
 		5D3B638D1AE223D100890A83 /* Event2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event2.png; path = SkillSwap/Event2.png; sourceTree = "<group>"; };
 		5D3B638E1AE223D100890A83 /* Event3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event3.png; path = SkillSwap/Event3.png; sourceTree = "<group>"; };
 		5D3B638F1AE223D100890A83 /* Event4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event4.png; path = SkillSwap/Event4.png; sourceTree = "<group>"; };
 		5D3B63901AE223D100890A83 /* Event5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event5.png; path = SkillSwap/Event5.png; sourceTree = "<group>"; };
 		5D3B63911AE223D100890A83 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBackground.png; path = SkillSwap/loginBackground.png; sourceTree = "<group>"; };
-		5D3B63921AE223D100890A83 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = SkillSwap/logo.png; sourceTree = "<group>"; };
 		5D3B63931AE223D100890A83 /* Next button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Next button.png"; path = "SkillSwap/Next button.png"; sourceTree = "<group>"; };
 		5D3B63941AE223D100890A83 /* Save button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Save button.png"; path = "SkillSwap/Save button.png"; sourceTree = "<group>"; };
 		5D3B63951AE223D100890A83 /* Sign In button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Sign In button.png"; path = "SkillSwap/Sign In button.png"; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 		5D3B63991AE223D100890A83 /* user image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user image3.png"; path = "SkillSwap/user image3.png"; sourceTree = "<group>"; };
 		5D3B639A1AE223D100890A83 /* user image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user image4.png"; path = "SkillSwap/user image4.png"; sourceTree = "<group>"; };
 		5D3B639B1AE223D100890A83 /* user image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user image5.png"; path = "SkillSwap/user image5.png"; sourceTree = "<group>"; };
-		5D3B63AC1AE2261500890A83 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Event_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Message_Page 1@3x.png"; sourceTree = "<group>"; };
@@ -413,9 +411,9 @@
 				5D3B638F1AE223D100890A83 /* Event4.png */,
 				5D3B63901AE223D100890A83 /* Event5.png */,
 				5D3B63911AE223D100890A83 /* loginBackground.png */,
-				5D3B63921AE223D100890A83 /* logo.png */,
 				5D3B63931AE223D100890A83 /* Next button.png */,
 				5D3B63941AE223D100890A83 /* Save button.png */,
+				5D12ACDD1AE6F30C005540D9 /* logo.png */,
 				5D3B63951AE223D100890A83 /* Sign In button.png */,
 				5D3B63961AE223D100890A83 /* Sign Up button.png */,
 				5D3B63971AE223D100890A83 /* user image1.png */,
@@ -430,7 +428,6 @@
 				5FCAFFE21ACCED3C001951E0 /* Default.png */,
 				5FCAFFE31ACCED3C001951E0 /* Default@2x.png */,
 				5DC742011ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png */,
-				5D3B63AC1AE2261500890A83 /* logo.png */,
 				5DC742021ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png */,
 				5DC742031ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png */,
 				5DC742041ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png */,
@@ -541,6 +538,7 @@
 				5D3B639D1AE223D100890A83 /* Event2.png in Resources */,
 				5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */,
 				5FBF80341AE31DD300FA3A16 /* MoreButton.png in Resources */,
+				5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */,
 				5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */,
 				5D3B639F1AE223D100890A83 /* Event4.png in Resources */,
 				5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */,
@@ -571,7 +569,6 @@
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
 				5DC742061ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png in Resources */,
-				5D3B63A21AE223D100890A83 /* logo.png in Resources */,
 				5F42FAA11ADF16E700362C54 /* noImg.png in Resources */,
 				5F9EEADF1ACA48C400D6D23E /* Images.xcassets in Resources */,
 				5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */,
@@ -585,7 +582,6 @@
 				5FBF80361AE31DD300FA3A16 /* MoreButton@3x.png in Resources */,
 				5FCA00001ACCED3C001951E0 /* Twitter.png in Resources */,
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
-				5D3B63AD1AE2261500890A83 /* logo.png in Resources */,
 				5F42FAA71AE18BB900362C54 /* loginBackground.png in Resources */,
 				5D3B63A11AE223D100890A83 /* loginBackground.png in Resources */,
 			);
