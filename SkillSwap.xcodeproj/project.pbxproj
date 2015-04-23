@@ -26,6 +26,8 @@
 		5D3B63A91AE223D100890A83 /* user image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63991AE223D100890A83 /* user image3.png */; };
 		5D3B63AA1AE223D100890A83 /* user image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B639A1AE223D100890A83 /* user image4.png */; };
 		5D3B63AB1AE223D100890A83 /* user image5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B639B1AE223D100890A83 /* user image5.png */; };
+		5D6584271AE87988001632AD /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6584261AE87988001632AD /* name.png */; };
+		5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6584291AE87A17001632AD /* ProfileTableViewCell.m */; };
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
 		5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */; };
 		5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */; };
@@ -129,6 +131,9 @@
 		5D3B63991AE223D100890A83 /* user image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user image3.png"; path = "SkillSwap/user image3.png"; sourceTree = "<group>"; };
 		5D3B639A1AE223D100890A83 /* user image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user image4.png"; path = "SkillSwap/user image4.png"; sourceTree = "<group>"; };
 		5D3B639B1AE223D100890A83 /* user image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user image5.png"; path = "SkillSwap/user image5.png"; sourceTree = "<group>"; };
+		5D6584261AE87988001632AD /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = name.png; sourceTree = "<group>"; };
+		5D6584281AE87A17001632AD /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		5D6584291AE87A17001632AD /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Event_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Message_Page 1@3x.png"; sourceTree = "<group>"; };
@@ -395,6 +400,8 @@
 			children = (
 				5FBF802B1AE190CC00FA3A16 /* ProfileTableViewController.h */,
 				5FBF802C1AE190CC00FA3A16 /* ProfileTableViewController.m */,
+				5D6584281AE87A17001632AD /* ProfileTableViewCell.h */,
+				5D6584291AE87A17001632AD /* ProfileTableViewCell.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -410,6 +417,7 @@
 				5D3B638E1AE223D100890A83 /* Event3.png */,
 				5D3B638F1AE223D100890A83 /* Event4.png */,
 				5D3B63901AE223D100890A83 /* Event5.png */,
+				5D6584261AE87988001632AD /* name.png */,
 				5D3B63911AE223D100890A83 /* loginBackground.png */,
 				5D3B63931AE223D100890A83 /* Next button.png */,
 				5D3B63941AE223D100890A83 /* Save button.png */,
@@ -533,6 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6584271AE87988001632AD /* name.png in Resources */,
 				5FCAFFF61ACCED3C001951E0 /* Exit.png in Resources */,
 				5D3B63A51AE223D100890A83 /* Sign In button.png in Resources */,
 				5D3B639D1AE223D100890A83 /* Event2.png in Resources */,
@@ -606,6 +615,7 @@
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */,
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
+				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */,
 				5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */,

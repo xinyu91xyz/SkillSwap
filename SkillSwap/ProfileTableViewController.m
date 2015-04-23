@@ -9,6 +9,7 @@
 #import "ProfileTableViewController.h"
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
+#import "ProfileTableViewCell.h"
 
 @interface ProfileTableViewController () <SignInViewControllerDelegate> {
     NSDictionary *animals;
@@ -160,9 +161,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
+    ProfileTableViewCell *cell;
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
+        PFUser *user = [PFUser currentUser];
+        cell.realname.text = [user objectForKey:@"realName"];
+        cell.usertitle.text = [user objectForKey:@"userTitle"];
+        cell.usermajor.text = [user objectForKey:@"major"];
+        cell.enrollyear.text = [user objectForKey:@"enrollYear"];
+        
     }
     else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MySkillCell" forIndexPath:indexPath];
