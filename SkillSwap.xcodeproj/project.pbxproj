@@ -10,6 +10,8 @@
 		4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */; };
 		4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */; };
 		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
+		5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */; };
+		5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */; };
 		5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D12ACDD1AE6F30C005540D9 /* logo.png */; };
 		5D3B639C1AE223D100890A83 /* Event1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638C1AE223D100890A83 /* Event1.png */; };
 		5D3B639D1AE223D100890A83 /* Event2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638D1AE223D100890A83 /* Event2.png */; };
@@ -115,6 +117,9 @@
 		4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
 		4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
+		5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		5D12ACDD1AE6F30C005540D9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		5D3B638C1AE223D100890A83 /* Event1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event1.png; path = SkillSwap/Event1.png; sourceTree = "<group>"; };
 		5D3B638D1AE223D100890A83 /* Event2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event2.png; path = SkillSwap/Event2.png; sourceTree = "<group>"; };
@@ -333,6 +338,7 @@
 				5F9EEAE01ACA48C400D6D23E /* LaunchScreen.xib */,
 				5F1108211AD6328600E47080 /* SignInViewController.xib */,
 				5F1108221AD6328600E47080 /* SignUpViewController.xib */,
+				5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */,
 				5FCAFFDF1ACCED2A001951E0 /* Assets */,
 				5F9EEAD11ACA48C400D6D23E /* Supporting Files */,
 				5FBF802E1AE1A71C00FA3A16 /* TestTableViewController.h */,
@@ -402,6 +408,8 @@
 				5FBF802C1AE190CC00FA3A16 /* ProfileTableViewController.m */,
 				5D6584281AE87A17001632AD /* ProfileTableViewCell.h */,
 				5D6584291AE87A17001632AD /* ProfileTableViewCell.m */,
+				5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */,
+				5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -550,6 +558,7 @@
 				5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */,
 				5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */,
 				5D3B639F1AE223D100890A83 /* Event4.png in Resources */,
+				5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */,
 				5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */,
 				5D3B639C1AE223D100890A83 /* Event1.png in Resources */,
 				5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */,
@@ -617,6 +626,7 @@
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
 				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
+				5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */,
 				5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */,
 				5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,

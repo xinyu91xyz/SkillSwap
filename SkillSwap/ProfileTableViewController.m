@@ -10,6 +10,7 @@
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
 #import "ProfileTableViewCell.h"
+#import "EditProfileViewController.h"
 
 @interface ProfileTableViewController () <SignInViewControllerDelegate> {
     NSDictionary *animals;
@@ -221,9 +222,32 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Edit profile" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self presentEditProfileViewController];
     }]];
+    
     [alertController addAction:[UIAlertAction actionWithTitle:@"Add a skill" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
+                                                         message:@"Add a Skill"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:@"OK", nil];
+        alert.tag = 1;
+        
+        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+        UITextField * alertTextField1 = [alert textFieldAtIndex:0];
+        alertTextField1.keyboardType = UIKeyboardTypeDefault;
+        alertTextField1.placeholder = @"Skill Name";
+        
+        UITextField * alertTextField2 = [alert textFieldAtIndex:1];
+        alertTextField2.keyboardType = UIKeyboardTypeDefault;
+        alertTextField2.placeholder = @"Skill Type: tolearn or known";
+        alertTextField2.secureTextEntry=NO;
+        
+        [alert show];
+        
     }]];
+    
     [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         [PFUser logOut];
         [self presentLoginViewController];
@@ -237,6 +261,20 @@
     }
     
     [self presentViewController:alertController animated:YES completion:nil];
+
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {  //Login
+            UITextField *skillname = [alertView textFieldAtIndex:0];
+            UITextField *skilltype = [alertView textFieldAtIndex:1];
+            
+            NSLog(@"skillname: %@", skillname.text);
+            NSLog(@"skilltype: %@", skilltype.text);
+        }
+    }
 
 }
 
@@ -257,6 +295,16 @@
 - (void)loginViewControllerDidLogin:(SignInViewController *)controller {
     //    [self presentWallViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+- (void)presentEditProfileViewController {
+    EditProfileViewController *viewController = [[EditProfileViewController alloc] initWithNibName:nil bundle:nil];
+//    viewController.delegate = self;
+    [self presentViewController:viewController animated:YES completion:NULL];
+    
+    NSLog(@"present edit profile view controller");
+
 }
 
 
