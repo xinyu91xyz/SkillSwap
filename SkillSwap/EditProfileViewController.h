@@ -10,4 +10,7 @@
 
 @interface EditProfileViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *updateName;
+@property (weak, nonatomic) IBOutlet UILabel *showName;
+
 @end

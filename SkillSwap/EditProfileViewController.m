@@ -7,6 +7,7 @@
 //
 
 #import "EditProfileViewController.h"
+#import <Parse/Parse.h>
 
 @interface EditProfileViewController ()
 
@@ -43,7 +44,28 @@
 }
 */
 - (IBAction)backBtn:(id)sender {
+    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)updateBtn:(id)sender {
+    
+    if (![self.updateName.text isEqualToString:@""]) {
+            
+            // update user real name
+        PFQuery *userrealname = [PFUser query];
+        [userrealname whereKey:@"objectId" equalTo:[PFUser currentUser]];
+        
+        [userrealname getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+        {
+            PFUser *currentUser = [PFUser currentUser];
+            [currentUser setObject:self.updateName.text forKey:@"realName"];
+            [[PFUser currentUser] saveInBackground];
+            self.showName.text = [currentUser objectForKey:@"realName"];
+
+        }];
+
+    }
+    
 }
 
 @end
