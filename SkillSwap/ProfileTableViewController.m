@@ -64,25 +64,6 @@
     toLearnSkills = [[toLearnRelation query] findObjects];
     
     
-    animals = @{@"B" : @[@"Bear", @"Black Swan", @"Buffalo"],
-                @"C" : @[@"Camel", @"Cockatoo"],
-                @"D" : @[@"Dog", @"Donkey"],
-                @"E" : @[@"Emu"],
-                @"G" : @[@"Giraffe", @"Greater Rhea"],
-                @"H" : @[@"Hippopotamus", @"Horse"],
-                @"K" : @[@"Koala"],
-                @"L" : @[@"Lion", @"Llama"],
-                @"M" : @[@"Manatus", @"Meerkat"],
-                @"P" : @[@"Panda", @"Peacock", @"Pig", @"Platypus", @"Polar Bear"],
-                @"R" : @[@"Rhinoceros"],
-                @"S" : @[@"Seagull"],
-                @"T" : @[@"Tasmania Devil"],
-                @"W" : @[@"Whale", @"Whale Shark", @"Wombat"]};
-    
-    animalSectionTitles = [[animals allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    animalIndexTitles = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
-    
-    
     PFUser *user = [PFUser currentUser];
     
     userEmail = [user objectForKey:@"email"];
@@ -103,6 +84,10 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {

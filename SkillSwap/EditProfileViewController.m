@@ -8,6 +8,8 @@
 
 #import "EditProfileViewController.h"
 #import <Parse/Parse.h>
+#import "ProfileTableViewController.h"
+#import "ProfileTableViewCell.h"
 
 @interface EditProfileViewController ()
 
@@ -27,7 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,7 +51,8 @@
     
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)updateBtn:(id)sender {
+
+- (IBAction)updateNameBtn:(id)sender {
     
     if (![self.updateName.text isEqualToString:@""]) {
             
@@ -67,5 +72,68 @@
     }
     
 }
+
+- (IBAction)updateTitleBtn:(id)sender {
+    
+    if (![self.updateTitle.text isEqualToString:@""]) {
+        
+        // update user real name
+        PFQuery *userrealname = [PFUser query];
+        [userrealname whereKey:@"objectId" equalTo:[PFUser currentUser]];
+        
+        [userrealname getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+         {
+             PFUser *currentUser = [PFUser currentUser];
+             [currentUser setObject:self.updateTitle.text forKey:@"userTitle"];
+             [[PFUser currentUser] saveInBackground];
+             self.showTitle.text = [currentUser objectForKey:@"userTitle"];
+             
+         }];
+        
+    }
+}
+
+- (IBAction)updateMajorBtn:(id)sender {
+    
+    if (![self.updateMajor.text isEqualToString:@""]) {
+        
+        // update user real name
+        PFQuery *userrealname = [PFUser query];
+        [userrealname whereKey:@"objectId" equalTo:[PFUser currentUser]];
+        
+        [userrealname getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+         {
+             PFUser *currentUser = [PFUser currentUser];
+             [currentUser setObject:self.updateMajor.text forKey:@"major"];
+             [[PFUser currentUser] saveInBackground];
+             self.showMajor.text = [currentUser objectForKey:@"major"];
+             
+         }];
+        
+    }
+}
+
+
+- (IBAction)updateEnrollYearBtn:(id)sender {
+    
+    if (![self.updateEnrollYear.text isEqualToString:@""]) {
+        
+        // update user real name
+        PFQuery *userrealname = [PFUser query];
+        [userrealname whereKey:@"objectId" equalTo:[PFUser currentUser]];
+        
+        [userrealname getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+         {
+             PFUser *currentUser = [PFUser currentUser];
+             [currentUser setObject:self.updateEnrollYear.text forKey:@"enrollYear"];
+             [[PFUser currentUser] saveInBackground];
+             self.showEnrollYear.text = [currentUser objectForKey:@"enrollYear"];
+             
+         }];
+        
+    }
+    
+}
+
 
 @end
