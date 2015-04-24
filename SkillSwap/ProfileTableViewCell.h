@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *usertitle;
 @property (weak, nonatomic) IBOutlet UILabel *usermajor;
 @property (weak, nonatomic) IBOutlet UILabel *enrollyear;
+@property (weak, nonatomic) IBOutlet UIImageView *userimage;
 
 @end

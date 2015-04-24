@@ -170,6 +170,16 @@
         cell.usermajor.text = [user objectForKey:@"major"];
         cell.enrollyear.text = [user objectForKey:@"enrollYear"];
         
+        PFFile *file = [user objectForKey:@"userImg"];
+        
+        [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:data];
+                cell.userimage.image = image;
+                // image can now be set on a UIImageView
+            }
+        }];
+        
     }
     else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MySkillCell" forIndexPath:indexPath];
