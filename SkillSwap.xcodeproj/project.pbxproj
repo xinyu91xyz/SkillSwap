@@ -45,8 +45,11 @@
 		5F1108291AD6345100E47080 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108261AD6345100E47080 /* SignInViewController.m */; };
 		5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108281AD6345100E47080 /* SignUpViewController.m */; };
 		5F42FAA11ADF16E700362C54 /* noImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F42FAA01ADF16E700362C54 /* noImg.png */; };
-		5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */; };
 		5F42FAA71AE18BB900362C54 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F42FAA61AE18BB900362C54 /* loginBackground.png */; };
+		5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735CB71AEDE7C700DF0811 /* EventBaseTableViewController.m */; };
+		5F735CBB1AEDE7E600DF0811 /* EventResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735CBA1AEDE7E600DF0811 /* EventResultsTableViewController.m */; };
+		5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735CC21AEE4FF800DF0811 /* EventCell.m */; };
+		5F735CC51AEE4FF800DF0811 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F735CC31AEE4FF800DF0811 /* EventCell.xib */; };
 		5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */; };
 		5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */; };
 		5F9EEAD41ACA48C400D6D23E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EEAD31ACA48C400D6D23E /* main.m */; };
@@ -157,9 +160,14 @@
 		5F1108271AD6345100E47080 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		5F1108281AD6345100E47080 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5F42FAA01ADF16E700362C54 /* noImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImg.png; sourceTree = "<group>"; };
-		5F42FAA21ADF2A5900362C54 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
-		5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		5F42FAA61AE18BB900362C54 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
+		5F735CB61AEDE7C700DF0811 /* EventBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBaseTableViewController.h; sourceTree = "<group>"; };
+		5F735CB71AEDE7C700DF0811 /* EventBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBaseTableViewController.m; sourceTree = "<group>"; };
+		5F735CB91AEDE7E600DF0811 /* EventResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventResultsTableViewController.h; sourceTree = "<group>"; };
+		5F735CBA1AEDE7E600DF0811 /* EventResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventResultsTableViewController.m; sourceTree = "<group>"; };
+		5F735CC11AEE4FF800DF0811 /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
+		5F735CC21AEE4FF800DF0811 /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		5F735CC31AEE4FF800DF0811 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		5F7E03071AD38BAB00CDBF42 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
 		5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
@@ -286,12 +294,17 @@
 		5F42FAA51AE18ADB00362C54 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				5F7E03071AD38BAB00CDBF42 /* EventTableViewController.h */,
-				5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */,
 				5F7E030A1AD3978900CDBF42 /* EventDetailViewController.h */,
 				5F7E030B1AD3978900CDBF42 /* EventDetailViewController.m */,
-				5F42FAA21ADF2A5900362C54 /* EventTableViewCell.h */,
-				5F42FAA31ADF2A5900362C54 /* EventTableViewCell.m */,
+				5F7E03071AD38BAB00CDBF42 /* EventTableViewController.h */,
+				5F7E03081AD38BAB00CDBF42 /* EventTableViewController.m */,
+				5F735CB61AEDE7C700DF0811 /* EventBaseTableViewController.h */,
+				5F735CB71AEDE7C700DF0811 /* EventBaseTableViewController.m */,
+				5F735CB91AEDE7E600DF0811 /* EventResultsTableViewController.h */,
+				5F735CBA1AEDE7E600DF0811 /* EventResultsTableViewController.m */,
+				5F735CC11AEE4FF800DF0811 /* EventCell.h */,
+				5F735CC21AEE4FF800DF0811 /* EventCell.m */,
+				5F735CC31AEE4FF800DF0811 /* EventCell.xib */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -583,6 +596,7 @@
 				5D3B63A01AE223D100890A83 /* Event5.png in Resources */,
 				5FCAFFFF1ACCED3C001951E0 /* SignUpFieldBG.png in Resources */,
 				5DC742051ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png in Resources */,
+				5F735CC51AEE4FF800DF0811 /* EventCell.xib in Resources */,
 				5D3B63A81AE223D100890A83 /* user image2.png in Resources */,
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
@@ -620,19 +634,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
+				5F735CBB1AEDE7E600DF0811 /* EventResultsTableViewController.m in Sources */,
 				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */,
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
+				5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */,
 				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */,
-				5F42FAA41ADF2A5900362C54 /* EventTableViewCell.m in Sources */,
 				5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,
 				4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */,
 				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
+				5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
 				4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,

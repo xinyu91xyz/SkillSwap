@@ -7,14 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ParseUI/ParseUI.h>
+#import "EventBaseTableViewController.h"
 
-@interface EventTableViewController : PFQueryTableViewController
+@interface EventTableViewController : EventBaseTableViewController
 
-@property (nonatomic, strong) UISearchController *searchController;
-
-// for state restoration
-@property BOOL searchControllerWasActive;
-@property BOOL searchControllerSearchFieldWasFirstResponder;
+@property (nonatomic, copy) NSArray *events;
 
 @end
