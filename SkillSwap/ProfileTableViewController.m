@@ -13,9 +13,6 @@
 #import "EditProfileViewController.h"
 
 @interface ProfileTableViewController () <SignInViewControllerDelegate> {
-    NSDictionary *animals;
-    NSArray *animalSectionTitles;
-    NSArray *animalIndexTitles;
     
     NSArray *knownSkills;
     NSArray *toLearnSkills;
@@ -44,50 +41,13 @@
     UIImage *moreImage = [UIImage imageNamed:@"MoreButton.png"];
     UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithImage:moreImage  landscapeImagePhone:moreImage style:UIBarButtonItemStylePlain target:self action:@selector(showMoreOptions:)];
     self.navigationItem.rightBarButtonItem = moreButton;
-    
-    
-    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-//    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:223/255.0 green:62/255.0 blue:125/255.0 alpha:1];
-//    [self.navigationController.navigationBar
-//     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:223/255.0 green:62/255.0 blue:125/255.0 alpha:1]}];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-
-    self.navigationController.navigationBar.translucent = NO;
-    
-//    self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:223/255.0 green:62/255.0 blue:125/255.0 alpha:1];
-    self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
-
-//    self.tabBarController.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"myImage.png"];
     
     PFRelation *knownRelation = [[PFUser currentUser] relationForKey:@"knownSkills"];
     knownSkills = [[knownRelation query] findObjects];
     
     PFRelation *toLearnRelation = [[PFUser currentUser] relationForKey:@"toLearnSkills"];
     toLearnSkills = [[toLearnRelation query] findObjects];
-    
-    
-    PFUser *user = [PFUser currentUser];
-    
-    userEmail = [user objectForKey:@"email"];
-    userRealName = [user objectForKey:@"realName"];
-    
-    
-    
-    
-    NSLog(@"%@,%@",userEmail,userRealName);
-    
-    for (PFObject *object in knownSkills) {
-        NSLog(@"knownSkill: %@",object[@"skillName"]);
-    }
-    
-    for (PFObject *object in toLearnSkills) {
-        NSLog(@"%@",object[@"skillType"]);
-    }
     
 }
 
@@ -108,15 +68,11 @@
 {
     // Return the number of sections.
     return 3;
-    //    return [animalSectionTitles count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    //    NSString *sectionTitle = [animalSectionTitles objectAtIndex:section];
-    //    NSArray *sectionAnimals = [animals objectForKey:sectionTitle];
-    //    return [sectionAnimals count];
     if (section == 0) return 1;
     else if (section == 1) return [knownSkills count];
     else if (section == 2) return [toLearnSkills count];
@@ -126,7 +82,7 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0)
-        return 1.0f;
+        return 0.0f;
     return 32.0f;
 }
 
@@ -149,7 +105,6 @@
     else {
         return @"";
     }
-    //    return [animalSectionTitles objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -157,11 +112,18 @@
     ProfileTableViewCell *cell;
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
+        
+        cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"user profile bg.png"]];
+        
         PFUser *user = [PFUser currentUser];
         cell.realname.text = [user objectForKey:@"realName"];
+        cell.realname.textColor = [UIColor whiteColor];
         cell.usertitle.text = [user objectForKey:@"userTitle"];
+        cell.usertitle.textColor = [UIColor whiteColor];
         cell.usermajor.text = [user objectForKey:@"major"];
+        cell.usermajor.textColor = [UIColor whiteColor];
         cell.enrollyear.text = [user objectForKey:@"enrollYear"];
+        cell.enrollyear.textColor = [UIColor whiteColor];
         
         PFFile *file = [user objectForKey:@"userImg"];
         
