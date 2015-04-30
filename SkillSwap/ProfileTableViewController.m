@@ -93,19 +93,19 @@
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    
-    if (section == 1) {
-        return @"My Skills";
-    }
-    else if (section == 2) {
-        return @"Want to Learn";
-    }
-    else {
-        return @"";
-    }
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    
+//    if (section == 1) {
+//        return @"My Skills";
+//    }
+//    else if (section == 2) {
+//        return @"Want to Learn";
+//    }
+//    else {
+//        return @"";
+//    }
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -230,6 +230,50 @@
         }
     }
 
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    CGRect frame = tableView.frame;
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    
+    if (section == 1) {
+        
+        [headerView setBackgroundColor:[UIColor colorWithRed:214/255.0 green:213/255.0 blue:215/255.0 alpha:1]];
+        
+        UIButton *addButton = [[UIButton alloc]init];
+        addButton.frame = CGRectMake(10, 6, 25, 25);
+
+        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateNormal];
+        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
+        addButton.tag = 1;
+
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(45, 6, 100, 25)];
+        title.text = @"My Skills";
+        
+        [headerView addSubview:title];
+        [headerView addSubview:addButton];
+        
+    } else if (section == 2) {
+
+        [headerView setBackgroundColor:[UIColor colorWithRed:214/255.0 green:213/255.0 blue:215/255.0 alpha:1]];
+
+        UIButton *addButton = [[UIButton alloc]init];
+        addButton.frame = CGRectMake(10, 6, 25, 25);
+        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateNormal];
+        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
+        addButton.tag = 2;
+        
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(45, 6, 120, 25)];
+        title.text = @"Want to Learn";
+
+        [headerView addSubview:title];
+        [headerView addSubview:addButton];
+    }
+
+    
+    return headerView;
 }
 
 
