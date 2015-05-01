@@ -14,8 +14,10 @@
 
 @interface ProfileTableViewController () <SignInViewControllerDelegate> {
     
-    NSArray *knownSkills;
-    NSArray *toLearnSkills;
+//    NSArray *knownSkills;
+//    NSArray *toLearnSkills;
+    NSMutableArray *knownSkills;
+    NSMutableArray *toLearnSkills;
     NSString *userEmail;
     NSString *userRealName;
 
@@ -48,6 +50,9 @@
     
     PFRelation *toLearnRelation = [[PFUser currentUser] relationForKey:@"toLearnSkills"];
     toLearnSkills = [[toLearnRelation query] findObjects];
+    
+    // During startup (-viewDidLoad or in storyboard) do:
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
     
 }
 
@@ -135,6 +140,8 @@
             }
         }];
         
+        cell.userInteractionEnabled = NO;
+        
     }
     else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MySkillCell" forIndexPath:indexPath];
@@ -179,34 +186,47 @@
         [self presentEditProfileViewController];
     }]];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Add a skill" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
-                                                         message:@"Add a Skill"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles:@"OK", nil];
-        alert.tag = 1;
-        
-        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-        UITextField * alertTextField1 = [alert textFieldAtIndex:0];
-        alertTextField1.keyboardType = UIKeyboardTypeDefault;
-        alertTextField1.placeholder = @"Skill Name";
-        
-        UITextField * alertTextField2 = [alert textFieldAtIndex:1];
-        alertTextField2.keyboardType = UIKeyboardTypeDefault;
-        alertTextField2.placeholder = @"Skill Type: tolearn or known";
-        alertTextField2.secureTextEntry=NO;
-        
-        [alert show];
-        
-    }]];
-    
     [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         [PFUser logOut];
         [self presentLoginViewController];
     }]];
     
+//    [self presentEditProfileViewController];
+    
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Edit profile" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//        [self presentEditProfileViewController];
+//    }]];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Add a skill" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//        
+//        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
+//                                                         message:@"Add a Skill"
+//                                                        delegate:self
+//                                               cancelButtonTitle:@"Cancel"
+//                                               otherButtonTitles:@"OK", nil];
+//        alert.tag = 1;
+//        
+//        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+//        UITextField * alertTextField1 = [alert textFieldAtIndex:0];
+//        alertTextField1.keyboardType = UIKeyboardTypeDefault;
+//        alertTextField1.placeholder = @"Skill Name";
+//        
+//        UITextField * alertTextField2 = [alert textFieldAtIndex:1];
+//        alertTextField2.keyboardType = UIKeyboardTypeDefault;
+//        alertTextField2.placeholder = @"Skill Type: tolearn or known";
+//        alertTextField2.secureTextEntry=NO;
+//        
+//        [alert show];
+//        
+//    }]];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        [PFUser logOut];
+//        [self presentLoginViewController];
+//    }]];
+//    
     // Configure the alert controller's popover presentation controller if it has one.
     UIPopoverPresentationController *popoverPresentationController = [alertController popoverPresentationController];
     if (popoverPresentationController) {
@@ -245,15 +265,18 @@
         addButton.frame = CGRectMake(10, 6, 25, 25);
 
         [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateNormal];
-        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
+//        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 1;
-
+        
+        [addButton addTarget:self action:@selector(addKnownSkill:) forControlEvents:UIControlEventTouchDown];
         
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(45, 6, 100, 25)];
         title.text = @"My Skills";
         
         [headerView addSubview:title];
         [headerView addSubview:addButton];
+        
+
         
     } else if (section == 2) {
 
@@ -262,8 +285,10 @@
         UIButton *addButton = [[UIButton alloc]init];
         addButton.frame = CGRectMake(10, 6, 25, 25);
         [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateNormal];
-        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
+//        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 2;
+        
+        [addButton addTarget:self action:@selector(addToLearnSkill:) forControlEvents:UIControlEventTouchDown];
         
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(45, 6, 120, 25)];
         title.text = @"Want to Learn";
@@ -274,6 +299,82 @@
 
     
     return headerView;
+}
+
+- (void) addKnownSkill:(id)sender {
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Add a Known Skill"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles:@"OK", nil];
+    alert.tag = 1;
+    
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField1 = [alert textFieldAtIndex:0];
+    alertTextField1.keyboardType = UIKeyboardTypeDefault;
+    alertTextField1.placeholder = @"Skill Name";
+    
+    [alert show];
+
+}
+
+- (void) addToLearnSkill:(id)sender {
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
+                                                     message:@"Add a Skill To Learn"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles:@"OK", nil];
+    alert.tag = 2;
+    
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField1 = [alert textFieldAtIndex:0];
+    alertTextField1.keyboardType = UIKeyboardTypeDefault;
+    alertTextField1.placeholder = @"Skill Name";
+    
+    [alert show];
+    
+}
+
+// Override to support conditional editing of the table view.
+// This only needs to be implemented if you are going to be returning NO
+// for some items. By default, all items are editable.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    if (indexPath.section == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        if (indexPath.section == 1) {
+            
+//            [knownSkills removeObjectAtIndex:indexPath.row];
+            PFObject *object = [knownSkills objectAtIndex:indexPath.row];
+            [knownSkills removeObjectAtIndex:indexPath.row];
+            [object deleteEventually];
+            
+            [tableView reloadData];
+            
+
+            
+        } else if (indexPath.section == 2) {
+            PFObject *object = [toLearnSkills objectAtIndex:indexPath.row];
+            [toLearnSkills removeObjectAtIndex:indexPath.row];
+            [object deleteEventually];
+            
+            [tableView reloadData];
+        }
+
+    }
+
 }
 
 
@@ -301,7 +402,7 @@
 //    viewController.delegate = self;
     [self presentViewController:viewController animated:YES completion:NULL];
     
-    NSLog(@"present edit profile view controller");
+//    NSLog(@"present edit profile view controller");
 
 }
 
