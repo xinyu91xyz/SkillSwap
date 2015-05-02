@@ -12,7 +12,7 @@
 #import "ProfileTableViewCell.h"
 #import "EditProfileViewController.h"
 
-@interface ProfileTableViewController () <SignInViewControllerDelegate> {
+@interface ProfileTableViewController () <SignInViewControllerDelegate, UIAlertViewDelegate> {
     
 //    NSArray *knownSkills;
 //    NSArray *toLearnSkills;
@@ -46,10 +46,13 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     PFRelation *knownRelation = [[PFUser currentUser] relationForKey:@"knownSkills"];
-    knownSkills = [[knownRelation query] findObjects];
+//    knownSkills =  [[knownRelation query] findObjects];
+    knownSkills = [[NSMutableArray alloc] initWithArray:[[knownRelation query] findObjects]];
+//    ;
     
     PFRelation *toLearnRelation = [[PFUser currentUser] relationForKey:@"toLearnSkills"];
-    toLearnSkills = [[toLearnRelation query] findObjects];
+//    toLearnSkills = [[toLearnRelation query] findObjects];
+    toLearnSkills = [[NSMutableArray alloc] initWithArray:[[toLearnRelation query] findObjects]];
     
     // During startup (-viewDidLoad or in storyboard) do:
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
@@ -156,13 +159,7 @@
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
     }
-    // Configure the cell...
-    //    NSString *sectionTitle = [animalSectionTitles objectAtIndex:indexPath.section];
-    //    NSArray *sectionAnimals = [animals objectForKey:sectionTitle];
-    //    NSString *animal = [sectionAnimals objectAtIndex:indexPath.row];
-    //    cell.textLabel.text = animal;
-    //    cell.imageView.image = [UIImage imageNamed:[self getImageFilename:animal]];
-    
+
     return cell;
 }
 
@@ -191,42 +188,6 @@
         [self presentLoginViewController];
     }]];
     
-//    [self presentEditProfileViewController];
-    
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"Edit profile" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//        [self presentEditProfileViewController];
-//    }]];
-//    
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"Add a skill" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//        
-//        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@""
-//                                                         message:@"Add a Skill"
-//                                                        delegate:self
-//                                               cancelButtonTitle:@"Cancel"
-//                                               otherButtonTitles:@"OK", nil];
-//        alert.tag = 1;
-//        
-//        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-//        UITextField * alertTextField1 = [alert textFieldAtIndex:0];
-//        alertTextField1.keyboardType = UIKeyboardTypeDefault;
-//        alertTextField1.placeholder = @"Skill Name";
-//        
-//        UITextField * alertTextField2 = [alert textFieldAtIndex:1];
-//        alertTextField2.keyboardType = UIKeyboardTypeDefault;
-//        alertTextField2.placeholder = @"Skill Type: tolearn or known";
-//        alertTextField2.secureTextEntry=NO;
-//        
-//        [alert show];
-//        
-//    }]];
-//    
-//    [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//        [PFUser logOut];
-//        [self presentLoginViewController];
-//    }]];
-//    
     // Configure the alert controller's popover presentation controller if it has one.
     UIPopoverPresentationController *popoverPresentationController = [alertController popoverPresentationController];
     if (popoverPresentationController) {
@@ -235,20 +196,6 @@
     }
     
     [self presentViewController:alertController animated:YES completion:nil];
-
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (alertView.tag == 1) {
-        if (buttonIndex == 1) {  //Login
-            UITextField *skillname = [alertView textFieldAtIndex:0];
-            UITextField *skilltype = [alertView textFieldAtIndex:1];
-            
-            NSLog(@"skillname: %@", skillname.text);
-            NSLog(@"skilltype: %@", skilltype.text);
-        }
-    }
 
 }
 
@@ -316,7 +263,48 @@
     alertTextField1.placeholder = @"Skill Name";
     
     [alert show];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        
+        if (alertView.tag == 1) {
+            NSString *skillname = [alertView textFieldAtIndex:0].text;
+            
+            PFObject *newSkillKnown = [PFObject objectWithClassName:@"Skills"];
+            [newSkillKnown setObject:skillname forKey:@"skillName"];
+            [newSkillKnown save];
+            
+            PFUser *user = [PFUser currentUser];
+            PFRelation *relation = [user relationForKey:@"knownSkills"];
+            [relation addObject:newSkillKnown];
+            [user save];
+            
+            knownSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+            [self.tableView reloadData];
+            
+        } else if (alertView.tag == 2) {
+            
+            NSString *skillname = [alertView textFieldAtIndex:0].text;
+            
+            PFObject *newSkillToLearn = [PFObject objectWithClassName:@"Skills"];
+            [newSkillToLearn setObject:skillname forKey:@"skillName"];
+            [newSkillToLearn save];
+            
+            PFUser *user = [PFUser currentUser];
+            PFRelation *relation = [user relationForKey:@"toLearnSkills"];
+            [relation addObject:newSkillToLearn];
+            [user save];
+            
+            toLearnSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+            [self.tableView reloadData];
+            
+        }
+    
+
+
+    }
 }
 
 - (void) addToLearnSkill:(id)sender {
