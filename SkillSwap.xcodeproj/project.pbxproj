@@ -10,6 +10,9 @@
 		4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */; };
 		4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */; };
 		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
+		4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50033F1AF59A140055C7A9 /* MessageViewController.m */; };
+		4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */; };
+		4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */; };
 		5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */; };
 		5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */; };
 		5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D12ACDD1AE6F30C005540D9 /* logo.png */; };
@@ -122,6 +125,12 @@
 		4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
 		4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
+		4F50033E1AF59A140055C7A9 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		4F50033F1AF59A140055C7A9 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		4F5003411AF59A9F0055C7A9 /* MessageMateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMateTableViewController.h; sourceTree = "<group>"; };
+		4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageMateTableViewController.m; sourceTree = "<group>"; };
+		4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDialogViewController.h; sourceTree = "<group>"; };
+		4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDialogViewController.m; sourceTree = "<group>"; };
 		5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
@@ -287,6 +296,19 @@
 			name = People;
 			sourceTree = "<group>";
 		};
+		4F50033D1AF599EA0055C7A9 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				4F50033E1AF59A140055C7A9 /* MessageViewController.h */,
+				4F50033F1AF59A140055C7A9 /* MessageViewController.m */,
+				4F5003411AF59A9F0055C7A9 /* MessageMateTableViewController.h */,
+				4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */,
+				4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */,
+				4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
 		5F1108201AD6325F00E47080 /* SignUpImg */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +360,7 @@
 				5F9EEAD51ACA48C400D6D23E /* AppDelegate.h */,
 				5F9EEAD61ACA48C400D6D23E /* AppDelegate.m */,
 				5F42FAA51AE18ADB00362C54 /* Event */,
+				4F50033D1AF599EA0055C7A9 /* Message */,
 				5FBF802A1AE1909500FA3A16 /* Profile */,
 				5FCA00081ACCF36E001951E0 /* TabBarController.h */,
 				5FCA00091ACCF36E001951E0 /* TabBarController.m */,
@@ -647,6 +670,7 @@
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */,
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
+				4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */,
 				5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */,
 				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
@@ -654,12 +678,14 @@
 				5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */,
 				5F9EEAD41ACA48C400D6D23E /* main.m in Sources */,
 				4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */,
+				4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */,
 				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
 				5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
 				4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,
+				4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
