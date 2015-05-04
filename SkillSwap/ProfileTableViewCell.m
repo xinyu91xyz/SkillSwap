@@ -7,6 +7,7 @@
 //
 
 #import "ProfileTableViewCell.h"
+#import "EditProfileViewController.h"
 
 @implementation ProfileTableViewCell
 

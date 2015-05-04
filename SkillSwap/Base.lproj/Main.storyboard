@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dI6-KB-DU5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dI6-KB-DU5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -323,6 +323,33 @@
             </objects>
             <point key="canvasLocation" x="2550" y="-194"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="xBP-V2-Rdi">
+            <objects>
+                <viewController id="V8z-RU-VZE" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s2B-Yg-Z6d"/>
+                        <viewControllerLayoutGuide type="bottom" id="OPQ-LM-QUk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xiU-qW-mKC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqg-Aj-aaY">
+                                <rect key="frame" x="239" y="157" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hhe-66-2f6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akh-lY-EIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598" y="598"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wwy-Kh-nHn">
             <objects>
@@ -405,31 +432,31 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrg-Hh-zIe">
-                                            <rect key="frame" x="148" y="26" width="217" height="21"/>
+                                            <rect key="frame" x="177" y="26" width="217" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77b-dK-QKo">
-                                            <rect key="frame" x="148" y="67" width="217" height="21"/>
+                                            <rect key="frame" x="177" y="67" width="217" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWw-ss-pFX">
-                                            <rect key="frame" x="148" y="110" width="217" height="21"/>
+                                            <rect key="frame" x="177" y="110" width="217" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXm-8W-idj">
-                                            <rect key="frame" x="148" y="153" width="217" height="21"/>
+                                            <rect key="frame" x="177" y="153" width="217" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2F-xS-rX9">
-                                            <rect key="frame" x="15" y="34" width="116" height="132"/>
+                                            <rect key="frame" x="15" y="8" width="116" height="128"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -464,11 +491,23 @@
                             <outlet property="delegate" destination="MIV-oO-gIB" id="OgX-eY-mI1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Profile" id="yut-Ba-cbn"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="yut-Ba-cbn">
+                        <barButtonItem key="rightBarButtonItem" image="Setting X1.png" id="2f1-0K-Jmz">
+                            <connections>
+                                <action selector="settings:" destination="MIV-oO-gIB" id="Lu0-AP-f0q"/>
+                                <segue destination="V8z-RU-VZE" kind="push" identifier="showSettings" id="zdw-1y-nBv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="settings" destination="2f1-0K-Jmz" id="TzK-tV-yNy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q42-Ji-TBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="598"/>
+            <point key="canvasLocation" x="1811" y="598"/>
         </scene>
         <!--Event-->
         <scene sceneID="QXX-gQ-J7G">
@@ -510,6 +549,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Setting X1.png" width="22" height="22"/>
         <image name="ui element_Add_Page 1@3x.png" width="66" height="66"/>
         <image name="ui element_Event_Page 1@3x.png" width="66" height="66"/>
         <image name="ui element_People_Page 1@3x.png" width="66" height="66"/>

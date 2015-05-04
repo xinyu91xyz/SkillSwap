@@ -10,4 +10,8 @@
 
 @interface ProfileTableViewController : UITableViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settings;
+- (IBAction)settings:(id)sender;
+
+
 @end

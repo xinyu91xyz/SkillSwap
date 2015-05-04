@@ -40,9 +40,10 @@
 {
     [super viewDidLoad];
     
-    UIImage *moreImage = [UIImage imageNamed:@"MoreButton.png"];
-    UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithImage:moreImage  landscapeImagePhone:moreImage style:UIBarButtonItemStylePlain target:self action:@selector(showMoreOptions:)];
-    self.navigationItem.rightBarButtonItem = moreButton;
+//    UIImage *moreImage = [UIImage imageNamed:@"MoreButton.png"];
+//    UIBarButtonItem *moreButton = [[UIBarButtonItem alloc] initWithImage:moreImage  landscapeImagePhone:moreImage style:UIBarButtonItemStylePlain target:self action:@selector(showMoreOptions:)];
+//    self.navigationItem.rightBarButtonItem = moreButton;
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     PFRelation *knownRelation = [[PFUser currentUser] relationForKey:@"knownSkills"];
@@ -143,7 +144,18 @@
             }
         }];
         
-        cell.userInteractionEnabled = NO;
+        UIButton *editProfileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        editProfileButton.frame = CGRectMake(35.0f, 140.0f, 80.0f, 30.0f);
+        [editProfileButton setTitle:@"Edit Profile" forState:UIControlStateNormal];
+        [editProfileButton setBackgroundImage:[UIImage imageNamed:@"Edit bg X1.png"] forState:UIControlStateNormal];
+        
+        [cell addSubview:editProfileButton];
+        [editProfileButton addTarget:self
+                            action:@selector(editProfile:)
+                  forControlEvents:UIControlEventTouchUpInside];
+        
+        
+//        cell.userInteractionEnabled = NO;
         
     }
     else if (indexPath.section == 1) {
@@ -163,6 +175,11 @@
     return cell;
 }
 
+-(void) editProfile: (id)sender {
+//    NSLog(@"Edit");
+    [self presentEditProfileViewController];
+}
+
 //- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 //{
 //    //  return animalSectionTitles;
@@ -175,29 +192,33 @@
 //}
 
 
-- (void)showMoreOptions:(id)sender {
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Edit profile" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self presentEditProfileViewController];
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [PFUser logOut];
-        [self presentLoginViewController];
-    }]];
-    
-    // Configure the alert controller's popover presentation controller if it has one.
-    UIPopoverPresentationController *popoverPresentationController = [alertController popoverPresentationController];
-    if (popoverPresentationController) {
-        popoverPresentationController.sourceView = self.view;
-        popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
-    }
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-
+- (IBAction)settings:(id)sender {
+    [self performSegueWithIdentifier:@"showSettings" sender:self];
 }
+
+//- (void)showMoreOptions:(id)sender {
+//    
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Edit profile" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//        [self presentEditProfileViewController];
+//    }]];
+//    
+//    [alertController addAction:[UIAlertAction actionWithTitle:@"Sign out" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        [PFUser logOut];
+//        [self presentLoginViewController];
+//    }]];
+//    
+//    // Configure the alert controller's popover presentation controller if it has one.
+//    UIPopoverPresentationController *popoverPresentationController = [alertController popoverPresentationController];
+//    if (popoverPresentationController) {
+//        popoverPresentationController.sourceView = self.view;
+//        popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+//    }
+//    
+//    [self presentViewController:alertController animated:YES completion:nil];
+//
+//}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
@@ -272,38 +293,73 @@
         if (alertView.tag == 1) {
             NSString *skillname = [alertView textFieldAtIndex:0].text;
             
-            PFObject *newSkillKnown = [PFObject objectWithClassName:@"Skills"];
-            [newSkillKnown setObject:skillname forKey:@"skillName"];
-            [newSkillKnown save];
+            PFQuery *query = [PFQuery queryWithClassName:@"Skills"];
+            [query whereKey:@"skillName" equalTo:skillname];
             
-            PFUser *user = [PFUser currentUser];
-            PFRelation *relation = [user relationForKey:@"knownSkills"];
-            [relation addObject:newSkillKnown];
-            [user save];
-            
-            knownSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
-            [self.tableView reloadData];
+            if (![query getFirstObject]) {
+                
+                PFObject *newSkillKnown = [PFObject objectWithClassName:@"Skills"];
+                [newSkillKnown setObject:skillname forKey:@"skillName"];
+                [newSkillKnown save];
+                
+                PFUser *user = [PFUser currentUser];
+                PFRelation *relation = [user relationForKey:@"knownSkills"];
+                [relation addObject:newSkillKnown];
+                [user save];
+                
+                knownSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+                [self.tableView reloadData];
+                
+            } else {
+                
+                PFObject *existingSkill = [query getFirstObject];
+                
+                PFUser *user = [PFUser currentUser];
+                PFRelation *relation = [user relationForKey:@"knownSkills"];
+                [relation addObject:existingSkill];
+                [user save];
+                
+                knownSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+                [self.tableView reloadData];
+                
+            }
             
         } else if (alertView.tag == 2) {
-            
             NSString *skillname = [alertView textFieldAtIndex:0].text;
             
-            PFObject *newSkillToLearn = [PFObject objectWithClassName:@"Skills"];
-            [newSkillToLearn setObject:skillname forKey:@"skillName"];
-            [newSkillToLearn save];
+            PFQuery *query = [PFQuery queryWithClassName:@"Skills"];
+            [query whereKey:@"skillName" equalTo:skillname];
             
-            PFUser *user = [PFUser currentUser];
-            PFRelation *relation = [user relationForKey:@"toLearnSkills"];
-            [relation addObject:newSkillToLearn];
-            [user save];
-            
-            toLearnSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
-            [self.tableView reloadData];
+            if (![query getFirstObject]) {
+                
+                PFObject *newSkillToLearn = [PFObject objectWithClassName:@"Skills"];
+                [newSkillToLearn setObject:skillname forKey:@"skillName"];
+                [newSkillToLearn save];
+                
+                PFUser *user = [PFUser currentUser];
+                PFRelation *relation = [user relationForKey:@"toLearnSkills"];
+                [relation addObject:newSkillToLearn];
+                [user save];
+                
+                toLearnSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+                [self.tableView reloadData];
+                
+            } else {
+                
+                PFObject *existingSkill = [query getFirstObject];
+                
+                PFUser *user = [PFUser currentUser];
+                PFRelation *relation = [user relationForKey:@"toLearnSkills"];
+                [relation addObject:existingSkill];
+                [user save];
+                
+                toLearnSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+                [self.tableView reloadData];
+                
+            }
             
         }
-    
-
-
+        
     }
 }
 
@@ -393,7 +449,6 @@
 //    NSLog(@"present edit profile view controller");
 
 }
-
 
 
 @end
