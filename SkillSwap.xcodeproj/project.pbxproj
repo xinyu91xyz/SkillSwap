@@ -13,6 +13,8 @@
 		4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50033F1AF59A140055C7A9 /* MessageViewController.m */; };
 		4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */; };
 		4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */; };
+		4F661EB51AF6C9010005E982 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB41AF6C9010005E982 /* ChatMessageCell.m */; };
+		4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB71AF6C9D50005E982 /* ChatMessage.m */; };
 		5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */; };
 		5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */; };
 		5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D12ACDD1AE6F30C005540D9 /* logo.png */; };
@@ -131,6 +133,10 @@
 		4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageMateTableViewController.m; sourceTree = "<group>"; };
 		4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDialogViewController.h; sourceTree = "<group>"; };
 		4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDialogViewController.m; sourceTree = "<group>"; };
+		4F661EB31AF6C9010005E982 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
+		4F661EB41AF6C9010005E982 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
+		4F661EB61AF6C9D50005E982 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
+		4F661EB71AF6C9D50005E982 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
 		5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
@@ -305,6 +311,10 @@
 				4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */,
 				4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */,
 				4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */,
+				4F661EB31AF6C9010005E982 /* ChatMessageCell.h */,
+				4F661EB41AF6C9010005E982 /* ChatMessageCell.m */,
+				4F661EB61AF6C9D50005E982 /* ChatMessage.h */,
+				4F661EB71AF6C9D50005E982 /* ChatMessage.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -672,6 +682,7 @@
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
 				4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */,
 				5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */,
+				4F661EB51AF6C9010005E982 /* ChatMessageCell.m in Sources */,
 				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */,
@@ -684,6 +695,7 @@
 				5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
 				4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */,
+				4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,
 				4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */,
 			);

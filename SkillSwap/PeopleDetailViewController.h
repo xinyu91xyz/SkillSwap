@@ -12,4 +12,6 @@
 
 @interface PeopleDetailViewController : UIViewController
 
+@property(nonatomic, retain) UIButton *sendMessage;
+-(IBAction)sendMessage:(id)sender;
 @end

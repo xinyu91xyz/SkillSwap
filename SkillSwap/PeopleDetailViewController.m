@@ -7,6 +7,7 @@
 //
 
 #import "PeopleDetailViewController.h"
+#import "ChatDialogViewController.h"
 @interface PeopleDetailViewController()
 
 @end
@@ -29,6 +30,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(IBAction)sendMessage:(id)sender {
+    ChatDialogViewController *chat = [[ChatDialogViewController alloc] initWithNibName:@"ChatDialogViewController" bundle:[NSBundle mainBundle]];
+    [self presentViewController:chat animated:YES completion:nil];
+}
 
 @end

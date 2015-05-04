@@ -8,14 +8,21 @@
 
 #import "MessageMateTableViewController.h"
 #import <Parse/Parse.h>
-#import "ChatDialogViewController.h"
-@interface MessageMateTableViewController ()
-@property (strong, nonatomic) NSMutableArray *chatMatesArray;
-@property (strong, nonatomic) ChatDialogViewController *activeDialogViewController;
-@property (strong, nonatomic) NSString *myUserId;
-@end
 
 @implementation MessageMateTableViewController
+@synthesize chatMatesArray, myUserId;
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.activeDialogViewController = nil;
+    [self retrieveChatMatesFromParse];
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.chatMatesArray = [[NSMutableArray alloc] init];
+    self.navigationItem.title = self.myUserId;
+    // Do any additional setup after loading the view.
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -23,22 +30,18 @@
     return 1;
 }
 
-//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section:(NSInteger)section
-//{
-//    return [self.chatMatesArray count];
-//}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.activeDialogViewController = nil;
-    [self retrieveChatMatesFromParse];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.chatMatesArray count];
 }
+
+
 - (void)retrieveChatMatesFromParse {
     [self.chatMatesArray removeAllObjects];
     PFQuery *query = [PFUser query];
     [query orderByAscending:@"username"];
-    NSLog(@"error");
-    [query whereKey:@"username" notEqualTo:[PFUser currentUser][@"username"]];
+    myUserId =[PFUser currentUser][@"username"];
+    [query whereKey:@"username" notEqualTo:myUserId];
     __weak typeof(self) weakSelf = self;
    [query findObjectsInBackgroundWithBlock:^(NSArray *chatMateArray, NSError *error) {
         if(!error) {
@@ -56,21 +59,14 @@
 
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.chatMatesArray = [[NSMutableArray alloc] init];
-    //self.navigationItem.title = self.myUserId;
-    // Do any additional setup after loading the view.
-}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"ChatMateCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSString *chatMateId = [self.chatMatesArray objectAtIndex:indexPath.row];
     cell.textLabel.text = chatMateId;
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+//    }
     
     return cell;
 }
@@ -78,10 +74,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"openDialog"]) {
+    if ([segue.identifier isEqualToString:@"OpenDialog"]) {
         self.activeDialogViewController = segue.destinationViewController;
-        NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
-        self.activeDialogViewController.chatMateId = self.chatMatesArray[chatMateIndex];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+//        NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
+    self.activeDialogViewController.chatMateId = self.chatMatesArray[indexPath.row];
+       // self.activeDialogViewController.myUserId = self.myUserId;
+        return;
     }
 }
 
