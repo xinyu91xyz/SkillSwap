@@ -11,6 +11,7 @@
 //#import "MySignUpViewController.h"
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
+#import "BuildProfileViewController.h"
 
 @interface TabBarController ()
 <SignInViewControllerDelegate>
@@ -22,32 +23,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    // set default selected tab in TabBarController to profile table view controller
+    self.selectedViewController=[self.viewControllers objectAtIndex:1];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    
-    
-    
     if (![PFUser currentUser]) {
         
         [self presentLoginViewController];
-        
-//        [self presentViewController:logInViewController animated:YES completion:NULL];
+
     }
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
 
 #pragma mark -
 #pragma mark LoginViewController
@@ -60,11 +56,13 @@
 //    [self.navigationController setViewControllers:@[ viewController ] animated:NO];
 }
 
+
 #pragma mark Delegate
 
 - (void)loginViewControllerDidLogin:(SignInViewController *)controller {
 //    [self presentWallViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 

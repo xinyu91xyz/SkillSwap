@@ -8,10 +8,23 @@
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
 
+
+//@class ProfileTableViewController;
+//
+//@protocol ProfileTableViewControllerDelegate <NSObject>
+//
+////- (void)loginViewControllerDidLogin:(SignInViewController *)controller;
+//
+//@end
+
+
 @interface ProfileTableViewController : UITableViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+
+//@property (nonatomic, weak) id<ProfileTableViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settings;
 - (IBAction)settings:(id)sender;
+
 
 
 @end

@@ -29,6 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+//    CGRect frameRect = self.updateTitle.frame;
+//    frameRect.size.height = 100;
+//    self.updateTitle.frame = frameRect;
+    
+//    [self.updateTitle setFrame:CGRectMake(self.updateTitle.frame.origin.x, self.updateTitle.frame.origin.y, self.updateTitle.frame.size.width, 100)];
+    
+    [self.updateTitle setBorderStyle:UITextBorderStyleRoundedRect];
 
 }
 
@@ -65,15 +73,11 @@
             PFUser *currentUser = [PFUser currentUser];
             [currentUser setObject:self.updateName.text forKey:@"realName"];
             [[PFUser currentUser] saveInBackground];
-            self.showName.text = [currentUser objectForKey:@"realName"];
+//            self.showName.text = [currentUser objectForKey:@"realName"];
 
         }];
 
     }
-    
-}
-
-- (IBAction)updateTitleBtn:(id)sender {
     
     if (![self.updateTitle.text isEqualToString:@""]) {
         
@@ -86,14 +90,13 @@
              PFUser *currentUser = [PFUser currentUser];
              [currentUser setObject:self.updateTitle.text forKey:@"userTitle"];
              [[PFUser currentUser] saveInBackground];
-             self.showTitle.text = [currentUser objectForKey:@"userTitle"];
+//             self.showTitle.text = [currentUser objectForKey:@"userTitle"];
              
          }];
         
-    }
-}
 
-- (IBAction)updateMajorBtn:(id)sender {
+        
+    }
     
     if (![self.updateMajor.text isEqualToString:@""]) {
         
@@ -106,15 +109,11 @@
              PFUser *currentUser = [PFUser currentUser];
              [currentUser setObject:self.updateMajor.text forKey:@"major"];
              [[PFUser currentUser] saveInBackground];
-             self.showMajor.text = [currentUser objectForKey:@"major"];
+//             self.showMajor.text = [currentUser objectForKey:@"major"];
              
          }];
         
     }
-}
-
-
-- (IBAction)updateEnrollYearBtn:(id)sender {
     
     if (![self.updateEnrollYear.text isEqualToString:@""]) {
         
@@ -127,13 +126,29 @@
              PFUser *currentUser = [PFUser currentUser];
              [currentUser setObject:self.updateEnrollYear.text forKey:@"enrollYear"];
              [[PFUser currentUser] saveInBackground];
-             self.showEnrollYear.text = [currentUser objectForKey:@"enrollYear"];
+//             self.showEnrollYear.text = [currentUser objectForKey:@"enrollYear"];
              
          }];
         
     }
     
 }
+
+//- (IBAction)updateTitleBtn:(id)sender {
+//    
+//
+//}
+//
+//- (IBAction)updateMajorBtn:(id)sender {
+//    
+//
+//}
+//
+//
+//- (IBAction)updateEnrollYearBtn:(id)sender {
+//    
+//    
+//}
 
 
 @end

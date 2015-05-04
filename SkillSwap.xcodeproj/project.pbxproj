@@ -18,6 +18,11 @@
 		5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */; };
 		5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */; };
 		5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D12ACDD1AE6F30C005540D9 /* logo.png */; };
+		5D32FB2E1AF7E79C005031A8 /* Save button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D32FB2D1AF7E79C005031A8 /* Save button.png */; };
+		5D32FB321AF7F583005031A8 /* BuildProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32FB301AF7F583005031A8 /* BuildProfileViewController.m */; };
+		5D32FB331AF7F583005031A8 /* BuildProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D32FB311AF7F583005031A8 /* BuildProfileViewController.xib */; };
+		5D32FB371AF7F5D9005031A8 /* BuildSkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32FB351AF7F5D9005031A8 /* BuildSkillViewController.m */; };
+		5D32FB381AF7F5D9005031A8 /* BuildSkillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D32FB361AF7F5D9005031A8 /* BuildSkillViewController.xib */; };
 		5D3B639C1AE223D100890A83 /* Event1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638C1AE223D100890A83 /* Event1.png */; };
 		5D3B639D1AE223D100890A83 /* Event2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638D1AE223D100890A83 /* Event2.png */; };
 		5D3B639E1AE223D100890A83 /* Event3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B638E1AE223D100890A83 /* Event3.png */; };
@@ -52,7 +57,6 @@
 		5DC742061ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742021ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png */; };
 		5DC742071ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742031ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png */; };
 		5DC742081ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC742041ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png */; };
-		5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEB5F501AD4820C007A222F /* ProfileViewController.m */; };
 		5F1108231AD6328600E47080 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108211AD6328600E47080 /* SignInViewController.xib */; };
 		5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1108221AD6328600E47080 /* SignUpViewController.xib */; };
 		5F1108291AD6345100E47080 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1108261AD6345100E47080 /* SignInViewController.m */; };
@@ -147,6 +151,13 @@
 		5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		5D12ACDD1AE6F30C005540D9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5D32FB2D1AF7E79C005031A8 /* Save button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Save button.png"; sourceTree = "<group>"; };
+		5D32FB2F1AF7F583005031A8 /* BuildProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildProfileViewController.h; sourceTree = "<group>"; };
+		5D32FB301AF7F583005031A8 /* BuildProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildProfileViewController.m; sourceTree = "<group>"; };
+		5D32FB311AF7F583005031A8 /* BuildProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildProfileViewController.xib; sourceTree = "<group>"; };
+		5D32FB341AF7F5D9005031A8 /* BuildSkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSkillViewController.h; sourceTree = "<group>"; };
+		5D32FB351AF7F5D9005031A8 /* BuildSkillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSkillViewController.m; sourceTree = "<group>"; };
+		5D32FB361AF7F5D9005031A8 /* BuildSkillViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuildSkillViewController.xib; sourceTree = "<group>"; };
 		5D3B638C1AE223D100890A83 /* Event1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event1.png; path = SkillSwap/Event1.png; sourceTree = "<group>"; };
 		5D3B638D1AE223D100890A83 /* Event2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event2.png; path = SkillSwap/Event2.png; sourceTree = "<group>"; };
 		5D3B638E1AE223D100890A83 /* Event3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event3.png; path = SkillSwap/Event3.png; sourceTree = "<group>"; };
@@ -183,8 +194,6 @@
 		5DC742021ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Password_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC742031ADCDBA9006EF2C8 /* ui element_Email Address_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Email Address_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC742041ADCDBA9006EF2C8 /* ui element_User Name_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_User Name_Page 1@3x.png"; sourceTree = "<group>"; };
-		5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		5DEB5F501AD4820C007A222F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		5F1108211AD6328600E47080 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		5F1108221AD6328600E47080 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		5F1108251AD6345100E47080 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
@@ -387,27 +396,24 @@
 				5FBF802A1AE1909500FA3A16 /* Profile */,
 				5FCA00081ACCF36E001951E0 /* TabBarController.h */,
 				5FCA00091ACCF36E001951E0 /* TabBarController.m */,
-				5DEB5F4F1AD4820C007A222F /* ProfileViewController.h */,
-				5DEB5F501AD4820C007A222F /* ProfileViewController.m */,
 				9DC2497F1ADB198A00BC4544 /* ActivityView.h */,
 				9DC249801ADB198A00BC4544 /* ActivityView.m */,
 				5F1108251AD6345100E47080 /* SignInViewController.h */,
 				5F1108261AD6345100E47080 /* SignInViewController.m */,
+				5F1108211AD6328600E47080 /* SignInViewController.xib */,
 				5F1108271AD6345100E47080 /* SignUpViewController.h */,
 				5F1108281AD6345100E47080 /* SignUpViewController.m */,
+				5F1108221AD6328600E47080 /* SignUpViewController.xib */,
+				5D8CD53B1AF737CF005CD963 /* SettingsViewController.h */,
+				5D8CD53C1AF737CF005CD963 /* SettingsViewController.m */,
 				5F9EEADB1ACA48C400D6D23E /* Main.storyboard */,
 				4F0675E21AE1B9C1004BB7C1 /* People */,
 				5F9EEADE1ACA48C400D6D23E /* Images.xcassets */,
 				5F9EEAE01ACA48C400D6D23E /* LaunchScreen.xib */,
-				5F1108211AD6328600E47080 /* SignInViewController.xib */,
-				5F1108221AD6328600E47080 /* SignUpViewController.xib */,
-				5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */,
 				5FCAFFDF1ACCED2A001951E0 /* Assets */,
 				5F9EEAD11ACA48C400D6D23E /* Supporting Files */,
 				5FBF802E1AE1A71C00FA3A16 /* TestTableViewController.h */,
 				5FBF802F1AE1A71C00FA3A16 /* TestTableViewController.m */,
-				5D8CD53B1AF737CF005CD963 /* SettingsViewController.h */,
-				5D8CD53C1AF737CF005CD963 /* SettingsViewController.m */,
 			);
 			path = SkillSwap;
 			sourceTree = "<group>";
@@ -475,6 +481,13 @@
 				5D6584291AE87A17001632AD /* ProfileTableViewCell.m */,
 				5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */,
 				5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */,
+				5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */,
+				5D32FB2F1AF7F583005031A8 /* BuildProfileViewController.h */,
+				5D32FB301AF7F583005031A8 /* BuildProfileViewController.m */,
+				5D32FB311AF7F583005031A8 /* BuildProfileViewController.xib */,
+				5D32FB341AF7F5D9005031A8 /* BuildSkillViewController.h */,
+				5D32FB351AF7F5D9005031A8 /* BuildSkillViewController.m */,
+				5D32FB361AF7F5D9005031A8 /* BuildSkillViewController.xib */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -482,6 +495,7 @@
 		5FCAFFDF1ACCED2A001951E0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5D32FB2D1AF7E79C005031A8 /* Save button.png */,
 				5D3F22DB1AF2ACAB00CC3D29 /* pink bg.png */,
 				5FBF80311AE31DD300FA3A16 /* MoreButton.png */,
 				5D8CD5371AF73746005CD963 /* Setting X1.png */,
@@ -634,6 +648,8 @@
 				5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */,
 				5D3B639F1AE223D100890A83 /* Event4.png in Resources */,
 				5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */,
+				5D32FB2E1AF7E79C005031A8 /* Save button.png in Resources */,
+				5D32FB331AF7F583005031A8 /* BuildProfileViewController.xib in Resources */,
 				5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */,
 				5D3B639C1AE223D100890A83 /* Event1.png in Resources */,
 				5D9A24971AF17BA400A87BF9 /* user profile bg.png in Resources */,
@@ -678,6 +694,7 @@
 				5D3F22DC1AF2ACAB00CC3D29 /* pink bg.png in Resources */,
 				5FCAFFF41ACCED3C001951E0 /* Default@2x.png in Resources */,
 				5FBF80361AE31DD300FA3A16 /* MoreButton@3x.png in Resources */,
+				5D32FB381AF7F5D9005031A8 /* BuildSkillViewController.xib in Resources */,
 				5FCA00001ACCED3C001951E0 /* Twitter.png in Resources */,
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
 				5F42FAA71AE18BB900362C54 /* loginBackground.png in Resources */,
@@ -701,7 +718,6 @@
 			files = (
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
 				5F735CBB1AEDE7E600DF0811 /* EventResultsTableViewController.m in Sources */,
-				5DEB5F511AD4820C007A222F /* ProfileViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
 				4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */,
 				5FBF80301AE1A71C00FA3A16 /* TestTableViewController.m in Sources */,
@@ -716,6 +732,7 @@
 				4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */,
 				4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */,
 				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
+				5D32FB321AF7F583005031A8 /* BuildProfileViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
 				5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
@@ -724,6 +741,7 @@
 				5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,
 				4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */,
+				5D32FB371AF7F5D9005031A8 /* BuildSkillViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "BuildProfileViewController.h"
 
 #import <Parse/Parse.h>
 
@@ -110,12 +111,27 @@
 - (IBAction)createAccountPressed:(id)sender {
     [self dismissKeyboard];
     [self processFieldEntries];
+    // build profile and skills first
+//    [self presentBuildProfileViewController];
 }
 
 - (IBAction)closeButtonPressed:(id)sender {
     [self dismissKeyboard];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)presentBuildProfileViewController {
+    BuildProfileViewController *viewController = [[BuildProfileViewController alloc] initWithNibName:nil bundle:nil];
+//    viewController.delegate = self;
+    [self presentViewController:viewController animated:YES completion:NULL];
+}
+
+
+//- (void)buildProfileViewControllerDidBuild:(BuildProfileViewController *)controller {
+//    //    [self presentWallViewControllerAnimated:YES];
+//    [self dismissViewControllerAnimated:YES completion:NULL];
+//    
+//}
 
 #pragma mark -
 #pragma mark Sign Up
@@ -254,12 +270,9 @@
                 NSLog(@"Failed to save.");
             }
         }];
-        
-        // Success!
-//        [activityView.activityIndicator stopAnimating];
-//        [activityView removeFromSuperview];
 
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self presentBuildProfileViewController];
+//        [self dismissViewControllerAnimated:YES completion:nil];
         [self.delegate newUserViewControllerDidSignup:self];
     }];
 }
