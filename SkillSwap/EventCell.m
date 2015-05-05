@@ -21,5 +21,26 @@
 }
 
 - (IBAction)tapLikeButton:(id)sender {
+    if (self.user == nil) {
+        UIImage *btnImage = [UIImage imageNamed:@"heartFilled.png"];
+        [self.likeButton setImage:btnImage forState:UIControlStateNormal];
+        
+        PFUser *currentUser = [PFUser currentUser];
+        self.user = currentUser;
+        PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+        [relation addObject:self.event];
+        [currentUser saveInBackground];
+    } else {
+        
+        UIImage *btnImage = [UIImage imageNamed:@"heartEmpty.png"];
+        [self.likeButton setImage:btnImage forState:UIControlStateNormal];
+        
+        self.user = nil;
+        PFUser *currentUser = [PFUser currentUser];
+        PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+        [relation removeObject:self.event];
+        [currentUser saveInBackground];
+    }
 }
+
 @end

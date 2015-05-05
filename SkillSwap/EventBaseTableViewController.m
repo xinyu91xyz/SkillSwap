@@ -30,8 +30,35 @@ NSString *const kTableCellNibName = @"EventCell";
 
 - (void)configureCell:(EventCell *)cell forPFObject:(PFObject *)object {
     cell.eventTitleLabel.text = [object objectForKey:@"eventName"];
-    cell.eventHostLabel.text = [object objectForKey:@"eventHost"];
+//    cell.eventHostLabel.text = [object objectForKey:@"eventHost"];
     cell.eventLocationLabel.text = [object objectForKey:@"eventLocation"];
+    cell.event = object;
+    UIImage *btnImg = [UIImage imageNamed:@"heartEmpty.png"];
+    [cell.likeButton setImage:btnImg forState:UIControlStateNormal];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+    
+    // Check if the even is in myEvent relation
+    PFQuery *query = [relation query];
+    [query whereKey:@"objectId" equalTo:object.objectId];
+    
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (number > 0) {
+            UIImage *btnImage = [UIImage imageNamed:@"heartFilled.png"];
+            [cell.likeButton setImage:btnImage forState:UIControlStateNormal];
+            cell.user = [PFUser currentUser];
+        }
+    }];
+    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if ([objects count] > 0) {
+//            UIImage *btnImage = [UIImage imageNamed:@"heartFilled.png"];
+//            [cell.likeButton setImage:btnImage forState:UIControlStateNormal];
+//            cell.user = [PFUser currentUser];
+//        }
+//        
+//    }];
 
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MMMM dd hh:mma"];

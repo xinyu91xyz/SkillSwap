@@ -39,7 +39,7 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    [query orderByAscending:@"evenDate"];
+    [query orderByAscending:@"eventDate"];
     self.events = [query findObjects];
     
     
@@ -146,7 +146,7 @@
 
     // hand over the filtered results to our search results table
     EventResultsTableViewController *tableViewController = (EventResultsTableViewController *)self.searchController.searchResultsController;
-    tableViewController.tableView.rowHeight = 104.0;
+    tableViewController.tableView.rowHeight = 96.0;
     tableViewController.filteredEvents = searchResults;
     tableViewController.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [tableViewController.tableView reloadData];
@@ -215,11 +215,14 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
 - (IBAction)showMoreOption:(id)sender {
     // Hide already showing popover
     [self.menuPopover dismissMenuPopover];
-    
+    self.tableView.scrollEnabled = NO;
+    [self.tableView setContentOffset:self.tableView.contentOffset animated:NO];
     self.menuPopover = [[MLKMenuPopover alloc] initWithFrame:MENU_POPOVER_FRAME menuItems:self.menuItems menuIsSelected:self.menuIsSelected];
     
     self.menuPopover.menuPopoverDelegate = self;
     [self.menuPopover showInView:self.view];
+    self.menuPopover.tableView = self.tableView;
+    
 
 
 }
@@ -231,21 +234,35 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
 {
     [self.menuPopover dismissMenuPopover];
     switch (selectedIndex) {
-        case 0:
+        case 0: {
             self.menuIsSelected[0] = @"Y";
             self.menuIsSelected[1] = @"N";
             self.menuIsSelected[2] = @"N";
+            PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+            [query orderByAscending:@"eventDate"];
+            self.events = [query findObjects];
+            [self.tableView reloadData];
             break;
-        case 1:
+        }
+        case 1:{
             self.menuIsSelected[0] = @"N";
             self.menuIsSelected[1] = @"Y";
             self.menuIsSelected[2] = @"N";
+            PFUser *currentUser = [PFUser currentUser];
+            PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+            PFQuery *query = [relation query];
+            [query orderByAscending:@"eventDate"];
+            self.events = [query findObjects];
+            [self.tableView reloadData];
             break;
-        case 2:
+        }
+            
+        case 2:{
             self.menuIsSelected[0] = @"N";
             self.menuIsSelected[1] = @"N";
             self.menuIsSelected[2] = @"Y";
             break;
+        }
         default:
             break;
     }

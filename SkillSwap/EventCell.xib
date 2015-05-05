@@ -16,26 +16,20 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4R-6y-jjr">
                         <rect key="frame" x="8" y="4" width="88" height="88"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDI-lc-ewR">
-                        <rect key="frame" x="104" y="12" width="227" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is Big Data" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDI-lc-ewR">
+                        <rect key="frame" x="104" y="11" width="227" height="39"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jure Leskovec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHN-2T-00U">
-                        <rect key="frame" x="123" y="34" width="208" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="389 Mary Gates Hall" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olz-p4-xT5">
-                        <rect key="frame" x="123" y="51" width="208" height="14"/>
+                        <rect key="frame" x="123" y="52" width="208" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 8, 3:30pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJt-o5-RtM">
-                        <rect key="frame" x="123" y="68" width="208" height="14"/>
+                        <rect key="frame" x="123" y="69" width="208" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -50,20 +44,16 @@
                             <action selector="tapLikeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZbO-Tq-6Ai"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hostImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-8f-JVi">
-                        <rect key="frame" x="104" y="35" width="11" height="11"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="locationImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="gdu-PB-7Vr">
-                        <rect key="frame" x="104" y="52" width="11" height="11"/>
+                        <rect key="frame" x="104" y="53" width="11" height="11"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendarImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-dA-NGb">
-                        <rect key="frame" x="104" y="69" width="11" height="11"/>
+                        <rect key="frame" x="104" y="70" width="11" height="11"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="eventCalendarLabel" destination="BJt-o5-RtM" id="JjD-Mh-Piv"/>
-                <outlet property="eventHostLabel" destination="vHN-2T-00U" id="qSk-cw-89E"/>
                 <outlet property="eventImage" destination="Z4R-6y-jjr" id="Cg7-hl-KiX"/>
                 <outlet property="eventLocationLabel" destination="olz-p4-xT5" id="pxQ-oG-qfB"/>
                 <outlet property="eventTitleLabel" destination="qDI-lc-ewR" id="iec-kT-4UH"/>
@@ -75,7 +65,6 @@
     <resources>
         <image name="calendarImg.png" width="11" height="11"/>
         <image name="heartEmpty.png" width="22" height="22"/>
-        <image name="hostImg.png" width="11" height="11"/>
         <image name="locationImg.png" width="11" height="11"/>
     </resources>
 </document>

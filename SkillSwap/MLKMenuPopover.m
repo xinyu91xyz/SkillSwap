@@ -32,7 +32,6 @@
 @interface MLKMenuPopover ()
 
 @property(nonatomic,retain) NSArray *menuItems;
-
 @property(nonatomic,retain) UIButton *containerButton;
 
 - (void)hide;
@@ -41,7 +40,6 @@
 @end
 
 @implementation MLKMenuPopover
-
 @synthesize menuPopoverDelegate;
 @synthesize menuItems;
 @synthesize menuIsSelected;
@@ -148,6 +146,8 @@
 - (void)dismissMenuPopover
 {
     [self hide];
+    self.tableView.scrollEnabled = YES;
+
 }
 
 - (void)showInView:(UIView *)view

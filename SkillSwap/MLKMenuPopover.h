@@ -17,13 +17,13 @@
 @end
 
 @interface MLKMenuPopover : UIView <UITableViewDataSource,UITableViewDelegate>
-
 @property(nonatomic,assign) id<MLKMenuPopoverDelegate> menuPopoverDelegate;
 @property(nonatomic,retain) NSMutableArray *menuIsSelected;
 - (id)initWithFrame:(CGRect)frame menuItems:(NSArray *)menuItems menuIsSelected:(NSMutableArray *)menuIsSelected;
 - (void)showInView:(UIView *)view;
 - (void)dismissMenuPopover;
 - (void)layoutUIForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+@property(weak, nonatomic) UITableView *tableView;
 
 @end
 

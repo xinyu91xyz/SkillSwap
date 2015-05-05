@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface EventCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImage;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *eventHostLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *eventLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventCalendarLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+
+@property (weak, nonatomic) PFObject *event;
+@property (weak, nonatomic) PFUser *user;
+
 - (IBAction)tapLikeButton:(id)sender;
 
 @end
