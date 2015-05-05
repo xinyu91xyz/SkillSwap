@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *eventImage;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventDescLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+- (IBAction)tapLikeButton:(id)sender;
 
 @end

@@ -10,14 +10,23 @@
 #import <Parse/Parse.h>
 #import "EventDetailViewController.h"
 #import "EventResultsTableViewController.h"
+#import "MLKMenuPopover.h"
 
-@interface EventTableViewController() <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+#define MENU_POPOVER_FRAME  CGRectMake(fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width)-130, 64, 120, 132)
+
+@interface EventTableViewController() <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,MLKMenuPopoverDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) EventResultsTableViewController *resultsTableViewController;
 
 @property BOOL searchControllerWasActive;
 @property BOOL searchControllerSearchFieldWasFirstResponder;
+
+- (IBAction)showMoreOption:(id)sender;
+@property(nonatomic,strong) MLKMenuPopover *menuPopover;
+@property(nonatomic,strong) NSArray *menuItems;
+@property(nonatomic,strong) NSMutableArray *menuIsSelected;
+
 
 @end
 
@@ -45,10 +54,18 @@
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
+    self.searchController.searchBar.barTintColor = [UIColor lightGrayColor];
+    self.searchController.searchBar.tintColor = [UIColor colorWithRed:232/255.0 green:51/255.0 blue:102/255.0 alpha:1];
     self.definesPresentationContext = YES;
     
     CGPoint offset = CGPointMake(0, self.searchController.searchBar.frame.size.height);
     self.tableView.contentOffset = offset;
+    
+    self.menuItems = [NSArray arrayWithObjects:@"All Events", @"My Events", @"Pick for Me!", nil];
+    self.menuIsSelected = [[NSMutableArray alloc] init];
+    [self.menuIsSelected addObject:@"Y"];
+    [self.menuIsSelected addObject:@"N"];
+    [self.menuIsSelected addObject:@"N"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -190,6 +207,48 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     
     // restore the text in the search field
     self.searchController.searchBar.text = [coder decodeObjectForKey:SearchBarTextKey];
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)showMoreOption:(id)sender {
+    // Hide already showing popover
+    [self.menuPopover dismissMenuPopover];
+    
+    self.menuPopover = [[MLKMenuPopover alloc] initWithFrame:MENU_POPOVER_FRAME menuItems:self.menuItems menuIsSelected:self.menuIsSelected];
+    
+    self.menuPopover.menuPopoverDelegate = self;
+    [self.menuPopover showInView:self.view];
+
+
+}
+
+#pragma mark -
+#pragma mark MLKMenuPopoverDelegate
+
+- (void)menuPopover:(MLKMenuPopover *)menuPopover didSelectMenuItemAtIndex:(NSInteger)selectedIndex
+{
+    [self.menuPopover dismissMenuPopover];
+    switch (selectedIndex) {
+        case 0:
+            self.menuIsSelected[0] = @"Y";
+            self.menuIsSelected[1] = @"N";
+            self.menuIsSelected[2] = @"N";
+            break;
+        case 1:
+            self.menuIsSelected[0] = @"N";
+            self.menuIsSelected[1] = @"Y";
+            self.menuIsSelected[2] = @"N";
+            break;
+        case 2:
+            self.menuIsSelected[0] = @"N";
+            self.menuIsSelected[1] = @"N";
+            self.menuIsSelected[2] = @"Y";
+            break;
+        default:
+            break;
+    }
 }
 
 @end
