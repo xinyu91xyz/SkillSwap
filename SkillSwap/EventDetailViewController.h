@@ -10,9 +10,8 @@
 #import <Parse/Parse.h>
 
 @interface EventDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *eventImage;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *eventDescLabel;
+@property (weak, nonatomic) IBOutlet UIWebView *eventWebView;
+
 @property (weak, nonatomic) PFObject *object;
 
 @end

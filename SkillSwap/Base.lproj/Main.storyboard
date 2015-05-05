@@ -43,34 +43,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R91-TG-1Rk">
-                                <rect key="frame" x="44" y="84" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-QW-rER">
-                                <rect key="frame" x="78" y="307" width="246" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T70-Gm-dp0">
-                                <rect key="frame" x="51" y="220" width="188" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqn-Rl-Evo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sr-AR-O3P" firstAttribute="top" secondItem="kqn-Rl-Evo" secondAttribute="bottom" id="F2h-iE-ICz"/>
+                            <constraint firstItem="kqn-Rl-Evo" firstAttribute="top" secondItem="Xsr-5X-Yho" secondAttribute="topMargin" id="KsV-Mn-bIv"/>
+                            <constraint firstAttribute="trailing" secondItem="kqn-Rl-Evo" secondAttribute="trailing" id="ria-pp-dv0"/>
+                            <constraint firstItem="kqn-Rl-Evo" firstAttribute="leading" secondItem="Xsr-5X-Yho" secondAttribute="leading" id="tsq-sv-mtV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="ZLa-px-aPR"/>
                     <connections>
-                        <outlet property="eventDescLabel" destination="T70-Gm-dp0" id="yDX-Fe-CPA"/>
-                        <outlet property="eventImage" destination="R91-TG-1Rk" id="oSN-M5-eHU"/>
-                        <outlet property="eventTitleLabel" destination="VfM-QW-rER" id="9U6-0M-CYq"/>
+                        <outlet property="eventWebView" destination="kqn-Rl-Evo" id="Qyp-Rm-PMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9l-Nq-xfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2676" y="-1928"/>
+            <point key="canvasLocation" x="2707" y="-1957"/>
         </scene>
         <!--People-->
         <scene sceneID="i4C-qV-oRD">

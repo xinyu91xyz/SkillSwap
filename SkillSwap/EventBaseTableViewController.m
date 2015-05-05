@@ -30,7 +30,14 @@ NSString *const kTableCellNibName = @"EventCell";
 
 - (void)configureCell:(EventCell *)cell forPFObject:(PFObject *)object {
     cell.eventTitleLabel.text = [object objectForKey:@"eventName"];
-    cell.eventDescLabel.text = [object objectForKey:@"eventDesc"];
+    cell.eventHostLabel.text = [object objectForKey:@"eventHost"];
+    cell.eventLocationLabel.text = [object objectForKey:@"eventLocation"];
+
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MMMM dd hh:mma"];
+    NSString *date = [dateFormat stringFromDate:[object objectForKey:@"eventDate"]];
+    cell.eventCalendarLabel.text = date;
+    
     PFFile *file = [object objectForKey:@"eventImg"];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
