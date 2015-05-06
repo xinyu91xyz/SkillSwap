@@ -20,7 +20,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="qJC-Vd-EsQ">
                         <barButtonItem key="rightBarButtonItem" image="MoreButton.png" id="SIS-6V-Zdy">
-                            <color key="tintColor" red="0.90980392156862744" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showMoreOption:" destination="gcT-Jj-1U4" id="5Sw-4D-8eN"/>
                             </connections>
@@ -338,7 +338,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqg-Aj-aaY">
                                 <rect key="frame" x="145" y="156" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrX-eu-fy4">
@@ -464,7 +464,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Profile" id="yut-Ba-cbn">
-                        <barButtonItem key="rightBarButtonItem" image="Setting X1.png" id="2f1-0K-Jmz">
+                        <barButtonItem key="rightBarButtonItem" image="settingImg.png" id="2f1-0K-Jmz">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="settings:" destination="MIV-oO-gIB" id="Lu0-AP-f0q"/>
                                 <segue destination="V8z-RU-VZE" kind="push" identifier="showSettings" id="zdw-1y-nBv"/>
@@ -522,7 +523,7 @@
     </scenes>
     <resources>
         <image name="MoreButton.png" width="22" height="22"/>
-        <image name="Setting X1.png" width="22" height="22"/>
+        <image name="settingImg.png" width="22" height="22"/>
         <image name="ui element_Event_Page 1@3x.png" width="66" height="66"/>
         <image name="ui element_People_Page 1@3x.png" width="66" height="66"/>
         <image name="ui element_User_Page 1@3x.png" width="66" height="66"/>

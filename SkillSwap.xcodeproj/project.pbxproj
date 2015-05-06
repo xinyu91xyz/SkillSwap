@@ -45,9 +45,9 @@
 		5D6584271AE87988001632AD /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6584261AE87988001632AD /* name.png */; };
 		5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6584291AE87A17001632AD /* ProfileTableViewCell.m */; };
 		5D8115D21ACFB31900C877D9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8115D11ACFB31900C877D9 /* Logo.png */; };
-		5D8CD5361AF7365C005CD963 /* Setting X3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5351AF7365C005CD963 /* Setting X3.png */; };
-		5D8CD5381AF73746005CD963 /* Setting X1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5371AF73746005CD963 /* Setting X1.png */; };
-		5D8CD53A1AF7374A005CD963 /* Setting X2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5391AF7374A005CD963 /* Setting X2.png */; };
+		5D8CD5361AF7365C005CD963 /* settingImg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5351AF7365C005CD963 /* settingImg@3x.png */; };
+		5D8CD5381AF73746005CD963 /* settingImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5371AF73746005CD963 /* settingImg.png */; };
+		5D8CD53A1AF7374A005CD963 /* settingImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5391AF7374A005CD963 /* settingImg@2x.png */; };
 		5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8CD53C1AF737CF005CD963 /* SettingsViewController.m */; };
 		5D8CD5411AF7442F005CD963 /* Edit bg X2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5401AF7442F005CD963 /* Edit bg X2.png */; };
 		5D8CD5431AF74436005CD963 /* Edit bg X1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5421AF74436005CD963 /* Edit bg X1.png */; };
@@ -205,9 +205,9 @@
 		5D6584281AE87A17001632AD /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		5D6584291AE87A17001632AD /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
 		5D8115D11ACFB31900C877D9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
-		5D8CD5351AF7365C005CD963 /* Setting X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting X3.png"; sourceTree = "<group>"; };
-		5D8CD5371AF73746005CD963 /* Setting X1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting X1.png"; sourceTree = "<group>"; };
-		5D8CD5391AF7374A005CD963 /* Setting X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting X2.png"; sourceTree = "<group>"; };
+		5D8CD5351AF7365C005CD963 /* settingImg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingImg@3x.png"; sourceTree = "<group>"; };
+		5D8CD5371AF73746005CD963 /* settingImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingImg.png; sourceTree = "<group>"; };
+		5D8CD5391AF7374A005CD963 /* settingImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingImg@2x.png"; sourceTree = "<group>"; };
 		5D8CD53B1AF737CF005CD963 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		5D8CD53C1AF737CF005CD963 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		5D8CD5401AF7442F005CD963 /* Edit bg X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Edit bg X2.png"; sourceTree = "<group>"; };
@@ -593,10 +593,10 @@
 				5D32FB2D1AF7E79C005031A8 /* Save button.png */,
 				5D3F22DB1AF2ACAB00CC3D29 /* pink bg.png */,
 				5FBF80311AE31DD300FA3A16 /* MoreButton.png */,
-				5D8CD5371AF73746005CD963 /* Setting X1.png */,
-				5D8CD5391AF7374A005CD963 /* Setting X2.png */,
+				5D8CD5371AF73746005CD963 /* settingImg.png */,
+				5D8CD5391AF7374A005CD963 /* settingImg@2x.png */,
 				5FBF80321AE31DD300FA3A16 /* MoreButton@2x.png */,
-				5D8CD5351AF7365C005CD963 /* Setting X3.png */,
+				5D8CD5351AF7365C005CD963 /* settingImg@3x.png */,
 				5FBF80331AE31DD300FA3A16 /* MoreButton@3x.png */,
 				5D08370D1AFAD786002F4394 /* add button X1.png */,
 				5D08370E1AFAD786002F4394 /* add button X2.png */,
@@ -733,11 +733,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D8CD5381AF73746005CD963 /* Setting X1.png in Resources */,
+				5D8CD5381AF73746005CD963 /* settingImg.png in Resources */,
 				5D6584271AE87988001632AD /* name.png in Resources */,
 				5FCAFFF61ACCED3C001951E0 /* Exit.png in Resources */,
 				5D3B63A51AE223D100890A83 /* Sign In button.png in Resources */,
-				5D8CD53A1AF7374A005CD963 /* Setting X2.png in Resources */,
+				5D8CD53A1AF7374A005CD963 /* settingImg@2x.png in Resources */,
 				5D8CD5431AF74436005CD963 /* Edit bg X1.png in Resources */,
 				5D3B639D1AE223D100890A83 /* Event2.png in Resources */,
 				5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */,
@@ -754,7 +754,7 @@
 				5D3B639C1AE223D100890A83 /* Event1.png in Resources */,
 				5D9A24971AF17BA400A87BF9 /* user profile bg.png in Resources */,
 				5F1108241AD6328600E47080 /* SignUpViewController.xib in Resources */,
-				5D8CD5361AF7365C005CD963 /* Setting X3.png in Resources */,
+				5D8CD5361AF7365C005CD963 /* settingImg@3x.png in Resources */,
 				5F4A5CFD1AF845A4006BBCD0 /* heartFilled@3x.png in Resources */,
 				5FCAFFF71ACCED3C001951E0 /* ExitDown.png in Resources */,
 				5D3B63AB1AE223D100890A83 /* user image5.png in Resources */,

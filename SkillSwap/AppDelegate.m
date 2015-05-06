@@ -30,7 +30,7 @@
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:232/255.0 green:51/255.0 blue:102/255.0 alpha:1]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"Your user agent", @"UserAgent", nil];
