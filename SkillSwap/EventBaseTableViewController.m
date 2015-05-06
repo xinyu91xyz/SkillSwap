@@ -36,9 +36,6 @@ NSString *const kTableCellNibName = @"EventCell";
     UIImage *btnImg = [UIImage imageNamed:@"heartEmpty.png"];
     [cell.likeButton setImage:btnImg forState:UIControlStateNormal];
     
-    PFUser *currentUser = [PFUser currentUser];
-    PFRelation *relation = [currentUser relationForKey:@"myEvent"];
-    
     if (isInMyEvent) {
         UIImage *btnImage = [UIImage imageNamed:@"heartFilled.png"];
         [cell.likeButton setImage:btnImage forState:UIControlStateNormal];

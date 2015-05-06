@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
+@class EventCell;
+@protocol EventCellDelegate
+
+- (void)unSelectEvent:(EventCell *)eventCell;
+- (void)selectEvent:(EventCell *)eventCell;
+
+@end
+
 @interface EventCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImage;
@@ -24,5 +32,7 @@
 @property (weak, nonatomic) PFUser *user;
 
 - (IBAction)tapLikeButton:(id)sender;
+
+@property(nonatomic,assign) id<EventCellDelegate> eventCellDelegate;
 
 @end

@@ -11,5 +11,6 @@
 @interface EventResultsTableViewController : EventBaseTableViewController
 
 @property (nonatomic, strong) NSArray *filteredEvents;
+@property (nonatomic, strong) NSMutableArray *myEvents;
 
 @end

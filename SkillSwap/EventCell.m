@@ -10,6 +10,7 @@
 
 @implementation EventCell
 
+
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -30,6 +31,7 @@
         PFRelation *relation = [currentUser relationForKey:@"myEvent"];
         [relation addObject:self.event];
         [currentUser saveInBackground];
+        [self.eventCellDelegate selectEvent:self];
     } else {
         
         UIImage *btnImage = [UIImage imageNamed:@"heartEmpty.png"];
@@ -40,6 +42,7 @@
         PFRelation *relation = [currentUser relationForKey:@"myEvent"];
         [relation removeObject:self.event];
         [currentUser saveInBackground];
+        [self.eventCellDelegate unSelectEvent:self];
     }
 }
 

@@ -11,10 +11,11 @@
 #import "EventDetailViewController.h"
 #import "EventResultsTableViewController.h"
 #import "MLKMenuPopover.h"
+#import "EventCell.h"
 
 #define MENU_POPOVER_FRAME  CGRectMake(fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width)-130, 64, 120, 132)
 
-@interface EventTableViewController() <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,MLKMenuPopoverDelegate>
+@interface EventTableViewController() <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,MLKMenuPopoverDelegate,EventCellDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) EventResultsTableViewController *resultsTableViewController;
@@ -46,7 +47,7 @@
     PFRelation *relation = [currentUser relationForKey:@"myEvent"];
     PFQuery *queryMyEvent = [relation query];
     [queryMyEvent selectKeys:nil];
-    self.myEvents = [queryMyEvent findObjects];
+    self.myEvents = [[NSMutableArray alloc] initWithArray:[queryMyEvent findObjects]];
     
     
     self.resultsTableViewController = [[EventResultsTableViewController alloc] init];
@@ -111,6 +112,7 @@
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
     // do something before the search controller is dismissed
+    [self.tableView reloadData];
 }
 
 - (void)didDismissSearchController:(UISearchController *)searchController {
@@ -162,6 +164,8 @@
     EventResultsTableViewController *tableViewController = (EventResultsTableViewController *)self.searchController.searchResultsController;
     tableViewController.tableView.rowHeight = 96.0;
     tableViewController.filteredEvents = searchResults;
+    tableViewController.myEvents = self.myEvents;
+    
     tableViewController.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [tableViewController.tableView reloadData];
 }
@@ -262,12 +266,7 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
             self.menuIsSelected[0] = @"N";
             self.menuIsSelected[1] = @"Y";
             self.menuIsSelected[2] = @"N";
-            PFUser *currentUser = [PFUser currentUser];
-            PFRelation *relation = [currentUser relationForKey:@"myEvent"];
-            PFQuery *query = [relation query];
-            [query orderByAscending:@"eventDate"];
-            self.events = [query findObjects];
-            self.myEvents = self.events;
+            self.events = [[NSArray alloc] initWithArray:self.myEvents];
             [self.tableView reloadData];
             break;
         }
@@ -283,4 +282,17 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     }
 }
 
+#pragma mark EventCellDelegate
+- (void)unSelectEvent:(EventCell *)eventCell
+{
+    for (PFObject *event in self.myEvents) {
+        if ([[event objectId] isEqualToString:[eventCell.event objectId]]) {
+            [self.myEvents removeObject:event];
+        }
+    }
+}
+- (void)selectEvent:(EventCell *)eventCell
+{
+    [self.myEvents addObject:eventCell.event];
+}
 @end

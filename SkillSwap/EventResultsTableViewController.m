@@ -9,7 +9,7 @@
 #import "EventResultsTableViewController.h"
 #import "EventCell.h"
 
-@interface EventResultsTableViewController ()
+@interface EventResultsTableViewController () <EventCellDelegate>
 
 @end
 
@@ -35,8 +35,32 @@
     EventCell *cell = (EventCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     
     PFObject *event = self.filteredEvents[indexPath.row];
-    [self configureCell:cell forPFObject:event];
+    
+    BOOL isInMyEvent = false;
+    
+    for (PFObject *myEvent in self.myEvents) {
+        if ([[myEvent objectId] isEqualToString:[event objectId]]) {
+            isInMyEvent = true;
+        }
+    }
+    
+    [self configureCell:cell forPFObject:event withFlag:isInMyEvent];
     return cell;
+}
+
+#pragma mark EventCellDelegate
+- (void)unSelectEvent:(EventCell *)eventCell
+{
+    for (PFObject *event in self.myEvents) {
+        if ([[event objectId] isEqualToString:[eventCell.event objectId]]) {
+            [self.myEvents removeObject:event];
+        }
+    }
+}
+
+- (void)selectEvent:(EventCell *)eventCell
+{
+    [self.myEvents addObject:eventCell.event];
 }
 
 @end
