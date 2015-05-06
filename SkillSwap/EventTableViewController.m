@@ -42,6 +42,12 @@
     [query orderByAscending:@"eventDate"];
     self.events = [query findObjects];
     
+    PFUser *currentUser = [PFUser currentUser];
+    PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+    PFQuery *queryMyEvent = [relation query];
+    [queryMyEvent selectKeys:nil];
+    self.myEvents = [queryMyEvent findObjects];
+    
     
     self.resultsTableViewController = [[EventResultsTableViewController alloc] init];
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableViewController];
@@ -120,7 +126,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EventCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     PFObject *event = self.events[indexPath.row];
-    [self configureCell:cell forPFObject:event];
+    BOOL isInMyEvent = false;
+
+    for (PFObject *myEvent in self.myEvents) {
+        if ([[myEvent objectId] isEqualToString:[event objectId]]) {
+            isInMyEvent = true;
+        }
+            
+    }
+    [self configureCell:cell forPFObject:event withFlag:isInMyEvent];
     return cell;
 }
 
@@ -253,6 +267,7 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
             PFQuery *query = [relation query];
             [query orderByAscending:@"eventDate"];
             self.events = [query findObjects];
+            self.myEvents = self.events;
             [self.tableView reloadData];
             break;
         }

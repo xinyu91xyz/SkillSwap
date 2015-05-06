@@ -13,6 +13,6 @@ extern NSString *const kCellIdentifier;
 
 @interface EventBaseTableViewController : UITableViewController
 
-- (void)configureCell:(EventCell *)cell forPFObject:(PFObject *)object;
+- (void)configureCell:(EventCell *)cell forPFObject:(PFObject *)object withFlag:(BOOL)isInMyEvent;
 
 @end
