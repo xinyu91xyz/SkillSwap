@@ -15,6 +15,9 @@
 		4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */; };
 		4F661EB51AF6C9010005E982 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB41AF6C9010005E982 /* ChatMessageCell.m */; };
 		4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB71AF6C9D50005E982 /* ChatMessage.m */; };
+		5D0837101AFAD786002F4394 /* add button X1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button X1.png */; };
+		5D0837111AFAD786002F4394 /* add button X2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370E1AFAD786002F4394 /* add button X2.png */; };
+		5D0837121AFAD786002F4394 /* add button X3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370F1AFAD786002F4394 /* add button X3.png */; };
 		5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */; };
 		5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */; };
 		5D12ACDE1AE6F30C005540D9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D12ACDD1AE6F30C005540D9 /* logo.png */; };
@@ -168,6 +171,9 @@
 		4F661EB41AF6C9010005E982 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
 		4F661EB61AF6C9D50005E982 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		4F661EB71AF6C9D50005E982 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
+		5D08370D1AFAD786002F4394 /* add button X1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button X1.png"; sourceTree = "<group>"; };
+		5D08370E1AFAD786002F4394 /* add button X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button X2.png"; sourceTree = "<group>"; };
+		5D08370F1AFAD786002F4394 /* add button X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button X3.png"; sourceTree = "<group>"; };
 		5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
@@ -592,6 +598,9 @@
 				5FBF80321AE31DD300FA3A16 /* MoreButton@2x.png */,
 				5D8CD5351AF7365C005CD963 /* Setting X3.png */,
 				5FBF80331AE31DD300FA3A16 /* MoreButton@3x.png */,
+				5D08370D1AFAD786002F4394 /* add button X1.png */,
+				5D08370E1AFAD786002F4394 /* add button X2.png */,
+				5D08370F1AFAD786002F4394 /* add button X3.png */,
 				5D3B638C1AE223D100890A83 /* Event1.png */,
 				5D3B638D1AE223D100890A83 /* Event2.png */,
 				5D3B638E1AE223D100890A83 /* Event3.png */,
@@ -777,6 +786,7 @@
 				5FCAFFFF1ACCED3C001951E0 /* SignUpFieldBG.png in Resources */,
 				5F4A5D131AF855BD006BBCD0 /* locationImg.png in Resources */,
 				5DC742051ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png in Resources */,
+				5D0837101AFAD786002F4394 /* add button X1.png in Resources */,
 				5F4A5D091AF852EE006BBCD0 /* hostImg@3x.png in Resources */,
 				5F4A5CEA1AF82A90006BBCD0 /* Menu_PopOver_BG.png in Resources */,
 				5F735CC51AEE4FF800DF0811 /* EventCell.xib in Resources */,
@@ -785,6 +795,7 @@
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5F4A5D141AF855BD006BBCD0 /* locationImg@2x.png in Resources */,
 				5D8115D21ACFB31900C877D9 /* Logo.png in Resources */,
+				5D0837121AFAD786002F4394 /* add button X3.png in Resources */,
 				5F4A5D0F1AF855B1006BBCD0 /* calendarImg@3x.png in Resources */,
 				5DC742061ADCDBA9006EF2C8 /* ui element_Password_Page 1@3x.png in Resources */,
 				5F42FAA11ADF16E700362C54 /* noImg.png in Resources */,
@@ -806,6 +817,7 @@
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
 				5F42FAA71AE18BB900362C54 /* loginBackground.png in Resources */,
 				5D3B63A11AE223D100890A83 /* loginBackground.png in Resources */,
+				5D0837111AFAD786002F4394 /* add button X2.png in Resources */,
 				5F4A5CFB1AF845A4006BBCD0 /* heartFilled.png in Resources */,
 				5F4A5D031AF846D5006BBCD0 /* heartEmpty@3x.png in Resources */,
 			);

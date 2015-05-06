@@ -231,9 +231,9 @@
         [headerView setBackgroundColor:[UIColor colorWithRed:214/255.0 green:213/255.0 blue:215/255.0 alpha:1]];
         
         UIButton *addButton = [[UIButton alloc]init];
-        addButton.frame = CGRectMake(10, 6, 25, 25);
+        addButton.frame = CGRectMake(10, 3, 25, 25);
 
-        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateNormal];
+        [addButton setBackgroundImage:[UIImage imageNamed:@"add button X3.png"] forState:UIControlStateNormal];
 //        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 1;
         
@@ -252,8 +252,8 @@
         [headerView setBackgroundColor:[UIColor colorWithRed:214/255.0 green:213/255.0 blue:215/255.0 alpha:1]];
 
         UIButton *addButton = [[UIButton alloc]init];
-        addButton.frame = CGRectMake(10, 6, 25, 25);
-        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateNormal];
+        addButton.frame = CGRectMake(10, 3, 25, 25);
+        [addButton setBackgroundImage:[UIImage imageNamed:@"add button X3.png"] forState:UIControlStateNormal];
 //        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 2;
         
@@ -401,21 +401,27 @@
         //add code here for when you hit delete
         if (indexPath.section == 1) {
             
-//            [knownSkills removeObjectAtIndex:indexPath.row];
             PFObject *object = [knownSkills objectAtIndex:indexPath.row];
-            [knownSkills removeObjectAtIndex:indexPath.row];
-            [object deleteEventually];
+            PFUser *user = [PFUser currentUser];
+            PFRelation *relation = [user relationForKey:@"knownSkills"];
+            [relation removeObject:object];
+            [user save];
             
-            [tableView reloadData];
-            
-
+            knownSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+            [self.tableView reloadData];
             
         } else if (indexPath.section == 2) {
-            PFObject *object = [toLearnSkills objectAtIndex:indexPath.row];
-            [toLearnSkills removeObjectAtIndex:indexPath.row];
-            [object deleteEventually];
             
-            [tableView reloadData];
+            PFObject *object = [toLearnSkills objectAtIndex:indexPath.row];
+            
+            PFUser *user = [PFUser currentUser];
+            PFRelation *relation = [user relationForKey:@"toLearnSkills"];
+            [relation removeObject:object];
+            [user save];
+            
+            toLearnSkills = [[NSMutableArray alloc] initWithArray:[[relation query] findObjects]];
+            [self.tableView reloadData];
+            
         }
 
     }
