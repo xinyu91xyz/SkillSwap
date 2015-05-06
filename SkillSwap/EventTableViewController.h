@@ -12,5 +12,5 @@
 @interface EventTableViewController : EventBaseTableViewController
 
 @property (nonatomic, copy) NSArray *events;
-@property (nonatomic, copy) NSMutableArray *myEvents;
+@property (nonatomic, copy) NSArray *myEvents;
 @end

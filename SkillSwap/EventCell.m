@@ -10,6 +10,7 @@
 
 @implementation EventCell
 
+@synthesize eventCellDelegate;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -30,10 +31,11 @@
         self.user = currentUser;
         PFRelation *relation = [currentUser relationForKey:@"myEvent"];
         [relation addObject:self.event];
-        [currentUser saveInBackground];
-        [self.eventCellDelegate selectEvent:self];
-    } else {
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.eventCellDelegate updateLikedEvents:self];
+        }];
         
+    } else {
         UIImage *btnImage = [UIImage imageNamed:@"heartEmpty.png"];
         [self.likeButton setImage:btnImage forState:UIControlStateNormal];
         
@@ -41,8 +43,9 @@
         PFUser *currentUser = [PFUser currentUser];
         PFRelation *relation = [currentUser relationForKey:@"myEvent"];
         [relation removeObject:self.event];
-        [currentUser saveInBackground];
-        [self.eventCellDelegate unSelectEvent:self];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.eventCellDelegate updateLikedEvents:self];
+        }];
     }
 }
 

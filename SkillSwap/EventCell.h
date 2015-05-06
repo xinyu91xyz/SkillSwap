@@ -10,10 +10,10 @@
 #import <Parse/Parse.h>
 
 @class EventCell;
+
 @protocol EventCellDelegate
 
-- (void)unSelectEvent:(EventCell *)eventCell;
-- (void)selectEvent:(EventCell *)eventCell;
+- (void)updateLikedEvents:(EventCell *)eventCell;
 
 @end
 
@@ -33,6 +33,6 @@
 
 - (IBAction)tapLikeButton:(id)sender;
 
-@property(nonatomic,assign) id<EventCellDelegate> eventCellDelegate;
+@property(nonatomic,weak) id<EventCellDelegate> eventCellDelegate;
 
 @end

@@ -33,7 +33,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     EventCell *cell = (EventCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    
+    cell.eventCellDelegate = self;
+//    UIImage *btnImage = [UIImage imageNamed:@"heartEmpty.png"];
+//    [cell.likeButton setImage:btnImage forState:UIControlStateNormal];
     PFObject *event = self.filteredEvents[indexPath.row];
     
     BOOL isInMyEvent = false;
@@ -45,22 +47,20 @@
     }
     
     [self configureCell:cell forPFObject:event withFlag:isInMyEvent];
+    
     return cell;
 }
 
 #pragma mark EventCellDelegate
-- (void)unSelectEvent:(EventCell *)eventCell
+- (void)updateLikedEvents:(EventCell *)eventCell
 {
-    for (PFObject *event in self.myEvents) {
-        if ([[event objectId] isEqualToString:[eventCell.event objectId]]) {
-            [self.myEvents removeObject:event];
-        }
-    }
+    PFUser *currentUser = [PFUser currentUser];
+    PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+    PFQuery *queryMyEvent = [relation query];
+    [queryMyEvent selectKeys:nil];
+    self.myEvents = [queryMyEvent findObjects];
+    [self.resultTableDelegate updateResultCell:self];
 }
 
-- (void)selectEvent:(EventCell *)eventCell
-{
-    [self.myEvents addObject:eventCell.event];
-}
 
 @end

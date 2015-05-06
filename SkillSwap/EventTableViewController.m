@@ -15,7 +15,7 @@
 
 #define MENU_POPOVER_FRAME  CGRectMake(fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width)-130, 64, 120, 132)
 
-@interface EventTableViewController() <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,MLKMenuPopoverDelegate,EventCellDelegate>
+@interface EventTableViewController() <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,MLKMenuPopoverDelegate,EventCellDelegate,ResultTableDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) EventResultsTableViewController *resultsTableViewController;
@@ -27,7 +27,7 @@
 @property(nonatomic,strong) MLKMenuPopover *menuPopover;
 @property(nonatomic,strong) NSArray *menuItems;
 @property(nonatomic,strong) NSMutableArray *menuIsSelected;
-
+@property(nonatomic,strong) EventResultsTableViewController *tableViewController;
 
 @end
 
@@ -47,10 +47,12 @@
     PFRelation *relation = [currentUser relationForKey:@"myEvent"];
     PFQuery *queryMyEvent = [relation query];
     [queryMyEvent selectKeys:nil];
-    self.myEvents = [[NSMutableArray alloc] initWithArray:[queryMyEvent findObjects]];
+    self.myEvents = [queryMyEvent findObjects];
     
     
     self.resultsTableViewController = [[EventResultsTableViewController alloc] init];
+    self.resultsTableViewController.resultTableDelegate = self;
+    
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableViewController];
     
     self.searchController.searchResultsUpdater = self;
@@ -112,11 +114,15 @@
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
     // do something before the search controller is dismissed
-    [self.tableView reloadData];
+    
 }
 
 - (void)didDismissSearchController:(UISearchController *)searchController {
     // do something after the search controller is dismissed
+//    self.myEvents = self.tableViewController.myEvents;
+    NSLog(@"count from self %lu",(unsigned long)[self.myEvents count]);
+    NSLog(@"count from self.tableview %lu",(unsigned long)[self.tableViewController.myEvents count]);
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -127,6 +133,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EventCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    cell.eventCellDelegate = self;
+//    UIImage *btnImage = [UIImage imageNamed:@"heartEmpty.png"];
+//    [cell.likeButton setImage:btnImage forState:UIControlStateNormal];
+    
     PFObject *event = self.events[indexPath.row];
     BOOL isInMyEvent = false;
 
@@ -161,13 +171,13 @@
     NSArray *searchResults  = [query findObjects];
 
     // hand over the filtered results to our search results table
-    EventResultsTableViewController *tableViewController = (EventResultsTableViewController *)self.searchController.searchResultsController;
-    tableViewController.tableView.rowHeight = 96.0;
-    tableViewController.filteredEvents = searchResults;
-    tableViewController.myEvents = self.myEvents;
+    self.tableViewController = (EventResultsTableViewController *)self.searchController.searchResultsController;
+    self.tableViewController.tableView.rowHeight = 96.0;
+    self.tableViewController.filteredEvents = searchResults;
+    self.tableViewController.myEvents = self.myEvents;
     
-    tableViewController.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [tableViewController.tableView reloadData];
+    self.tableViewController.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.tableViewController.tableView reloadData];
 }
 
 #pragma mark - UIStateRestoration
@@ -282,17 +292,21 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     }
 }
 
-#pragma mark EventCellDelegate
-- (void)unSelectEvent:(EventCell *)eventCell
+#pragma mark eventCellDelegate
+- (void)updateLikedEvents:(EventCell *)eventCell
 {
-    for (PFObject *event in self.myEvents) {
-        if ([[event objectId] isEqualToString:[eventCell.event objectId]]) {
-            [self.myEvents removeObject:event];
-        }
-    }
+    
+    PFUser *currentUser = [PFUser currentUser];
+    PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+    PFQuery *queryMyEvent = [relation query];
+    [queryMyEvent selectKeys:nil];
+    self.myEvents = [queryMyEvent findObjects];
 }
-- (void)selectEvent:(EventCell *)eventCell
+
+#pragma mark resultTableDelegate
+- (void)updateResultCell:(EventResultsTableViewController *)resultTableViewController
 {
-    [self.myEvents addObject:eventCell.event];
+    self.myEvents = resultTableViewController.myEvents;
 }
+
 @end

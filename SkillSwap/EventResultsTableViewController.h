@@ -7,10 +7,18 @@
 //
 
 #import "EventBaseTableViewController.h"
+@class EventResultsTableViewController;
+
+@protocol ResultTableDelegate
+
+- (void)updateResultCell:(EventResultsTableViewController *)resultTableViewController;
+
+@end
 
 @interface EventResultsTableViewController : EventBaseTableViewController
 
 @property (nonatomic, strong) NSArray *filteredEvents;
-@property (nonatomic, strong) NSMutableArray *myEvents;
+@property (nonatomic, strong) NSArray *myEvents;
+@property (nonatomic, weak) id<ResultTableDelegate> resultTableDelegate;
 
 @end
