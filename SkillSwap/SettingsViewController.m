@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "SignInViewController.h"
 #import "ProfileTableViewController.h"
+#import "AppDelegate.h"
 
 //@interface SettingsViewController () <SignInViewControllerDelegate, ProfileTableViewControllerDelegate> {}
 @interface SettingsViewController () <SignInViewControllerDelegate> {}
@@ -39,12 +40,8 @@
 
 - (IBAction)signOut:(id)sender {
     [PFUser logOut];
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"myViewController"];
-    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:vc animated:YES completion:NULL];
-//    [self presentLoginViewController];
-    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate resetWindowToInitialView];    
 }
 
 

@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
-
+@property (weak, nonatomic) UIStoryboard *initalStoryboard;
 @end
 
 @implementation AppDelegate
@@ -36,6 +36,8 @@
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"Your user agent", @"UserAgent", nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
 
+    self.initalStoryboard = self.window.rootViewController.storyboard;
+    
     return YES;
 }
 
@@ -59,6 +61,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)resetWindowToInitialView
+{
+    for (UIView* view in self.window.subviews)
+    {
+        [view removeFromSuperview];
+    }
+    
+    UIViewController* initialScene = [self.initalStoryboard instantiateInitialViewController];
+    self.window.rootViewController = initialScene;
 }
 
 @end

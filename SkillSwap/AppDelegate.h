@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+- (void)resetWindowToInitialView;
 
 @property (strong, nonatomic) UIWindow *window;
 
