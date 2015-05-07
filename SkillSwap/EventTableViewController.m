@@ -63,8 +63,14 @@
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
-    self.searchController.searchBar.barTintColor = [UIColor lightGrayColor];
-    self.searchController.searchBar.tintColor = [UIColor colorWithRed:232/255.0 green:51/255.0 blue:102/255.0 alpha:1];
+
+    UIColor *lightGray = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
+    UIColor *pink = [UIColor colorWithRed:232/255.0 green:51/255.0 blue:102/255.0 alpha:1];
+
+    self.searchController.searchBar.backgroundColor = [UIColor clearColor];
+    self.searchController.searchBar.barTintColor = lightGray;
+    self.searchController.searchBar.tintColor = pink;
+
     self.definesPresentationContext = YES;
     
     CGPoint offset = CGPointMake(0, self.searchController.searchBar.frame.size.height);
@@ -75,6 +81,8 @@
     [self.menuIsSelected addObject:@"Y"];
     [self.menuIsSelected addObject:@"N"];
     [self.menuIsSelected addObject:@"N"];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -155,9 +163,18 @@
     self.events[indexPath.row] : self.resultsTableViewController.filteredEvents[indexPath.row];
     
     EventDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EventDetailViewController"];
+    detailViewController.title = @"Event";
+
+    self.navigationItem.backBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                      style:UIBarButtonItemStylePlain
+                                     target:nil
+                                     action:nil];
     detailViewController.object = selectedEvent;
     [self.navigationController pushViewController:detailViewController animated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
 }
 
 #pragma mark - UISearchResultsUpdating

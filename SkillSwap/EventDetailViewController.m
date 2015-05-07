@@ -19,6 +19,7 @@
     NSString *urlString = [self.object objectForKey:@"eventUrl"];
     [self.eventWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     self.eventWebView.scalesPageToFit = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {

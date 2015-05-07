@@ -57,7 +57,7 @@
     PFUser *currentUser = [PFUser currentUser];
     PFRelation *relation = [currentUser relationForKey:@"myEvent"];
     PFQuery *queryMyEvent = [relation query];
-    [queryMyEvent selectKeys:nil];
+    [queryMyEvent selectKeys:[[NSArray alloc] init]];
     self.myEvents = [queryMyEvent findObjects];
     [self.resultTableDelegate updateResultCell:self];
 }
