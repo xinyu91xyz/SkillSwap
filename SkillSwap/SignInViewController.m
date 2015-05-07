@@ -13,6 +13,7 @@
 #import "BuildProfileViewController.h"
 #import "ActivityView.h"
 #import "SignUpViewController.h"
+#import "BuildProfileViewController.h"
 
 @interface SignInViewController ()
 <UITextFieldDelegate,
@@ -400,9 +401,15 @@ SignUpViewControllerDelegate>
         }
     }];
     
-    BuildProfileViewController *viewController = [[BuildProfileViewController alloc] initWithNibName:nil bundle:nil];
-    //    viewController.delegate = self;
-    [self presentViewController:viewController animated:YES completion:NULL];
+//    BuildProfileViewController *viewController = [[BuildProfileViewController alloc] initWithNibName:nil bundle:nil];
+//    //    viewController.delegate = self;
+//    [self presentViewController:viewController animated:YES completion:NULL];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BuildProfileViewController *bvc = [storyboard instantiateViewControllerWithIdentifier:@"buildProfile"];
+    UINavigationController *newProfile = [[UINavigationController alloc] initWithRootViewController:bvc];
+    
+    [self presentViewController:newProfile animated:YES completion:nil];
     
 
     

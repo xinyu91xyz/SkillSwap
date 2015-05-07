@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
 
     // set default selected tab in TabBarController to profile table view controller
-    self.selectedViewController=[self.viewControllers objectAtIndex:1];
+    self.selectedViewController=[self.viewControllers objectAtIndex:2];
 
 }
 
