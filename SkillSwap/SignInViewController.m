@@ -107,61 +107,61 @@ SignUpViewControllerDelegate>
     // Set up activity view
     self.activityViewVisible = YES;
     // Login PFUser using facebook
-    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            // Hide the activity view
-            self.activityViewVisible = NO;
-            NSString *alertMessage, *alertTitle;
-            if (error) {
-                FBErrorCategory errorCategory = [FBErrorUtility errorCategoryForError:error];
-                if ([FBErrorUtility shouldNotifyUserForError:error]) {
-                    // If the SDK has a message for the user, surface it.
-                    alertTitle = @"Something Went Wrong";
-                    alertMessage = [FBErrorUtility userMessageForError:error];
-                } else if (errorCategory == FBErrorCategoryAuthenticationReopenSession) {
-                    // It is important to handle session closures. We notify the user.
-                    alertTitle = @"Session Error";
-                    alertMessage = @"Your current session is no longer valid. Please log in again.";
-                } else if (errorCategory == FBErrorCategoryUserCancelled) {
-                    // The user has cancelled a login. You can inspect the error
-                    // for more context. Here, we will simply ignore it.
-                    NSLog(@"user cancelled login");
-                } else {
-                    // Handle all other errors in a generic fashion
-                    alertTitle  = @"Unknown Error";
-                    alertMessage = @"Error. Please try again later.";
-                }
-
-                if (alertMessage) {
-                    [[[UIAlertView alloc] initWithTitle:alertTitle
-                                                message:alertMessage
-                                               delegate:nil
-                                      cancelButtonTitle:@"Dismiss"
-                                      otherButtonTitles:nil] show];
-                }
-            }
-        } else {
-            // Make a call to get user info
-            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
-                dispatch_block_t completion = ^{
-                    // Hide the activity view
-                    self.activityViewVisible = NO;
-                    // Show the logged in view
-                    [self.delegate loginViewControllerDidLogin:self];
-                };
-
-                if (error) {
-                    completion();
-                } else {
-                    // Save the name on Parse
-                    [PFUser currentUser][@"name"] = user.name;
-                    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        completion();
-                    }];
-                }
-            }];
-        }
-    }];
+//    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
+//        if (!user) {
+//            // Hide the activity view
+//            self.activityViewVisible = NO;
+//            NSString *alertMessage, *alertTitle;
+//            if (error) {
+//                FBErrorCategory errorCategory = [FBErrorUtility errorCategoryForError:error];
+//                if ([FBErrorUtility shouldNotifyUserForError:error]) {
+//                    // If the SDK has a message for the user, surface it.
+//                    alertTitle = @"Something Went Wrong";
+//                    alertMessage = [FBErrorUtility userMessageForError:error];
+//                } else if (errorCategory == FBErrorCategoryAuthenticationReopenSession) {
+//                    // It is important to handle session closures. We notify the user.
+//                    alertTitle = @"Session Error";
+//                    alertMessage = @"Your current session is no longer valid. Please log in again.";
+//                } else if (errorCategory == FBErrorCategoryUserCancelled) {
+//                    // The user has cancelled a login. You can inspect the error
+//                    // for more context. Here, we will simply ignore it.
+//                    NSLog(@"user cancelled login");
+//                } else {
+//                    // Handle all other errors in a generic fashion
+//                    alertTitle  = @"Unknown Error";
+//                    alertMessage = @"Error. Please try again later.";
+//                }
+//
+//                if (alertMessage) {
+//                    [[[UIAlertView alloc] initWithTitle:alertTitle
+//                                                message:alertMessage
+//                                               delegate:nil
+//                                      cancelButtonTitle:@"Dismiss"
+//                                      otherButtonTitles:nil] show];
+//                }
+//            }
+//        } else {
+//            // Make a call to get user info
+//            [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+//                dispatch_block_t completion = ^{
+//                    // Hide the activity view
+//                    self.activityViewVisible = NO;
+//                    // Show the logged in view
+//                    [self.delegate loginViewControllerDidLogin:self];
+//                };
+//
+//                if (error) {
+//                    completion();
+//                } else {
+//                    // Save the name on Parse
+//                    [PFUser currentUser][@"name"] = user.name;
+//                    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                        completion();
+//                    }];
+//                }
+//            }];
+//        }
+//    }];
 }
 
 - (IBAction)signUpPressed:(id)sender {

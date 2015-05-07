@@ -39,9 +39,14 @@
 
 - (IBAction)signOut:(id)sender {
     [PFUser logOut];
-    [self presentLoginViewController];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"myViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
+//    [self presentLoginViewController];
     
 }
+
 
 #pragma mark LoginViewController
 

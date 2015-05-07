@@ -18,7 +18,7 @@
 //@end
 
 
-@interface ProfileTableViewController : UITableViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface ProfileTableViewController : UITableViewController <UIPageViewControllerDelegate, UIPageViewControllerDelegate>
 
 //@property (nonatomic, weak) id<ProfileTableViewControllerDelegate> delegate;
 
