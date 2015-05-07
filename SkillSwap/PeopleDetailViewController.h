@@ -9,8 +9,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-
-@interface PeopleDetailViewController : UIViewController
+#import <MessageUI/MessageUI.h>
+@interface PeopleDetailViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property(nonatomic, retain) UIButton *sendMessage;
 -(IBAction)sendMessage:(id)sender;
