@@ -10,7 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
-
+#import "BuildProfileViewController.h"
 #import "ActivityView.h"
 #import "SignUpViewController.h"
 
@@ -366,5 +366,55 @@ SignUpViewControllerDelegate>
         _activityView = nil;
     }
 }
+
+#pragma mark 
+- (void)newUserViewControllerDidSignup:(SignUpViewController *)controller {
+    [PFUser logInWithUsernameInBackground:controller.usernameField.text password:controller.passwordField.text block:^(PFUser *user, NSError *error) {
+        // Tear down the activity view in all cases.
+        self.activityViewVisible = NO;
+        
+        if (user) {
+            [self.delegate loginViewControllerDidLogin:self];
+        } else {
+            // Didn't get a user.
+            NSLog(@"%s didn't get a user!", __PRETTY_FUNCTION__);
+            
+            NSString *alertTitle = nil;
+            
+            if (error) {
+                // Something else went wrong
+                alertTitle = [error userInfo][@"error"];
+            } else {
+                // the username or password is probably wrong.
+                alertTitle = @"Couldn’t log in:\nThe username or password were wrong.";
+            }
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                                message:nil
+                                                               delegate:self
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"OK", nil];
+            [alertView show];
+            
+            // Bring the keyboard back up, because they'll probably need to change something.
+            [self.usernameField becomeFirstResponder];
+        }
+    }];
+    
+    BuildProfileViewController *viewController = [[BuildProfileViewController alloc] initWithNibName:nil bundle:nil];
+    //    viewController.delegate = self;
+    [self presentViewController:viewController animated:YES completion:NULL];
+    
+
+    
+}
+
+//[self presentBuildProfileViewController];
+//
+//- (void)presentBuildProfileViewController {
+//    BuildProfileViewController *viewController = [[BuildProfileViewController alloc] initWithNibName:nil bundle:nil];
+//    //    viewController.delegate = self;
+//    [self presentViewController:viewController animated:YES completion:NULL];
+//}
+
 
 @end

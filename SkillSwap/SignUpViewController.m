@@ -120,11 +120,6 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)presentBuildProfileViewController {
-    BuildProfileViewController *viewController = [[BuildProfileViewController alloc] initWithNibName:nil bundle:nil];
-//    viewController.delegate = self;
-    [self presentViewController:viewController animated:YES completion:NULL];
-}
 
 
 //- (void)buildProfileViewControllerDidBuild:(BuildProfileViewController *)controller {
@@ -271,8 +266,8 @@
             }
         }];
 
-        [self presentBuildProfileViewController];
-//        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
         [self.delegate newUserViewControllerDidSignup:self];
     }];
 }

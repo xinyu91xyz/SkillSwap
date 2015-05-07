@@ -520,6 +520,24 @@
             </objects>
             <point key="canvasLocation" x="510" y="594"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="YsR-dK-sRV">
+            <objects>
+                <viewController id="9tO-7e-OcZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Vz-c1-UoX"/>
+                        <viewControllerLayoutGuide type="bottom" id="xRP-1T-f8P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h5m-v4-qmi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QYl-Z8-bWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="1893"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MoreButton.png" width="22" height="22"/>
