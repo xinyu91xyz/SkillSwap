@@ -147,7 +147,7 @@
         UIButton *editProfileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         editProfileButton.frame = CGRectMake(35.0f, 140.0f, 80.0f, 30.0f);
         [editProfileButton setTitle:@"Edit Profile" forState:UIControlStateNormal];
-        [editProfileButton setBackgroundImage:[UIImage imageNamed:@"Edit bg X1.png"] forState:UIControlStateNormal];
+        [editProfileButton setBackgroundImage:[UIImage imageNamed:@"Edit bg.png"] forState:UIControlStateNormal];
         
         [cell addSubview:editProfileButton];
         [editProfileButton addTarget:self
@@ -233,7 +233,7 @@
         UIButton *addButton = [[UIButton alloc]init];
         addButton.frame = CGRectMake(10, 3, 25, 25);
 
-        [addButton setBackgroundImage:[UIImage imageNamed:@"add button X3.png"] forState:UIControlStateNormal];
+        [addButton setBackgroundImage:[UIImage imageNamed:@"add button.png"] forState:UIControlStateNormal];
 //        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 1;
         
@@ -253,7 +253,7 @@
 
         UIButton *addButton = [[UIButton alloc]init];
         addButton.frame = CGRectMake(10, 3, 25, 25);
-        [addButton setBackgroundImage:[UIImage imageNamed:@"add button X3.png"] forState:UIControlStateNormal];
+        [addButton setBackgroundImage:[UIImage imageNamed:@"add button.png"] forState:UIControlStateNormal];
 //        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 2;
         

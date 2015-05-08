@@ -1,19 +1,18 @@
 //
-//  BuildSkillTableViewController.m
+//  BuildToLearnSkillTableViewController.m
 //  SkillSwap
 //
-//  Created by Xinyu Zheng on 5/6/15.
+//  Created by Xinyu Zheng on 5/7/15.
 //  Copyright (c) 2015 Chen Zhu. All rights reserved.
 //
 
-#import "BuildSkillTableViewController.h"
+#import "BuildToLearnSkillTableViewController.h"
 
-@interface BuildSkillTableViewController ()
-- (IBAction)doneButton:(id)sender;
+@interface BuildToLearnSkillTableViewController ()
 
 @end
 
-@implementation BuildSkillTableViewController
+@implementation BuildToLearnSkillTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,17 +31,17 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 0;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return 0;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,4 +103,5 @@
         
     }];
 }
+
 @end

@@ -36,7 +36,13 @@
     
 //    [self.updateTitle setFrame:CGRectMake(self.updateTitle.frame.origin.x, self.updateTitle.frame.origin.y, self.updateTitle.frame.size.width, 100)];
     
-    [self.updateTitle setBorderStyle:UITextBorderStyleRoundedRect];
+    //To make the border look very close to a UITextField
+    [self.updateTitle.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.3] CGColor]];
+    [self.updateTitle.layer setBorderWidth:0.5];
+    
+    //The rounded corner part, where you specify your view's corner radius:
+    self.updateTitle.layer.cornerRadius = 5;
+    self.updateTitle.clipsToBounds = YES;
 
 }
 

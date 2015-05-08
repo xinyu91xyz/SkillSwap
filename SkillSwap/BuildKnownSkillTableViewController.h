@@ -1,5 +1,5 @@
 //
-//  BuildSkillTableViewController.h
+//  BuildKnownSkillTableViewController.h
 //  SkillSwap
 //
 //  Created by Xinyu Zheng on 5/6/15.
@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface BuildSkillTableViewController : UITableViewController
+@interface BuildKnownSkillTableViewController : UITableViewController
+
+
 
 @end

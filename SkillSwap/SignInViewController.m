@@ -10,10 +10,10 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
-#import "BuildProfileViewController.h"
+#import "BuildNameViewController.h"
 #import "ActivityView.h"
 #import "SignUpViewController.h"
-#import "BuildProfileViewController.h"
+#import "BuildNameViewController.h"
 
 @interface SignInViewController ()
 <UITextFieldDelegate,
@@ -406,7 +406,7 @@ SignUpViewControllerDelegate>
 //    [self presentViewController:viewController animated:YES completion:NULL];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    BuildProfileViewController *bvc = [storyboard instantiateViewControllerWithIdentifier:@"buildProfile"];
+    BuildNameViewController *bvc = [storyboard instantiateViewControllerWithIdentifier:@"buildProfile"];
     UINavigationController *newProfile = [[UINavigationController alloc] initWithRootViewController:bvc];
     
     [self presentViewController:newProfile animated:YES completion:nil];

@@ -11,7 +11,7 @@
 //#import "MySignUpViewController.h"
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
-#import "BuildProfileViewController.h"
+#import "BuildNameViewController.h"
 
 @interface TabBarController ()
 <SignInViewControllerDelegate>

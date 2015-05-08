@@ -14,7 +14,8 @@
 //@property (weak, nonatomic) IBOutlet UILabel *showName;
 
 
-@property (weak, nonatomic) IBOutlet UITextField *updateTitle;
+@property (weak, nonatomic) IBOutlet UITextView *updateTitle;
+
 //@property (weak, nonatomic) IBOutlet UILabel *showTitle;
 
 

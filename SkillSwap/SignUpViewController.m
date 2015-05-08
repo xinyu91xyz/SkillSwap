@@ -6,7 +6,7 @@
 //
 
 #import "SignUpViewController.h"
-#import "BuildProfileViewController.h"
+#import "BuildNameViewController.h"
 
 #import <Parse/Parse.h>
 
