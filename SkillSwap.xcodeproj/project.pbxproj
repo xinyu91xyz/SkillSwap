@@ -13,6 +13,7 @@
 		4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50033F1AF59A140055C7A9 /* MessageViewController.m */; };
 		4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */; };
 		4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */; };
+		4F6062331AFC4C96008FC0DA /* PeopleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6062321AFC4C96008FC0DA /* PeopleTableViewCell.m */; };
 		4F661EB51AF6C9010005E982 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB41AF6C9010005E982 /* ChatMessageCell.m */; };
 		4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB71AF6C9D50005E982 /* ChatMessage.m */; };
 		5D0837101AFAD786002F4394 /* add button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button.png */; };
@@ -170,6 +171,8 @@
 		4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageMateTableViewController.m; sourceTree = "<group>"; };
 		4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDialogViewController.h; sourceTree = "<group>"; };
 		4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDialogViewController.m; sourceTree = "<group>"; };
+		4F6062311AFC4C96008FC0DA /* PeopleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleTableViewCell.h; sourceTree = "<group>"; };
+		4F6062321AFC4C96008FC0DA /* PeopleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewCell.m; sourceTree = "<group>"; };
 		4F661EB31AF6C9010005E982 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
 		4F661EB41AF6C9010005E982 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
 		4F661EB61AF6C9D50005E982 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 				4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */,
 				4F0675E31AE1BB77004BB7C1 /* PeopleDetailViewController.h */,
 				4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */,
+				4F6062311AFC4C96008FC0DA /* PeopleTableViewCell.h */,
+				4F6062321AFC4C96008FC0DA /* PeopleTableViewCell.m */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -881,6 +886,7 @@
 				4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */,
 				4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */,
 				5D9321081AFC206D00875654 /* BuildProfileImgViewController.m in Sources */,
+				4F6062331AFC4C96008FC0DA /* PeopleTableViewCell.m in Sources */,
 				5D93210B1AFC207D00875654 /* BuildAboutMeViewController.m in Sources */,
 				5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */,
 				5D9321021AFC200B00875654 /* BuildMajorViewController.m in Sources */,

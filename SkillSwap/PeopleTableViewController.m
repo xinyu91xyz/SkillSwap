@@ -34,6 +34,38 @@
 
     
 }
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.objects count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PeopleTableViewCell *cell;
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:@"PeopleCell" forIndexPath:indexPath];
+    
+    PFUser *user = self.users[indexPath.row];
+    
+    PFFile *file = [user objectForKey:@"userImg"];
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if(!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.userimage.image = image;
+        }
+    }];
+   
+    cell.username.text = [user objectForKey:@"realName"];
+    cell.major.text = [user objectForKey:@"major"];
+    PFRelation *knownRelation = [user relationForKey:@"knownSkills"];
+    NSMutableArray *knowRes = [[NSMutableArray alloc] initWithArray:[[knownRelation query] findObjects]];
+    cell.skills.text = [knowRes componentsJoinedByString:@"\n"];
+    PFRelation *toLearnRelation = [[PFUser currentUser] relationForKey:@"toLearnSkills"];
+    NSMutableArray *wantRes = [[NSMutableArray alloc] initWithArray:[[toLearnRelation query] findObjects]];
+    cell.wants.text = [wantRes componentsJoinedByString:@"\n"];
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //[self.tableView setBounces:NO];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
 -(void)viewWillAppear:(BOOL)animated {
     PFQuery *query = [PFUser query];
@@ -45,6 +77,7 @@
         }
         NSLog(@"objects");
     }];
+  
 }
 
 - (void)viewDidLoad {
@@ -67,17 +100,8 @@
 //    return query;
 //}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"PeopleCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    PFUser *user = self.users[indexPath.row];
-    cell.textLabel.text = user.username;
-    return cell;
-}
+
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
