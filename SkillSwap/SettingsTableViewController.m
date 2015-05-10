@@ -1,19 +1,19 @@
 //
-//  BuildSkillTableViewController.m
+//  SettingsTableViewController.m
 //  SkillSwap
 //
-//  Created by Xinyu Zheng on 5/6/15.
+//  Created by Xinyu Zheng on 5/9/15.
 //  Copyright (c) 2015 Chen Zhu. All rights reserved.
 //
 
-#import "BuildSkillTableViewController.h"
+#import "SettingsTableViewController.h"
+#import "AppDelegate.h"
 
-@interface BuildSkillTableViewController ()
-- (IBAction)doneButton:(id)sender;
+@interface SettingsTableViewController ()
 
 @end
 
-@implementation BuildSkillTableViewController
+@implementation SettingsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,11 +23,55 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    PFUser *user = [PFUser currentUser];
+    
+    PFFile *file = [user objectForKey:@"userImg"];
+    
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            self.userImg.image = image;
+            // image can now be set on a UIImageView
+        }
+    }];
+    
+    self.userName.text = [user objectForKey:@"username"];
+    self.realName.text = [user objectForKey:@"realName"];
+    self.emailAddress.text = [user objectForKey:@"myEmail"];
+    self.schoolName.text = [user objectForKey:@"school"];
+    self.majorName.text = [user objectForKey:@"major"];
+    self.enrollYear.text = [user objectForKey:@"enrollYear"];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    //Do whatever you like with indexpath.row
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        [PFUser logOut];
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        [appDelegate resetWindowToInitialView];
+    }
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 0.0001f;
+    }
+    return 5.0f;
 }
 
 #pragma mark - Table view data source
@@ -98,10 +142,4 @@
 }
 */
 
-- (IBAction)doneButton:(id)sender {
-    
-    [self dismissViewControllerAnimated:true completion:^{
-        
-    }];
-}
 @end

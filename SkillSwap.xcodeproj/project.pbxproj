@@ -10,17 +10,11 @@
 		4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */; };
 		4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */; };
 		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
-		4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50033F1AF59A140055C7A9 /* MessageViewController.m */; };
-		4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */; };
-		4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */; };
-		4F661EB51AF6C9010005E982 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB41AF6C9010005E982 /* ChatMessageCell.m */; };
-		4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F661EB71AF6C9D50005E982 /* ChatMessage.m */; };
-		5D0837101AFAD786002F4394 /* add button X1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button X1.png */; };
-		5D0837111AFAD786002F4394 /* add button X2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370E1AFAD786002F4394 /* add button X2.png */; };
-		5D0837121AFAD786002F4394 /* add button X3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370F1AFAD786002F4394 /* add button X3.png */; };
+		5D0837101AFAD786002F4394 /* add button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button.png */; };
+		5D0837111AFAD786002F4394 /* add button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370E1AFAD786002F4394 /* add button@2x.png */; };
+		5D0837121AFAD786002F4394 /* add button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370F1AFAD786002F4394 /* add button@3x.png */; };
 		5D0837151AFB0E32002F4394 /* BuildSkillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0837141AFB0E32002F4394 /* BuildSkillTableViewController.m */; };
 		5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */; };
-		5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */; };
 		5D32FB321AF7F583005031A8 /* BuildProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D32FB301AF7F583005031A8 /* BuildProfileViewController.m */; };
 		5D3B63A11AE223D100890A83 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63911AE223D100890A83 /* loginBackground.png */; };
 		5D3B63A31AE223D100890A83 /* Next button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B63931AE223D100890A83 /* Next button.png */; };
@@ -38,9 +32,17 @@
 		5D8CD5381AF73746005CD963 /* settingImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5371AF73746005CD963 /* settingImg.png */; };
 		5D8CD53A1AF7374A005CD963 /* settingImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5391AF7374A005CD963 /* settingImg@2x.png */; };
 		5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8CD53C1AF737CF005CD963 /* SettingsViewController.m */; };
-		5D8CD5411AF7442F005CD963 /* Edit bg X2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5401AF7442F005CD963 /* Edit bg X2.png */; };
-		5D8CD5431AF74436005CD963 /* Edit bg X1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5421AF74436005CD963 /* Edit bg X1.png */; };
+		5D8CD5411AF7442F005CD963 /* Edit bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5401AF7442F005CD963 /* Edit bg@2x.png */; };
+		5D8CD5431AF74436005CD963 /* Edit bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D8CD5421AF74436005CD963 /* Edit bg.png */; };
 		5D9A24971AF17BA400A87BF9 /* user profile bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A24961AF17BA400A87BF9 /* user profile bg.png */; };
+		5DAAB3C01AFEB97500E9B5D0 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3BF1AFEB97500E9B5D0 /* SettingsTableViewController.m */; };
+		5DAAB3C61AFEDD0100E9B5D0 /* UpdateNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3C51AFEDD0100E9B5D0 /* UpdateNameViewController.m */; };
+		5DAAB3C91AFEDD4400E9B5D0 /* UpdateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3C81AFEDD4400E9B5D0 /* UpdateEmailViewController.m */; };
+		5DAAB3CC1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3CB1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m */; };
+		5DAAB3CF1AFEDDCD00E9B5D0 /* UpdateMajorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3CE1AFEDDCD00E9B5D0 /* UpdateMajorViewController.m */; };
+		5DAAB3D21AFEDE0400E9B5D0 /* UpdateYearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3D11AFEDE0400E9B5D0 /* UpdateYearViewController.m */; };
+		5DAAB3D51AFEDE5800E9B5D0 /* ShowSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3D41AFEDE5800E9B5D0 /* ShowSettingsViewController.m */; };
+		5DAAB3D81AFEDEC100E9B5D0 /* UpdateImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAAB3D71AFEDEC100E9B5D0 /* UpdateImgViewController.m */; };
 		5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */; };
 		5DC741FE1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */; };
 		5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC741FB1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png */; };
@@ -155,24 +157,13 @@
 		4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
 		4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
-		4F50033E1AF59A140055C7A9 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		4F50033F1AF59A140055C7A9 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		4F5003411AF59A9F0055C7A9 /* MessageMateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMateTableViewController.h; sourceTree = "<group>"; };
-		4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageMateTableViewController.m; sourceTree = "<group>"; };
-		4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDialogViewController.h; sourceTree = "<group>"; };
-		4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDialogViewController.m; sourceTree = "<group>"; };
-		4F661EB31AF6C9010005E982 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
-		4F661EB41AF6C9010005E982 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
-		4F661EB61AF6C9D50005E982 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
-		4F661EB71AF6C9D50005E982 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
-		5D08370D1AFAD786002F4394 /* add button X1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button X1.png"; sourceTree = "<group>"; };
-		5D08370E1AFAD786002F4394 /* add button X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button X2.png"; sourceTree = "<group>"; };
-		5D08370F1AFAD786002F4394 /* add button X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button X3.png"; sourceTree = "<group>"; };
+		5D08370D1AFAD786002F4394 /* add button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button.png"; sourceTree = "<group>"; };
+		5D08370E1AFAD786002F4394 /* add button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@2x.png"; sourceTree = "<group>"; };
+		5D08370F1AFAD786002F4394 /* add button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@3x.png"; sourceTree = "<group>"; };
 		5D0837131AFB0E32002F4394 /* BuildSkillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildSkillTableViewController.h; sourceTree = "<group>"; };
 		5D0837141AFB0E32002F4394 /* BuildSkillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildSkillTableViewController.m; sourceTree = "<group>"; };
 		5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
-		5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		5D32FB2F1AF7F583005031A8 /* BuildProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildProfileViewController.h; sourceTree = "<group>"; };
 		5D32FB301AF7F583005031A8 /* BuildProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildProfileViewController.m; sourceTree = "<group>"; };
 		5D3B63911AE223D100890A83 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBackground.png; path = SkillSwap/loginBackground.png; sourceTree = "<group>"; };
@@ -193,9 +184,25 @@
 		5D8CD5391AF7374A005CD963 /* settingImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingImg@2x.png"; sourceTree = "<group>"; };
 		5D8CD53B1AF737CF005CD963 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		5D8CD53C1AF737CF005CD963 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		5D8CD5401AF7442F005CD963 /* Edit bg X2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Edit bg X2.png"; sourceTree = "<group>"; };
-		5D8CD5421AF74436005CD963 /* Edit bg X1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Edit bg X1.png"; sourceTree = "<group>"; };
+		5D8CD5401AF7442F005CD963 /* Edit bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Edit bg@2x.png"; sourceTree = "<group>"; };
+		5D8CD5421AF74436005CD963 /* Edit bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Edit bg.png"; sourceTree = "<group>"; };
 		5D9A24961AF17BA400A87BF9 /* user profile bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user profile bg.png"; sourceTree = "<group>"; };
+		5DAAB3BE1AFEB97500E9B5D0 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		5DAAB3BF1AFEB97500E9B5D0 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		5DAAB3C41AFEDD0100E9B5D0 /* UpdateNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateNameViewController.h; sourceTree = "<group>"; };
+		5DAAB3C51AFEDD0100E9B5D0 /* UpdateNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateNameViewController.m; sourceTree = "<group>"; };
+		5DAAB3C71AFEDD4400E9B5D0 /* UpdateEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateEmailViewController.h; sourceTree = "<group>"; };
+		5DAAB3C81AFEDD4400E9B5D0 /* UpdateEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateEmailViewController.m; sourceTree = "<group>"; };
+		5DAAB3CA1AFEDD8500E9B5D0 /* UpdateSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateSchoolViewController.h; sourceTree = "<group>"; };
+		5DAAB3CB1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateSchoolViewController.m; sourceTree = "<group>"; };
+		5DAAB3CD1AFEDDCD00E9B5D0 /* UpdateMajorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMajorViewController.h; sourceTree = "<group>"; };
+		5DAAB3CE1AFEDDCD00E9B5D0 /* UpdateMajorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMajorViewController.m; sourceTree = "<group>"; };
+		5DAAB3D01AFEDE0400E9B5D0 /* UpdateYearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateYearViewController.h; sourceTree = "<group>"; };
+		5DAAB3D11AFEDE0400E9B5D0 /* UpdateYearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateYearViewController.m; sourceTree = "<group>"; };
+		5DAAB3D31AFEDE5800E9B5D0 /* ShowSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowSettingsViewController.h; sourceTree = "<group>"; };
+		5DAAB3D41AFEDE5800E9B5D0 /* ShowSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowSettingsViewController.m; sourceTree = "<group>"; };
+		5DAAB3D61AFEDEC100E9B5D0 /* UpdateImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateImgViewController.h; sourceTree = "<group>"; };
+		5DAAB3D71AFEDEC100E9B5D0 /* UpdateImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateImgViewController.m; sourceTree = "<group>"; };
 		5DC741F91ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Event_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC741FA1ADCDA70006EF2C8 /* ui element_Message_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_Message_Page 1@3x.png"; sourceTree = "<group>"; };
 		5DC741FB1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ui element_People_Page 1@3x.png"; sourceTree = "<group>"; };
@@ -369,21 +376,27 @@
 			name = People;
 			sourceTree = "<group>";
 		};
-		4F50033D1AF599EA0055C7A9 /* Message */ = {
+		4F50033D1AF599EA0055C7A9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4F50033E1AF59A140055C7A9 /* MessageViewController.h */,
-				4F50033F1AF59A140055C7A9 /* MessageViewController.m */,
-				4F5003411AF59A9F0055C7A9 /* MessageMateTableViewController.h */,
-				4F5003421AF59A9F0055C7A9 /* MessageMateTableViewController.m */,
-				4F5003441AF5A37E0055C7A9 /* ChatDialogViewController.h */,
-				4F5003451AF5A37E0055C7A9 /* ChatDialogViewController.m */,
-				4F661EB31AF6C9010005E982 /* ChatMessageCell.h */,
-				4F661EB41AF6C9010005E982 /* ChatMessageCell.m */,
-				4F661EB61AF6C9D50005E982 /* ChatMessage.h */,
-				4F661EB71AF6C9D50005E982 /* ChatMessage.m */,
+				5DAAB3BE1AFEB97500E9B5D0 /* SettingsTableViewController.h */,
+				5DAAB3BF1AFEB97500E9B5D0 /* SettingsTableViewController.m */,
+				5DAAB3C41AFEDD0100E9B5D0 /* UpdateNameViewController.h */,
+				5DAAB3C51AFEDD0100E9B5D0 /* UpdateNameViewController.m */,
+				5DAAB3C71AFEDD4400E9B5D0 /* UpdateEmailViewController.h */,
+				5DAAB3C81AFEDD4400E9B5D0 /* UpdateEmailViewController.m */,
+				5DAAB3CA1AFEDD8500E9B5D0 /* UpdateSchoolViewController.h */,
+				5DAAB3CB1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m */,
+				5DAAB3CD1AFEDDCD00E9B5D0 /* UpdateMajorViewController.h */,
+				5DAAB3CE1AFEDDCD00E9B5D0 /* UpdateMajorViewController.m */,
+				5DAAB3D01AFEDE0400E9B5D0 /* UpdateYearViewController.h */,
+				5DAAB3D11AFEDE0400E9B5D0 /* UpdateYearViewController.m */,
+				5DAAB3D31AFEDE5800E9B5D0 /* ShowSettingsViewController.h */,
+				5DAAB3D41AFEDE5800E9B5D0 /* ShowSettingsViewController.m */,
+				5DAAB3D61AFEDEC100E9B5D0 /* UpdateImgViewController.h */,
+				5DAAB3D71AFEDEC100E9B5D0 /* UpdateImgViewController.m */,
 			);
-			name = Message;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		5F1108201AD6325F00E47080 /* SignUpImg */ = {
@@ -485,7 +498,7 @@
 				5F9EEADB1ACA48C400D6D23E /* Main.storyboard */,
 				5FC635D61AFC3DD8006B5AF4 /* SignInOut */,
 				5F42FAA51AE18ADB00362C54 /* Event */,
-				4F50033D1AF599EA0055C7A9 /* Message */,
+				4F50033D1AF599EA0055C7A9 /* Settings */,
 				5FBF802A1AE1909500FA3A16 /* Profile */,
 				5FCA00081ACCF36E001951E0 /* TabBarController.h */,
 				5FCA00091ACCF36E001951E0 /* TabBarController.m */,
@@ -563,7 +576,6 @@
 				5D6584291AE87A17001632AD /* ProfileTableViewCell.m */,
 				5D0B1FD81AEA1ABF004E6034 /* EditProfileViewController.h */,
 				5D0B1FD91AEA1ABF004E6034 /* EditProfileViewController.m */,
-				5D0B1FDA1AEA1ABF004E6034 /* EditProfileViewController.xib */,
 				5D32FB2F1AF7F583005031A8 /* BuildProfileViewController.h */,
 				5D32FB301AF7F583005031A8 /* BuildProfileViewController.m */,
 				5D0837131AFB0E32002F4394 /* BuildSkillTableViewController.h */,
@@ -635,14 +647,14 @@
 				5D8CD5371AF73746005CD963 /* settingImg.png */,
 				5D8CD5391AF7374A005CD963 /* settingImg@2x.png */,
 				5D8CD5351AF7365C005CD963 /* settingImg@3x.png */,
-				5D08370D1AFAD786002F4394 /* add button X1.png */,
-				5D08370E1AFAD786002F4394 /* add button X2.png */,
-				5D08370F1AFAD786002F4394 /* add button X3.png */,
+				5D08370D1AFAD786002F4394 /* add button.png */,
+				5D08370E1AFAD786002F4394 /* add button@2x.png */,
+				5D08370F1AFAD786002F4394 /* add button@3x.png */,
 				5D3B63911AE223D100890A83 /* loginBackground.png */,
 				5D3B63931AE223D100890A83 /* Next button.png */,
 				5D3B63941AE223D100890A83 /* Save button.png */,
-				5D8CD5421AF74436005CD963 /* Edit bg X1.png */,
-				5D8CD5401AF7442F005CD963 /* Edit bg X2.png */,
+				5D8CD5421AF74436005CD963 /* Edit bg.png */,
+				5D8CD5401AF7442F005CD963 /* Edit bg@2x.png */,
 				5D9A24961AF17BA400A87BF9 /* user profile bg.png */,
 				5D3B63951AE223D100890A83 /* Sign In button.png */,
 				5D3B63961AE223D100890A83 /* Sign Up button.png */,
@@ -750,13 +762,12 @@
 				5D8CD5381AF73746005CD963 /* settingImg.png in Resources */,
 				5D3B63A51AE223D100890A83 /* Sign In button.png in Resources */,
 				5D8CD53A1AF7374A005CD963 /* settingImg@2x.png in Resources */,
-				5D8CD5431AF74436005CD963 /* Edit bg X1.png in Resources */,
+				5D8CD5431AF74436005CD963 /* Edit bg.png in Resources */,
 				5DC741FD1ADCDA70006EF2C8 /* ui element_Event_Page 1@3x.png in Resources */,
 				5FC635D31AFC3DB1006B5AF4 /* SignInViewController.xib in Resources */,
 				5FBF80341AE31DD300FA3A16 /* MoreButton.png in Resources */,
 				5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */,
 				5F4A5D011AF846D5006BBCD0 /* heartEmpty.png in Resources */,
-				5D0B1FDC1AEA1ABF004E6034 /* EditProfileViewController.xib in Resources */,
 				5FC6364D1AFD741E006B5AF4 /* checkImg.png in Resources */,
 				5F4A5D021AF846D5006BBCD0 /* heartEmpty@2x.png in Resources */,
 				5DC741FF1ADCDA70006EF2C8 /* ui element_People_Page 1@3x.png in Resources */,
@@ -768,7 +779,7 @@
 				5D3B63AB1AE223D100890A83 /* user image5.png in Resources */,
 				5D3B63A71AE223D100890A83 /* user image1.png in Resources */,
 				5D3B63AA1AE223D100890A83 /* user image4.png in Resources */,
-				5D8CD5411AF7442F005CD963 /* Edit bg X2.png in Resources */,
+				5D8CD5411AF7442F005CD963 /* Edit bg@2x.png in Resources */,
 				5F4A5D071AF852EE006BBCD0 /* hostImg.png in Resources */,
 				5FC635DF1AFC480A006B5AF4 /* startImg.png in Resources */,
 				5D3B63A61AE223D100890A83 /* Sign Up button.png in Resources */,
@@ -792,7 +803,7 @@
 				5F4A5D131AF855BD006BBCD0 /* locationImg.png in Resources */,
 				5DC742051ADCDBA9006EF2C8 /* ui element_Add_Page 1@3x.png in Resources */,
 				5FC636481AFD7416006B5AF4 /* uncheckImg@2x.png in Resources */,
-				5D0837101AFAD786002F4394 /* add button X1.png in Resources */,
+				5D0837101AFAD786002F4394 /* add button.png in Resources */,
 				5FC635F01AFCA068006B5AF4 /* blankTextFieldImg.png in Resources */,
 				5F4A5D091AF852EE006BBCD0 /* hostImg@3x.png in Resources */,
 				5F4A5CEA1AF82A90006BBCD0 /* Menu_PopOver_BG.png in Resources */,
@@ -802,7 +813,7 @@
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
 				5F4A5D141AF855BD006BBCD0 /* locationImg@2x.png in Resources */,
 				5FC635E11AFC48E7006B5AF4 /* signInImg.png in Resources */,
-				5D0837121AFAD786002F4394 /* add button X3.png in Resources */,
+				5D0837121AFAD786002F4394 /* add button@3x.png in Resources */,
 				5F4A5D0F1AF855B1006BBCD0 /* calendarImg@3x.png in Resources */,
 				5D3B63A91AE223D100890A83 /* user image3.png in Resources */,
 				5D3B63A41AE223D100890A83 /* Save button.png in Resources */,
@@ -817,7 +828,7 @@
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
 				5FC635E41AFC4D24006B5AF4 /* iconLock.png in Resources */,
 				5D3B63A11AE223D100890A83 /* loginBackground.png in Resources */,
-				5D0837111AFAD786002F4394 /* add button X2.png in Resources */,
+				5D0837111AFAD786002F4394 /* add button@2x.png in Resources */,
 				5F4A5CFB1AF845A4006BBCD0 /* heartFilled.png in Resources */,
 				5F4A5D031AF846D5006BBCD0 /* heartEmpty@3x.png in Resources */,
 			);
@@ -840,15 +851,17 @@
 				5F7E03091AD38BAB00CDBF42 /* EventTableViewController.m in Sources */,
 				5F735CBB1AEDE7E600DF0811 /* EventResultsTableViewController.m in Sources */,
 				5F9EEAD71ACA48C400D6D23E /* AppDelegate.m in Sources */,
+				5DAAB3CF1AFEDDCD00E9B5D0 /* UpdateMajorViewController.m in Sources */,
+				5DAAB3C91AFEDD4400E9B5D0 /* UpdateEmailViewController.m in Sources */,
 				4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */,
 				5D0837151AFB0E32002F4394 /* BuildSkillTableViewController.m in Sources */,
-				4F5003401AF59A140055C7A9 /* MessageViewController.m in Sources */,
+				5DAAB3D81AFEDEC100E9B5D0 /* UpdateImgViewController.m in Sources */,
 				5FC635F31AFD282F006B5AF4 /* GuideViewController4.m in Sources */,
 				5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */,
-				4F661EB51AF6C9010005E982 /* ChatMessageCell.m in Sources */,
 				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5FC6368A1AFD9B3D006B5AF4 /* GuideViewController8.m in Sources */,
+				5DAAB3D51AFEDE5800E9B5D0 /* ShowSettingsViewController.m in Sources */,
 				5D0B1FDB1AEA1ABF004E6034 /* EditProfileViewController.m in Sources */,
 				5F4A5CF01AF83093006BBCD0 /* EventPopover.m in Sources */,
 				5FC636521AFD746C006B5AF4 /* SelectTableViewCell.m in Sources */,
@@ -857,20 +870,21 @@
 				4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */,
 				5FC635E81AFC8203006B5AF4 /* GuideViewController1.m in Sources */,
 				5FC635EB1AFC822F006B5AF4 /* GuideViewController2.m in Sources */,
-				4F5003461AF5A37E0055C7A9 /* ChatDialogViewController.m in Sources */,
+				5DAAB3D21AFEDE0400E9B5D0 /* UpdateYearViewController.m in Sources */,
 				5F1108291AD6345100E47080 /* SignInViewController.m in Sources */,
 				5FC636431AFD7271006B5AF4 /* GuideViewController6.m in Sources */,
 				5D32FB321AF7F583005031A8 /* BuildProfileViewController.m in Sources */,
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
 				5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
+				5DAAB3C61AFEDD0100E9B5D0 /* UpdateNameViewController.m in Sources */,
 				4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */,
 				5FC636551AFD8557006B5AF4 /* GuideViewController7.m in Sources */,
-				4F661EB81AF6C9D50005E982 /* ChatMessage.m in Sources */,
 				5FC635EE1AFC8275006B5AF4 /* GuideViewController3.m in Sources */,
+				5DAAB3CC1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m in Sources */,
 				5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,
-				4F5003431AF59A9F0055C7A9 /* MessageMateTableViewController.m in Sources */,
+				5DAAB3C01AFEB97500E9B5D0 /* SettingsTableViewController.m in Sources */,
 				5FC635F61AFD361E006B5AF4 /* GuideViewController5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

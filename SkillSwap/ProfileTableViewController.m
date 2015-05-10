@@ -111,7 +111,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0)
-        return 200.0f;
+        return 223.0f;
     return 44.0f;
 }
 
@@ -141,8 +141,8 @@
         PFUser *user = [PFUser currentUser];
         cell.realname.text = [user objectForKey:@"realName"];
         cell.realname.textColor = [UIColor whiteColor];
-        cell.usertitle.text = [user objectForKey:@"userTitle"];
-        cell.usertitle.textColor = [UIColor whiteColor];
+//        cell.usertitle.text = [user objectForKey:@"userTitle"];
+//        cell.usertitle.textColor = [UIColor whiteColor];
         cell.usermajor.text = [user objectForKey:@"major"];
         cell.usermajor.textColor = [UIColor whiteColor];
         cell.enrollyear.text = [user objectForKey:@"enrollYear"];
@@ -158,15 +158,15 @@
             }
         }];
         
-        UIButton *editProfileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        editProfileButton.frame = CGRectMake(35.0f, 140.0f, 80.0f, 30.0f);
-        [editProfileButton setTitle:@"Edit Profile" forState:UIControlStateNormal];
-        [editProfileButton setBackgroundImage:[UIImage imageNamed:@"Edit bg X1.png"] forState:UIControlStateNormal];
-        
-        [cell addSubview:editProfileButton];
-        [editProfileButton addTarget:self
-                            action:@selector(editProfile:)
-                  forControlEvents:UIControlEventTouchUpInside];
+//        UIButton *editProfileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//        editProfileButton.frame = CGRectMake(35.0f, 140.0f, 80.0f, 30.0f);
+//        [editProfileButton setTitle:@"Edit Profile" forState:UIControlStateNormal];
+//        [editProfileButton setBackgroundImage:[UIImage imageNamed:@"Edit bg X1.png"] forState:UIControlStateNormal];
+//        
+//        [cell addSubview:editProfileButton];
+//        [editProfileButton addTarget:self
+//                            action:@selector(editProfile:)
+//                  forControlEvents:UIControlEventTouchUpInside];
         
         
 //        cell.userInteractionEnabled = NO;
@@ -190,10 +190,10 @@
 }
 
 
--(void) editProfile: (id)sender {
-//    NSLog(@"Edit");
-    [self presentEditProfileViewController];
-}
+//-(void) editProfile: (id)sender {
+////    NSLog(@"Edit");
+//    [self presentEditProfileViewController];
+//}
 
 //- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 //{
@@ -207,9 +207,9 @@
 //}
 
 
-- (IBAction)settings:(id)sender {
-    [self performSegueWithIdentifier:@"showSettings" sender:self];
-}
+//- (IBAction)settings:(id)sender {
+//    [self performSegueWithIdentifier:@"showSettings" sender:self];
+//}
 
 //- (void)showMoreOptions:(id)sender {
 //    
@@ -245,20 +245,19 @@
         [headerView setBackgroundColor:[UIColor colorWithRed:214/255.0 green:213/255.0 blue:215/255.0 alpha:1]];
         
         UIButton *addButton = [[UIButton alloc]init];
-        addButton.frame = CGRectMake(10, 3, 25, 25);
+        addButton.frame = CGRectMake(self.view.frame.size.width-40, 3, 25, 25);
 
-        [addButton setBackgroundImage:[UIImage imageNamed:@"add button X3.png"] forState:UIControlStateNormal];
+        [addButton setBackgroundImage:[UIImage imageNamed:@"add button.png"] forState:UIControlStateNormal];
 //        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 1;
         
         [addButton addTarget:self action:@selector(addKnownSkill:) forControlEvents:UIControlEventTouchDown];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(45, 6, 100, 25)];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, 6, 100, 25)];
         title.text = @"My Skills";
         
         [headerView addSubview:title];
         [headerView addSubview:addButton];
-        
 
         
     } else if (section == 2) {
@@ -266,14 +265,14 @@
         [headerView setBackgroundColor:[UIColor colorWithRed:214/255.0 green:213/255.0 blue:215/255.0 alpha:1]];
 
         UIButton *addButton = [[UIButton alloc]init];
-        addButton.frame = CGRectMake(10, 3, 25, 25);
-        [addButton setBackgroundImage:[UIImage imageNamed:@"add button X3.png"] forState:UIControlStateNormal];
+        addButton.frame = CGRectMake(self.view.frame.size.width-40, 3, 25, 25);
+        [addButton setBackgroundImage:[UIImage imageNamed:@"add button.png"] forState:UIControlStateNormal];
 //        [addButton setBackgroundImage:[UIImage imageNamed:@"ui element_Add_Page 1@3x.png"] forState:UIControlStateHighlighted];
         addButton.tag = 2;
         
         [addButton addTarget:self action:@selector(addToLearnSkill:) forControlEvents:UIControlEventTouchDown];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(45, 6, 120, 25)];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, 6, 120, 25)];
         title.text = @"Want to Learn";
 
         [headerView addSubview:title];

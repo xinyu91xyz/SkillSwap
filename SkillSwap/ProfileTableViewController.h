@@ -22,8 +22,8 @@
 
 //@property (nonatomic, weak) id<ProfileTableViewControllerDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *settings;
-- (IBAction)settings:(id)sender;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *settings;
+//- (IBAction)settings:(id)sender;
 
 
 

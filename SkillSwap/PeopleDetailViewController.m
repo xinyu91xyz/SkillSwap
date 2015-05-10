@@ -7,7 +7,7 @@
 //
 
 #import "PeopleDetailViewController.h"
-#import "ChatDialogViewController.h"
+//#import "ChatDialogViewController.h"
 @interface PeopleDetailViewController()
 
 @end
