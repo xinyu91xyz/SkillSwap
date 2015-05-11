@@ -7,6 +7,7 @@
 //
 
 #import "PeopleTableViewController.h"
+#import "PeopleDetailViewController.h"
 #import <Parse/Parse.h>
 
 @implementation PeopleTableViewController
@@ -64,8 +65,14 @@ NSMutableArray *wantRes;
 
     return cell;
 }
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //[self.tableView setBounces:NO];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFUser *selectedUser = self.users[indexPath.row];
+    PeopleDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PeopleDetailViewController"];
+    detailViewController.title = @"People";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    detailViewController.object = selectedUser;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -12,6 +12,8 @@
 		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
 		4F2F37AA1B0053300037490B /* PeopleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F37A81B0053300037490B /* PeopleCell.m */; };
 		4F2F37AB1B0053300037490B /* PeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2F37A91B0053300037490B /* PeopleCell.xib */; };
+		4F2F37AD1B00824C0037490B /* PeopleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2F37AC1B00824C0037490B /* PeopleDetailCell.xib */; };
+		4F2F37B01B0082990037490B /* PeopleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F37AF1B0082990037490B /* PeopleDetailCell.m */; };
 		5D0837101AFAD786002F4394 /* add button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button.png */; };
 		5D0837111AFAD786002F4394 /* add button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370E1AFAD786002F4394 /* add button@2x.png */; };
 		5D0837121AFAD786002F4394 /* add button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370F1AFAD786002F4394 /* add button@3x.png */; };
@@ -162,6 +164,9 @@
 		4F2F37A71B0053300037490B /* PeopleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleCell.h; sourceTree = "<group>"; };
 		4F2F37A81B0053300037490B /* PeopleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleCell.m; sourceTree = "<group>"; };
 		4F2F37A91B0053300037490B /* PeopleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleCell.xib; sourceTree = "<group>"; };
+		4F2F37AC1B00824C0037490B /* PeopleDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleDetailCell.xib; sourceTree = "<group>"; };
+		4F2F37AE1B0082990037490B /* PeopleDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleDetailCell.h; sourceTree = "<group>"; };
+		4F2F37AF1B0082990037490B /* PeopleDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleDetailCell.m; sourceTree = "<group>"; };
 		5D08370D1AFAD786002F4394 /* add button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button.png"; sourceTree = "<group>"; };
 		5D08370E1AFAD786002F4394 /* add button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@2x.png"; sourceTree = "<group>"; };
 		5D08370F1AFAD786002F4394 /* add button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@3x.png"; sourceTree = "<group>"; };
@@ -371,6 +376,7 @@
 		4F0675E21AE1B9C1004BB7C1 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				4F2F37AC1B00824C0037490B /* PeopleDetailCell.xib */,
 				4F2F37A71B0053300037490B /* PeopleCell.h */,
 				4F2F37A81B0053300037490B /* PeopleCell.m */,
 				4F2F37A91B0053300037490B /* PeopleCell.xib */,
@@ -380,6 +386,8 @@
 				4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */,
 				4F0675E31AE1BB77004BB7C1 /* PeopleDetailViewController.h */,
 				4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */,
+				4F2F37AE1B0082990037490B /* PeopleDetailCell.h */,
+				4F2F37AF1B0082990037490B /* PeopleDetailCell.m */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -826,6 +834,7 @@
 				5D3B63A91AE223D100890A83 /* user image3.png in Resources */,
 				5D3B63A41AE223D100890A83 /* Save button.png in Resources */,
 				5FCAFFF51ACCED3C001951E0 /* Default-568h@2x.png in Resources */,
+				4F2F37AD1B00824C0037490B /* PeopleDetailCell.xib in Resources */,
 				5DC742001ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png in Resources */,
 				5FC6364E1AFD741E006B5AF4 /* checkImg@2x.png in Resources */,
 				5D3F22DC1AF2ACAB00CC3D29 /* pink bg.png in Resources */,
@@ -886,6 +895,7 @@
 				5F7E030C1AD3978900CDBF42 /* EventDetailViewController.m in Sources */,
 				5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */,
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
+				4F2F37B01B0082990037490B /* PeopleDetailCell.m in Sources */,
 				5DAAB3C61AFEDD0100E9B5D0 /* UpdateNameViewController.m in Sources */,
 				4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */,
 				5FC636551AFD8557006B5AF4 /* GuideViewController7.m in Sources */,
