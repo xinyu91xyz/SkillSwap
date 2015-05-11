@@ -10,49 +10,89 @@
 #import <Parse/Parse.h>
 
 @implementation PeopleTableViewController
+NSMutableArray *knowRes;
+NSMutableArray *wantRes;
 
--(id)initWithCoder:(NSCoder *)aCoder {
-    self = [super initWithCoder:aCoder];
-    if(self) {
-        self.parseClassName = @"_User";
-        // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"text";
-        
-        // Uncomment the following line to specify the key of a PFFile on the PFObject to display in the imageView of the default cell style
-        // self.imageKey = @"image";
-        
-        // Whether the built-in pull-to-refresh is enabled
-        self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
-        self.paginationEnabled = YES;
-        
-        // The number of objects to show per page
-        self.objectsPerPage = 25;
-    }
-    return self;
-
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.users count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PeopleCell *cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"PeopleCellId" forIndexPath:indexPath];
+    PFUser *user = self.users[indexPath.row];
+    PFFile *file = [user objectForKey:@"userImg"];
+    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if(!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.userimage.image = image;
+        }
+    }];
     
+    cell.username.text = [user objectForKey:@"realName"];
+    cell.major.text = [user objectForKey:@"major"];
+    NSString *userId = [user objectId];
+
+    PFQuery *query1 = [PFQuery queryWithClassName:@"UserSkill"];
+    [query1 whereKey:@"userId" equalTo:userId];
+    [query1 whereKey:@"skillType" equalTo:@"known"];
+    [query1 selectKeys:@[@"skillName"]];
+    knowRes = [[NSMutableArray alloc] initWithArray:[query1 findObjects]];
+    NSInteger knowCount = [knowRes count];
+    NSMutableString *knowStr = [NSMutableString string];
+    for(int i = 0; i < knowCount-1; i++) {
+        NSString *tmp = knowRes[i][@"skillName"];
+        [knowStr appendString:tmp];
+        [knowStr appendString:@","];
+    }
+    [knowStr appendString:knowRes[knowCount-1][@"skillName"]];
+    cell.skills.text = knowStr;
+    
+    PFQuery *query2 = [PFQuery queryWithClassName:@"UserSkill"];
+    [query2 whereKey:@"userId" equalTo:userId];
+    [query2 whereKey:@"skillType" equalTo:@"toLearn"];
+    [query2 selectKeys:@[@"skillName"]];
+    wantRes = [[NSMutableArray alloc] initWithArray:[query2 findObjects]];
+    NSInteger wantCount = [wantRes count];
+    NSMutableString *wantStr = [NSMutableString string];
+    for(int i = 0; i < wantCount-1; i++) {
+        NSString *tmp = wantRes[i][@"skillName"];
+        [wantStr appendString:tmp];
+        [wantStr appendString:@","];
+    }
+    [wantStr appendString:wantRes[wantCount-1][@"skillName"]];
+    cell.wants.text = wantStr;
+
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //[self.tableView setBounces:NO];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 95;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     PFQuery *query = [PFUser query];
-       //[query orderByAscending:@"createdAt"];
+    //[query orderByAscending:@"createdAt"];
+    NSString *myUserId = [PFUser currentUser][@"username"];
+    [query whereKey:@"username" notEqualTo:myUserId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error) {
             self.users = objects;
             [self.tableView reloadData];
         }
-        NSLog(@"objects");
     }];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([PeopleCell class]) bundle:nil] forCellReuseIdentifier:@"PeopleCellId"];
     
-//    self.tabBarController.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"myImage.png"];
+    //    self.tabBarController.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"myImage.png"];
     
-
+    
 }
 
 //- (PFQuery *) queryForTable {
@@ -60,24 +100,15 @@
 //    [query orderByAscending:@"createdAt"];
 //    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 //        if(!error) {
-//         
+//
 //           [self.tableView reloadData];
 //        }
 //    }];
 //    return query;
 //}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"PeopleCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    PFUser *user = self.users[indexPath.row];
-    cell.textLabel.text = user.username;
-    return cell;
-}
+
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

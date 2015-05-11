@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
+#import "PeopleCell.h"
 
-@interface PeopleTableViewController : PFQueryTableViewController
+@interface PeopleTableViewController : UITableViewController
 @property (nonatomic) NSArray *users;
+
 
 @end

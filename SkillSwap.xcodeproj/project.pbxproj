@@ -10,6 +10,8 @@
 		4F0675E51AE1BB77004BB7C1 /* PeopleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0675E41AE1BB77004BB7C1 /* PeopleDetailViewController.m */; };
 		4F1F9BFF1AE1C181009564DE /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */; };
 		4F1F9C001AE1C181009564DE /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */; };
+		4F2F37AA1B0053300037490B /* PeopleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F37A81B0053300037490B /* PeopleCell.m */; };
+		4F2F37AB1B0053300037490B /* PeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2F37A91B0053300037490B /* PeopleCell.xib */; };
 		5D0837101AFAD786002F4394 /* add button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button.png */; };
 		5D0837111AFAD786002F4394 /* add button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370E1AFAD786002F4394 /* add button@2x.png */; };
 		5D0837121AFAD786002F4394 /* add button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370F1AFAD786002F4394 /* add button@3x.png */; };
@@ -157,6 +159,9 @@
 		4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
 		4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
 		4F1F9BFE1AE1C181009564DE /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
+		4F2F37A71B0053300037490B /* PeopleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleCell.h; sourceTree = "<group>"; };
+		4F2F37A81B0053300037490B /* PeopleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleCell.m; sourceTree = "<group>"; };
+		4F2F37A91B0053300037490B /* PeopleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleCell.xib; sourceTree = "<group>"; };
 		5D08370D1AFAD786002F4394 /* add button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button.png"; sourceTree = "<group>"; };
 		5D08370E1AFAD786002F4394 /* add button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@2x.png"; sourceTree = "<group>"; };
 		5D08370F1AFAD786002F4394 /* add button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@3x.png"; sourceTree = "<group>"; };
@@ -366,6 +371,9 @@
 		4F0675E21AE1B9C1004BB7C1 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				4F2F37A71B0053300037490B /* PeopleCell.h */,
+				4F2F37A81B0053300037490B /* PeopleCell.m */,
+				4F2F37A91B0053300037490B /* PeopleCell.xib */,
 				4F1F9BFB1AE1C181009564DE /* PeopleTableViewController.h */,
 				4F1F9BFC1AE1C181009564DE /* PeopleTableViewController.m */,
 				4F1F9BFD1AE1C181009564DE /* PeopleViewController.h */,
@@ -826,6 +834,7 @@
 				5F4A5CFC1AF845A4006BBCD0 /* heartFilled@2x.png in Resources */,
 				5F4A5CEC1AF82A90006BBCD0 /* options_pointer.png in Resources */,
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
+				4F2F37AB1B0053300037490B /* PeopleCell.xib in Resources */,
 				5FC635E41AFC4D24006B5AF4 /* iconLock.png in Resources */,
 				5D3B63A11AE223D100890A83 /* loginBackground.png in Resources */,
 				5D0837111AFAD786002F4394 /* add button@2x.png in Resources */,
@@ -882,6 +891,7 @@
 				5FC636551AFD8557006B5AF4 /* GuideViewController7.m in Sources */,
 				5FC635EE1AFC8275006B5AF4 /* GuideViewController3.m in Sources */,
 				5DAAB3CC1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m in Sources */,
+				4F2F37AA1B0053300037490B /* PeopleCell.m in Sources */,
 				5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,
 				5DAAB3C01AFEB97500E9B5D0 /* SettingsTableViewController.m in Sources */,
