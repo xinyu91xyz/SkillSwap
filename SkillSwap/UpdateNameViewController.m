@@ -22,6 +22,8 @@
     // Do any additional setup after loading the view.
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,21 +37,19 @@
         [alertView show];
     }
     else {
-//        // update user real name
-//        PFQuery *userrealname = [PFUser query];
-//        [userrealname whereKey:@"objectId" equalTo:[PFUser currentUser]];
-//        
-//        [userrealname getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
-//         {
-//             PFUser *currentUser = [PFUser currentUser];
-//             [currentUser setObject:self.nameTextField.text forKey:@"realName"];
-//             [[PFUser currentUser] saveInBackground];
-//             
-//         }];
+        // update user real name
+        PFQuery *userrealname = [PFUser query];
+        [userrealname whereKey:@"objectId" equalTo:[PFUser currentUser]];
+        
+        [userrealname getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+         {
+             PFUser *currentUser = [PFUser currentUser];
+             [currentUser setObject:self.nameTextField.text forKey:@"realName"];
+             [[PFUser currentUser] saveInBackground];
+             
+         }];
         
     }
-    
-    
     return true;
 }
 

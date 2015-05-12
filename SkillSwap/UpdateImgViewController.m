@@ -7,6 +7,7 @@
 //
 
 #import "UpdateImgViewController.h"
+#import <Parse/Parse.h>
 
 @interface UpdateImgViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic) UIImagePickerController *imagePickerController;
@@ -141,4 +142,19 @@
 }
 */
 
+- (IBAction)uploadImgPressed:(id)sender {
+    
+    if (self.imageView.image != [UIImage imageNamed:@"defaultPhoto"]) {
+
+        NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
+        [imageFile save];
+        
+        PFUser *user = [PFUser currentUser];
+        [user setObject:imageFile forKey:@"userImg"];
+        [user save];
+        
+        
+    }
+}
 @end

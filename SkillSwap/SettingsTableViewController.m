@@ -26,6 +26,8 @@
     
     PFUser *user = [PFUser currentUser];
     
+//    NSData* data = UIImageJPEGRepresentation(self.userImg.image, 1.0f);
+    
     PFFile *file = [user objectForKey:@"userImg"];
     
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -47,7 +49,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView reloadData];
+    [self viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {

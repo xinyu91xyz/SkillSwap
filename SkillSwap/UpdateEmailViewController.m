@@ -34,21 +34,21 @@
         [alertView show];
     }
     else {
-//        if (![self.emailTextField.text isEqualToString:@""]) {
-//            
-//            // update user real name
-//            PFQuery *useremail = [PFUser query];
-//            [useremail whereKey:@"objectId" equalTo:[PFUser currentUser]];
-//            
-//            [useremail getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
-//             {
-//                 PFUser *currentUser = [PFUser currentUser];
-//                 [currentUser setObject:self.emailTextField.text forKey:@"myEmail"];
-//                 [[PFUser currentUser] saveInBackground];
-//                 //             self.showMajor.text = [currentUser objectForKey:@"major"];
-//                 
-//             }];
-//        }
+        if (![self.emailTextField.text isEqualToString:@""]) {
+            
+            // update user real name
+            PFQuery *useremail = [PFUser query];
+            [useremail whereKey:@"objectId" equalTo:[PFUser currentUser]];
+            
+            [useremail getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+             {
+                 PFUser *currentUser = [PFUser currentUser];
+                 [currentUser setObject:self.emailTextField.text forKey:@"myEmail"];
+                 [[PFUser currentUser] saveInBackground];
+                 //             self.showMajor.text = [currentUser objectForKey:@"major"];
+                 
+             }];
+        }
     }
     return true;
 }

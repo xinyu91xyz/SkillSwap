@@ -21,6 +21,9 @@
     
     self.majorPicker.delegate = self;
     
+    PFUser *user = [PFUser currentUser];
+    self.schoolName = [user objectForKey:@"school"];
+    
     if ([self.schoolName isEqualToString:@"The Information School"]) {
         self.majorArray = @[@"Informatics (INFO)",
                             @"Information Management and Technology (IMT)",
@@ -119,7 +122,6 @@
              PFUser *currentUser = [PFUser currentUser];
              [currentUser setObject:self.majorTextField.text forKey:@"major"];
              [[PFUser currentUser] saveInBackground];
-             //             self.showMajor.text = [currentUser objectForKey:@"major"];
              
          }];
     }

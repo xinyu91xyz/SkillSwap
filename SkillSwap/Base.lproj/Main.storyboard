@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dI6-KB-DU5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dI6-KB-DU5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1545,8 +1545,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="majorPicker" destination="xJK-Al-1QE" id="Dpz-QT-5Qd"/>
-                        <outlet property="majorTextField" destination="Scd-hy-6LG" id="H1w-Qs-VLz"/>
+                        <outlet property="majorPicker" destination="xJK-Al-1QE" id="9jH-7W-jaI"/>
+                        <outlet property="majorTextField" destination="Scd-hy-6LG" id="Cg3-FG-Hxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m64-1h-o7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1690,6 +1690,17 @@
                                     <action selector="buttonPressed:" destination="QOV-xU-XvK" eventType="touchUpInside" id="o6R-32-woA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHN-td-ReD">
+                                <rect key="frame" x="266" y="344" width="68" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="0.87450980389999999" green="0.24313725489999999" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImgPressed:" destination="QOV-xU-XvK" eventType="touchUpInside" id="rlY-XU-kQi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1700,6 +1711,8 @@
                             <constraint firstItem="3HR-b5-h8L" firstAttribute="leading" secondItem="CIR-i9-Qgw" secondAttribute="leadingMargin" constant="30" id="PWl-gA-FCB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3HR-b5-h8L" secondAttribute="trailing" constant="30" id="Pnr-9i-GIF"/>
                             <constraint firstItem="7mW-K0-FcR" firstAttribute="top" secondItem="3HR-b5-h8L" secondAttribute="bottom" constant="20" id="cSJ-i5-Fxl"/>
+                            <constraint firstItem="HHN-td-ReD" firstAttribute="top" secondItem="7mW-K0-FcR" secondAttribute="bottom" constant="20" id="hvO-Oi-g0C"/>
+                            <constraint firstAttribute="centerX" secondItem="HHN-td-ReD" secondAttribute="centerX" id="rxh-po-fEk"/>
                         </constraints>
                     </view>
                     <connections>

@@ -7,6 +7,7 @@
 //
 
 #import "UpdateSchoolViewController.h"
+#import "UpdateMajorViewController.h"
 #import <Parse/Parse.h>
 
 @interface UpdateSchoolViewController () <UIPickerViewDelegate>
@@ -32,6 +33,7 @@
 }
 
 - (IBAction)goButtonPressed:(id)sender {
+    
     if (![self.schoolTextField.text isEqualToString:@""]) {
         
         // update user real name
