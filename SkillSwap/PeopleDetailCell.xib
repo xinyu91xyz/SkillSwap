@@ -31,12 +31,9 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="eventCalendarLabel" destination="BJt-o5-RtM" id="JjD-Mh-Piv"/>
-                <outlet property="eventImage" destination="Z4R-6y-jjr" id="Cg7-hl-KiX"/>
-                <outlet property="eventTitleLabel" destination="qDI-lc-ewR" id="iec-kT-4UH"/>
-                <outlet property="major" destination="BJt-o5-RtM" id="z9D-JG-fWz"/>
-                <outlet property="userimage" destination="Z4R-6y-jjr" id="YNv-12-vKG"/>
-                <outlet property="username" destination="qDI-lc-ewR" id="JAg-Ve-64H"/>
+                <outlet property="major" destination="BJt-o5-RtM" id="0IA-R9-NUr"/>
+                <outlet property="userimage" destination="Z4R-6y-jjr" id="yas-Bm-ExN"/>
+                <outlet property="username" destination="qDI-lc-ewR" id="Eas-FM-RTJ"/>
             </connections>
             <point key="canvasLocation" x="360.5" y="219"/>
         </tableViewCell>

@@ -32,7 +32,7 @@ NSMutableArray *wantRes;
     cell.username.text = [user objectForKey:@"realName"];
     cell.major.text = [user objectForKey:@"major"];
     NSString *userId = [user objectId];
-
+    
     PFQuery *query1 = [PFQuery queryWithClassName:@"UserSkill"];
     [query1 whereKey:@"userId" equalTo:userId];
     [query1 whereKey:@"skillType" equalTo:@"known"];
@@ -40,13 +40,17 @@ NSMutableArray *wantRes;
     knowRes = [[NSMutableArray alloc] initWithArray:[query1 findObjects]];
     NSInteger knowCount = [knowRes count];
     NSMutableString *knowStr = [NSMutableString string];
-    for(int i = 0; i < knowCount-1; i++) {
-        NSString *tmp = knowRes[i][@"skillName"];
-        [knowStr appendString:tmp];
-        [knowStr appendString:@","];
+    if(knowCount == 0) cell.skills.text = knowStr;
+    else {
+        for(int i = 0; i < knowCount-1; i++) {
+            NSString *tmp = knowRes[i][@"skillName"];
+            [knowStr appendString:tmp];
+            [knowStr appendString:@","];
+        }
+        [knowStr appendString:knowRes[knowCount-1][@"skillName"]];
+        cell.skills.text = knowStr;
     }
-    [knowStr appendString:knowRes[knowCount-1][@"skillName"]];
-    cell.skills.text = knowStr;
+    
     
     PFQuery *query2 = [PFQuery queryWithClassName:@"UserSkill"];
     [query2 whereKey:@"userId" equalTo:userId];
@@ -55,14 +59,16 @@ NSMutableArray *wantRes;
     wantRes = [[NSMutableArray alloc] initWithArray:[query2 findObjects]];
     NSInteger wantCount = [wantRes count];
     NSMutableString *wantStr = [NSMutableString string];
-    for(int i = 0; i < wantCount-1; i++) {
-        NSString *tmp = wantRes[i][@"skillName"];
-        [wantStr appendString:tmp];
-        [wantStr appendString:@","];
+    if(wantCount == 0) cell.wants.text = wantStr;
+    else {
+        for(int i = 0; i < wantCount-1; i++) {
+            NSString *tmp = wantRes[i][@"skillName"];
+            [wantStr appendString:tmp];
+            [wantStr appendString:@","];
+        }
+        [wantStr appendString:wantRes[wantCount-1][@"skillName"]];
+        cell.wants.text = wantStr;
     }
-    [wantStr appendString:wantRes[wantCount-1][@"skillName"]];
-    cell.wants.text = wantStr;
-
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,16 +86,18 @@ NSMutableArray *wantRes;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-//    PFQuery *query = [PFUser query];
-//    //[query orderByAscending:@"createdAt"];
-//    NSString *myUserId = [PFUser currentUser][@"username"];
-//    [query whereKey:@"username" notEqualTo:myUserId];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if(!error) {
-//            self.users = objects;
-//            [self.tableView reloadData];
-//        }
-//    }];
+    PFQuery *query = [PFUser query];
+    NSString *myUserId = [PFUser currentUser][@"username"];
+    [query whereKey:@"username" notEqualTo:myUserId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(!error) {
+            self.users = objects;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"error");
+        }
+    }];
     
 }
 

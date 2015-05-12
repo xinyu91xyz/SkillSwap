@@ -10,13 +10,13 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <MessageUI/MessageUI.h>
+#import "PeopleTableViewController.h"
 @interface PeopleDetailViewController : UIViewController <MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) PFObject *object;
-@property (weak, nonatomic) IBOutlet UILabel *username;
-@property (weak, nonatomic) IBOutlet UILabel *major;
-@property (weak, nonatomic) IBOutlet UIImageView *userimage;
-@property (weak, nonatomic) IBOutlet UILabel *skills;
-@property (weak, nonatomic) IBOutlet UILabel *wants;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) PFUser *object;
+@property (strong, nonatomic) NSMutableArray *knowRes;
+@property (strong, nonatomic) NSMutableArray *wantRes;
+
 @property(nonatomic, retain) UIButton *sendMessage;
 -(IBAction)sendMessage:(id)sender;
 @end

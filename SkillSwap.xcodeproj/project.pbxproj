@@ -14,6 +14,8 @@
 		4F2F37AB1B0053300037490B /* PeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2F37A91B0053300037490B /* PeopleCell.xib */; };
 		4F2F37AD1B00824C0037490B /* PeopleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2F37AC1B00824C0037490B /* PeopleDetailCell.xib */; };
 		4F2F37B01B0082990037490B /* PeopleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F37AF1B0082990037490B /* PeopleDetailCell.m */; };
+		4F665D011B028FF30025C7D0 /* PeopleDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F665CFE1B028FF30025C7D0 /* PeopleDetail.xib */; };
+		4F665D021B028FF30025C7D0 /* PeopleDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F665D001B028FF30025C7D0 /* PeopleDetail.m */; };
 		5D0837101AFAD786002F4394 /* add button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370D1AFAD786002F4394 /* add button.png */; };
 		5D0837111AFAD786002F4394 /* add button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370E1AFAD786002F4394 /* add button@2x.png */; };
 		5D0837121AFAD786002F4394 /* add button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D08370F1AFAD786002F4394 /* add button@3x.png */; };
@@ -167,6 +169,9 @@
 		4F2F37AC1B00824C0037490B /* PeopleDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleDetailCell.xib; sourceTree = "<group>"; };
 		4F2F37AE1B0082990037490B /* PeopleDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleDetailCell.h; sourceTree = "<group>"; };
 		4F2F37AF1B0082990037490B /* PeopleDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleDetailCell.m; sourceTree = "<group>"; };
+		4F665CFE1B028FF30025C7D0 /* PeopleDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleDetail.xib; sourceTree = "<group>"; };
+		4F665CFF1B028FF30025C7D0 /* PeopleDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleDetail.h; sourceTree = "<group>"; };
+		4F665D001B028FF30025C7D0 /* PeopleDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleDetail.m; sourceTree = "<group>"; };
 		5D08370D1AFAD786002F4394 /* add button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button.png"; sourceTree = "<group>"; };
 		5D08370E1AFAD786002F4394 /* add button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@2x.png"; sourceTree = "<group>"; };
 		5D08370F1AFAD786002F4394 /* add button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add button@3x.png"; sourceTree = "<group>"; };
@@ -376,6 +381,9 @@
 		4F0675E21AE1B9C1004BB7C1 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				4F665CFE1B028FF30025C7D0 /* PeopleDetail.xib */,
+				4F665CFF1B028FF30025C7D0 /* PeopleDetail.h */,
+				4F665D001B028FF30025C7D0 /* PeopleDetail.m */,
 				4F2F37AC1B00824C0037490B /* PeopleDetailCell.xib */,
 				4F2F37A71B0053300037490B /* PeopleCell.h */,
 				4F2F37A81B0053300037490B /* PeopleCell.m */,
@@ -837,6 +845,7 @@
 				4F2F37AD1B00824C0037490B /* PeopleDetailCell.xib in Resources */,
 				5DC742001ADCDA70006EF2C8 /* ui element_User_Page 1@3x.png in Resources */,
 				5FC6364E1AFD741E006B5AF4 /* checkImg@2x.png in Resources */,
+				4F665D011B028FF30025C7D0 /* PeopleDetail.xib in Resources */,
 				5D3F22DC1AF2ACAB00CC3D29 /* pink bg.png in Resources */,
 				5FCAFFF41ACCED3C001951E0 /* Default@2x.png in Resources */,
 				5FBF80361AE31DD300FA3A16 /* MoreButton@3x.png in Resources */,
@@ -877,6 +886,7 @@
 				5FC635F31AFD282F006B5AF4 /* GuideViewController4.m in Sources */,
 				5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */,
 				5D65842A1AE87A17001632AD /* ProfileTableViewCell.m in Sources */,
+				4F665D021B028FF30025C7D0 /* PeopleDetail.m in Sources */,
 				5FCA000A1ACCF36E001951E0 /* TabBarController.m in Sources */,
 				5FC6368A1AFD9B3D006B5AF4 /* GuideViewController8.m in Sources */,
 				5DAAB3D51AFEDE5800E9B5D0 /* ShowSettingsViewController.m in Sources */,
