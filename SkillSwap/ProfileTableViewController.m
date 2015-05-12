@@ -111,7 +111,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0)
-        return 223.0f;
+        return 229.0f;
     return 44.0f;
 }
 
@@ -145,7 +145,8 @@
 //        cell.usertitle.textColor = [UIColor whiteColor];
         cell.usermajor.text = [user objectForKey:@"major"];
         cell.usermajor.textColor = [UIColor whiteColor];
-        cell.enrollyear.text = [user objectForKey:@"enrollYear"];
+        NSString *year = [user objectForKey:@"enrollYear"];
+        cell.enrollyear.text = [NSString stringWithFormat:@"Year of Enrollment: %@", year];
         cell.enrollyear.textColor = [UIColor whiteColor];
         
         PFFile *file = [user objectForKey:@"userImg"];

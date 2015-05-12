@@ -80,16 +80,16 @@ NSMutableArray *wantRes;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    PFQuery *query = [PFUser query];
-    //[query orderByAscending:@"createdAt"];
-    NSString *myUserId = [PFUser currentUser][@"username"];
-    [query whereKey:@"username" notEqualTo:myUserId];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if(!error) {
-            self.users = objects;
-            [self.tableView reloadData];
-        }
-    }];
+//    PFQuery *query = [PFUser query];
+//    //[query orderByAscending:@"createdAt"];
+//    NSString *myUserId = [PFUser currentUser][@"username"];
+//    [query whereKey:@"username" notEqualTo:myUserId];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if(!error) {
+//            self.users = objects;
+//            [self.tableView reloadData];
+//        }
+//    }];
     
 }
 
