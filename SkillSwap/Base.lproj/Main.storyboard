@@ -73,6 +73,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="eWe-Mi-jcJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="dM1-Bq-re9" kind="relationship" relationship="rootViewController" id="AHe-fQ-cY4"/>
@@ -90,6 +91,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="vPE-oG-GD9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="vzO-9D-C2O" kind="relationship" relationship="rootViewController" id="Ist-Dh-dhz"/>
@@ -945,6 +947,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="qVs-N9-teq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -964,6 +967,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="JDa-Tg-jNQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

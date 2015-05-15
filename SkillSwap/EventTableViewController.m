@@ -308,7 +308,7 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     self.menuPopover.menuPopoverDelegate = self;
     [self.menuPopover showInView:self.view];
     self.menuPopover.tableView = self.tableView;
-    self.menuPopover.alpha = 0.8f;
+    self.menuPopover.alpha = 1.0f;
 
 
 }

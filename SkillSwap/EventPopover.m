@@ -64,7 +64,7 @@
         UIImageView *menuPointerView = [[UIImageView alloc] initWithFrame:MENU_POINTER_RECT];
         menuPointerView.image = [UIImage imageNamed:@"options_pointer"];
         menuPointerView.tag = MENU_POINTER_TAG;
-        menuPointerView.alpha = 0.8f;
+        menuPointerView.alpha = 1.0f;
         [self.containerButton addSubview:menuPointerView];
         
         // Adding menu Items table
