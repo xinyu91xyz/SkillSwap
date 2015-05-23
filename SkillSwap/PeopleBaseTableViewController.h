@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PeopleCell.h"
 #import <Parse/Parse.h>
-
+#import "CellData.h"
 
 
 @interface PeopleBaseTableViewController : UITableViewController
-- (void)configureCell:(PeopleCell *)cell forUser:(NSString *)userId;
-- (void)configureDetailedCell:(PeopleCell *)cell forUser:(NSString *)userId;
+
+- (void)configureCell:(PeopleCell *)cell forCellData:(CellData *)cellData;
+
+
 @property (nonatomic, strong) NSArray *skills;
 @end

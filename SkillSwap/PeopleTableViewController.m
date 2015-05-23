@@ -14,7 +14,7 @@
 #import "PeopleCell.h"
 #import "AppDelegate.h"
 #import "ActivityView.h"
-
+#import "CellData.h"
 
 #define MENU_POPOVER_FRAME  CGRectMake(fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width)-130, 64, 120, 44)
 
@@ -33,6 +33,8 @@
 
 @property(nonatomic,strong) PeopleResultsTableViewController *tableViewController;
 
+@property(nonatomic,strong) NSMutableArray *cellDataArray;
+
 //- (IBAction)showMoreOption:(id)sender;
 //@property(nonatomic,strong) EventPopover *menuPopover;
 
@@ -43,7 +45,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.cellDataArray = [[NSMutableArray alloc] init];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     
@@ -74,6 +76,9 @@
     
     [self setNeedsStatusBarAppearanceUpdate];
     [self setActivityViewVisible:YES];
+    
+    
+    
 }
 
 
@@ -131,7 +136,6 @@
             
             [dict setObject:rating forKey:userId];
         }
-        
     }
     
     self.people = [dict keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
@@ -148,10 +152,44 @@
         return (NSComparisonResult)NSOrderedSame;
     }];
     
-//    for (int i = 0; i < [self.people count]; i++) {
-//        NSLog(@"%@ : %ld",self.people[i],(long)[[dict objectForKey:self.people[i]] integerValue]);
-//    }
+    for (NSInteger i = 0; i < [self.people count]; i++) {
+        NSString *usrId = self.people[i];
+        CellData *cellData = [[CellData alloc] init];
+        
+        PFQuery *query = [PFUser query];
+        PFUser *usr = (PFUser *)[query getObjectWithId:usrId];
+        
+        PFFile *file = [usr objectForKey:@"userImg"];
+        cellData.image = [UIImage imageWithData:[file getData]];
+        cellData.realName = [usr objectForKey:@"realName"];
+        cellData.major = [usr objectForKey:@"major"];
+        
+        NSMutableString *skillsString = [NSMutableString stringWithString:@"Skills: "];
+        NSMutableString *wantsString = [NSMutableString stringWithString:@"Wants: "];
+        
+        NSArray *userSkills = appDelegate.matchedPeople;
+        for (int j = 0; j < [userSkills count]; j++) {
+            if ([[userSkills[j] objectForKey:@"skillType"] isEqualToString:@"known"] && [[userSkills[j] objectForKey:@"userId"] isEqualToString:[usr objectId]]) {
+                [skillsString appendString:[userSkills[j] objectForKey:@"skillName"]];
+                [skillsString appendString:@", "];
+            
+            }
+            else if ([[userSkills[j] objectForKey:@"skillType"] isEqualToString:@"toLearn"] && [[userSkills[j] objectForKey:@"userId"] isEqualToString:[usr objectId]]) {
+                [wantsString appendString:[userSkills[j] objectForKey:@"skillName"]];
+                [wantsString appendString:@", "];
+            }
+        }
+
+        NSString *skills = [NSString stringWithString:skillsString];
+        NSString *wants = [NSString stringWithString:wantsString];
+        cellData.knowns = [skills substringToIndex:skills.length-2];
+        cellData.wants = [wants substringToIndex:wants.length-2];
+        
+        [self.cellDataArray addObject:cellData];
+    }
+    
 }
+
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
@@ -174,7 +212,13 @@
     [self findAllMatchedPeople];
     [self.tableView reloadData];
     [self setActivityViewVisible:NO];
+    
+    
+    
 }
+
+
+
 
 #pragma mark - UISearchBarDelegate
 
@@ -182,48 +226,69 @@
     [searchBar resignFirstResponder];
 
     [self setActivityViewVisible:YES];
+    
     NSString *searchText = searchBar.text;
     PFQuery *query = [PFQuery queryWithClassName: @"UserSkill"];
     [query whereKey:@"skillType" equalTo:@"known"];
     [query whereKey:@"skillName" containsString:searchText];
     query.limit = 25;
+    NSArray *searchedUserSkills = [query findObjects];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSArray *searchedUserSkills = objects;
-            
-            NSMutableArray *allPeople = [[NSMutableArray alloc] init];
-            
-            for (int i = 0; i < [searchedUserSkills count]; i++) {
-                [allPeople addObject:[searchedUserSkills[i] objectForKey:@"userId"]];
-                
-            }
-            NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:allPeople];
-            
-            NSArray *searchResults  = [orderedSet array];
-            
-//            
-//            
-//            NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-//                                                sortDescriptorWithKey:@"eventDate"
-//                                                ascending:YES];
-//            NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
-//            NSArray *searchResults = [unsortedSearchResults
-//                                      sortedArrayUsingDescriptors:sortDescriptors];
-            
-            
-            // hand over the filtered results to our search results table
-            self.tableViewController = (PeopleResultsTableViewController *)self.searchController.searchResultsController;
-            self.tableViewController.tableView.rowHeight = 96.0;
-            self.tableViewController.filteredPeople = searchResults;
-            
-            self.tableViewController.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-            [self.tableViewController.tableView reloadData];
-            
-        }
-        [self setActivityViewVisible:NO];
+    
+
+    
+    
+    self.tableViewController = (PeopleResultsTableViewController *)self.searchController.searchResultsController;
+    self.tableViewController.tableView.rowHeight = 96.0;
+    
+    
+    NSMutableArray *filteredCellData = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < [searchedUserSkills count]; i++) {
+        NSString *usrId = [searchedUserSkills[i] objectForKey:@"userId"];
+        CellData *cellData = [[CellData alloc] init];
+        cellData.userId = usrId;
+        PFQuery *query = [PFUser query];
+        PFUser *usr = (PFUser *)[query getObjectWithId:usrId];
         
-    }];
+        PFFile *file = [usr objectForKey:@"userImg"];
+        cellData.image = [UIImage imageWithData:[file getData]];
+        cellData.realName = [usr objectForKey:@"realName"];
+        cellData.major = [usr objectForKey:@"major"];
+        
+        
+        PFQuery *querySkill = [PFQuery queryWithClassName:@"UserSkill"];
+        [querySkill whereKey:@"userId" equalTo:usrId];
+        [querySkill selectKeys:@[@"skillName",@"skillType"]];
+        
+        NSArray *mySkills = [querySkill findObjects];
+        
+        NSMutableString *skillsString = [NSMutableString stringWithString:@"Skills: "];
+        NSMutableString *wantsString = [NSMutableString stringWithString:@"Wants: "];
+        
+        for (int i = 0; i < [mySkills count]; i++) {
+            if ([[mySkills[i] objectForKey:@"skillType"] isEqualToString:@"known"]) {
+                [skillsString appendString:[mySkills[i] objectForKey:@"skillName"]];
+                [skillsString appendString:@", "];
+                
+            } else {
+                [wantsString appendString:[mySkills[i] objectForKey:@"skillName"]];
+                [wantsString appendString:@", "];
+            }
+        }
+        NSString *skills = [NSString stringWithString:skillsString];
+        NSString *wants = [NSString stringWithString:wantsString];
+        cellData.knowns = [skills substringToIndex:skills.length-2];
+        cellData.wants = [wants substringToIndex:wants.length-2];
+        
+        [filteredCellData addObject:cellData];
+    }
+
+    self.tableViewController.filteredCellDataArray = filteredCellData;
+    
+    self.tableViewController.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self setActivityViewVisible:NO];
+    [self.tableViewController.tableView reloadData];
     
     
 }
@@ -255,14 +320,14 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return (tableView == self.tableView) ? self.people.count : self.resultsTableViewController.filteredPeople.count;
+    return (tableView == self.tableView) ? self.people.count : self.resultsTableViewController.filteredCellDataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PeopleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"peopleCellId" forIndexPath:indexPath];
     
-    NSString *userId = self.people[indexPath.row];
-    [self configureCell:cell forUser:userId];
+//    NSString *userId = self.people[indexPath.row];
+    [self configureCell:cell forCellData:self.cellDataArray[indexPath.row]];
     
     return cell;
 }
@@ -270,7 +335,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *theUserId = (tableView == self.tableView) ?
-    self.people[indexPath.row] : self.resultsTableViewController.filteredPeople[indexPath.row];
+    self.people[indexPath.row] : [(CellData *)self.resultsTableViewController.filteredCellDataArray[indexPath.row] userId];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     PeopleDetailTableViewController *detailVC = [storyboard instantiateViewControllerWithIdentifier:@"peopleTableId"];

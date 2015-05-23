@@ -8,9 +8,9 @@
 
 #import "PeopleDetailTableViewController.h"
 #import "ProfileTableViewCell.h"
+#import <MessageUI/MessageUI.h>
 
-
-@interface PeopleDetailTableViewController ()
+@interface PeopleDetailTableViewController () <MFMailComposeViewControllerDelegate>
 @property (nonatomic, strong) PFUser *user;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSArray *skills;
@@ -24,17 +24,65 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    PFQuery *query = [PFUser query];
+    self.user = (PFUser *)[query getObjectWithId:self.userId];
+    
+    UIImage *emailImage = [UIImage imageNamed:@"emailImg.png"];
+    UIBarButtonItem *emailButton = [[UIBarButtonItem alloc] initWithImage:emailImage landscapeImagePhone:emailImage style:UIBarButtonItemStylePlain target:self action:@selector(emailTapped:)];
+    self.navigationItem.rightBarButtonItem = emailButton;
 
     
 }
+
+- (void)emailTapped:(id)sender {
+    //Email Subject
+    NSString *emailTitle = [NSString stringWithFormat:@"[SkillSwap] From %@",[[PFUser currentUser] objectForKey:@"realName"]];
+    //Email Content
+    NSString *messageBody = @"";
+    //To address
+    NSString *email = [self.user objectForKey:@"myEmail"];
+    NSArray *toRecipients = [NSArray arrayWithObject:email];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipients];
+    
+    //present mail view controller on screen
+    [self presentViewController:mc animated:YES completion: NULL];
+    
+}
+
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    switch (result) {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            
+        default:
+            break;
+    }
+    //close the mail interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
     
-    PFQuery *query = [PFUser query];
-    self.user = (PFUser *)[query getObjectWithId:self.userId];
+    
     
     
     PFQuery *query1 = [PFQuery queryWithClassName:@"UserSkill"];

@@ -48,6 +48,7 @@
 		5F544C561B046B99003317BF /* PeopleResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F544C551B046B99003317BF /* PeopleResultsTableViewController.m */; };
 		5F544C591B046BCD003317BF /* PeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F544C581B046BCD003317BF /* PeopleTableViewController.m */; };
 		5F544C5C1B057BB4003317BF /* PeopleDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F544C5B1B057BB4003317BF /* PeopleDetailTableViewController.m */; };
+		5F544C5F1B0BD840003317BF /* CellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F544C5E1B0BD840003317BF /* CellData.m */; };
 		5F735CB81AEDE7C700DF0811 /* EventBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735CB71AEDE7C700DF0811 /* EventBaseTableViewController.m */; };
 		5F735CBB1AEDE7E600DF0811 /* EventResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735CBA1AEDE7E600DF0811 /* EventResultsTableViewController.m */; };
 		5F735CC41AEE4FF800DF0811 /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F735CC21AEE4FF800DF0811 /* EventCell.m */; };
@@ -103,6 +104,9 @@
 		5FCAFFD81ACCEAE1001951E0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCAFFD71ACCEAE1001951E0 /* Accounts.framework */; };
 		5FCAFFF11ACCED3C001951E0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFE01ACCED3C001951E0 /* Icon.png */; };
 		5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FCAFFE11ACCED3C001951E0 /* Icon@2x.png */; };
+		5FDBA7FD1B104B6200A76547 /* emailImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FDBA7FA1B104B6200A76547 /* emailImg.png */; };
+		5FDBA7FE1B104B6200A76547 /* emailImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FDBA7FB1B104B6200A76547 /* emailImg@2x.png */; };
+		5FDBA7FF1B104B6200A76547 /* emailImg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FDBA7FC1B104B6200A76547 /* emailImg@3x.png */; };
 		5FF53E111B031F9000FEFC5C /* cameraImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FF53E0E1B031F9000FEFC5C /* cameraImg.png */; };
 		5FF53E121B031F9000FEFC5C /* cameraImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FF53E0F1B031F9000FEFC5C /* cameraImg@2x.png */; };
 		5FF53E131B031F9000FEFC5C /* cameraImg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FF53E101B031F9000FEFC5C /* cameraImg@3x.png */; };
@@ -206,6 +210,8 @@
 		5F544C581B046BCD003317BF /* PeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleTableViewController.m; sourceTree = "<group>"; };
 		5F544C5A1B057BB4003317BF /* PeopleDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleDetailTableViewController.h; sourceTree = "<group>"; };
 		5F544C5B1B057BB4003317BF /* PeopleDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleDetailTableViewController.m; sourceTree = "<group>"; };
+		5F544C5D1B0BD840003317BF /* CellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellData.h; sourceTree = "<group>"; };
+		5F544C5E1B0BD840003317BF /* CellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellData.m; sourceTree = "<group>"; };
 		5F735CB61AEDE7C700DF0811 /* EventBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBaseTableViewController.h; sourceTree = "<group>"; };
 		5F735CB71AEDE7C700DF0811 /* EventBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBaseTableViewController.m; sourceTree = "<group>"; };
 		5F735CB91AEDE7E600DF0811 /* EventResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventResultsTableViewController.h; sourceTree = "<group>"; };
@@ -282,6 +288,9 @@
 		5FCAFFD71ACCEAE1001951E0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5FCAFFE01ACCED3C001951E0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		5FCAFFE11ACCED3C001951E0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		5FDBA7FA1B104B6200A76547 /* emailImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailImg.png; sourceTree = "<group>"; };
+		5FDBA7FB1B104B6200A76547 /* emailImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailImg@2x.png"; sourceTree = "<group>"; };
+		5FDBA7FC1B104B6200A76547 /* emailImg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailImg@3x.png"; sourceTree = "<group>"; };
 		5FF53E0E1B031F9000FEFC5C /* cameraImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraImg.png; sourceTree = "<group>"; };
 		5FF53E0F1B031F9000FEFC5C /* cameraImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraImg@2x.png"; sourceTree = "<group>"; };
 		5FF53E101B031F9000FEFC5C /* cameraImg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraImg@3x.png"; sourceTree = "<group>"; };
@@ -370,6 +379,8 @@
 				4F2F37A71B0053300037490B /* PeopleCell.h */,
 				4F2F37A81B0053300037490B /* PeopleCell.m */,
 				4F2F37A91B0053300037490B /* PeopleCell.xib */,
+				5F544C5D1B0BD840003317BF /* CellData.h */,
+				5F544C5E1B0BD840003317BF /* CellData.m */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -673,6 +684,9 @@
 				5FF53E301B0334BB00FEFC5C /* settingImg@2x.png */,
 				5FF53E311B0334BB00FEFC5C /* settingImg@3x.png */,
 				5D3F22DB1AF2ACAB00CC3D29 /* tabImg.png */,
+				5FDBA7FA1B104B6200A76547 /* emailImg.png */,
+				5FDBA7FB1B104B6200A76547 /* emailImg@2x.png */,
+				5FDBA7FC1B104B6200A76547 /* emailImg@3x.png */,
 			);
 			name = TabBarImg;
 			sourceTree = "<group>";
@@ -740,6 +754,7 @@
 				TargetAttributes = {
 					5F9EEACD1ACA48C400D6D23E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3GPN8KDRCL;
 					};
 					5F9EEAE61ACA48C400D6D23E = {
 						CreatedOnToolsVersion = 6.2;
@@ -779,6 +794,7 @@
 				5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */,
 				5F4A5D011AF846D5006BBCD0 /* heartEmpty.png in Resources */,
 				5FF53E1F1B0330C300FEFC5C /* peopleImg@2x.png in Resources */,
+				5FDBA7FD1B104B6200A76547 /* emailImg.png in Resources */,
 				5FC6364D1AFD741E006B5AF4 /* checkImg.png in Resources */,
 				5F4A5D021AF846D5006BBCD0 /* heartEmpty@2x.png in Resources */,
 				5FFD20FF1B03EB8400A4DF56 /* dsImg.png in Resources */,
@@ -802,6 +818,7 @@
 				5F544C4F1B043261003317BF /* addSkillImg@2x.png in Resources */,
 				5FF53E261B0330CC00FEFC5C /* profileImg@3x.png in Resources */,
 				5FF53E341B0334BB00FEFC5C /* settingImg@3x.png in Resources */,
+				5FDBA7FE1B104B6200A76547 /* emailImg@2x.png in Resources */,
 				5F4A5D151AF855BD006BBCD0 /* locationImg@3x.png in Resources */,
 				5FC636491AFD7416006B5AF4 /* uncheckImg@3x.png in Resources */,
 				5FC635D51AFC3DC5006B5AF4 /* SignUpViewController.xib in Resources */,
@@ -827,6 +844,7 @@
 				5FF53E321B0334BB00FEFC5C /* settingImg.png in Resources */,
 				5F4A5D141AF855BD006BBCD0 /* locationImg@2x.png in Resources */,
 				5FC635E11AFC48E7006B5AF4 /* signInImg.png in Resources */,
+				5FDBA7FF1B104B6200A76547 /* emailImg@3x.png in Resources */,
 				5F4A5D0F1AF855B1006BBCD0 /* calendarImg@3x.png in Resources */,
 				5FC6364E1AFD741E006B5AF4 /* checkImg@2x.png in Resources */,
 				5FFD21021B03F67F00A4DF56 /* tapToChangeImg.png in Resources */,
@@ -892,6 +910,7 @@
 				5FC635EE1AFC8275006B5AF4 /* GuideViewController3.m in Sources */,
 				5DAAB3CC1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m in Sources */,
 				4F2F37AA1B0053300037490B /* PeopleCell.m in Sources */,
+				5F544C5F1B0BD840003317BF /* CellData.m in Sources */,
 				5D8CD53E1AF737CF005CD963 /* SettingsViewController.m in Sources */,
 				9DC249811ADB198A00BC4544 /* ActivityView.m in Sources */,
 				5DAAB3C01AFEB97500E9B5D0 /* SettingsTableViewController.m in Sources */,
@@ -1017,12 +1036,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/SkillSwap";
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1030,12 +1052,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/SkillSwap";
 				INFOPLIST_FILE = SkillSwap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

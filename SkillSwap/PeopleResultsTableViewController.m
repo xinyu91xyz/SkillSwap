@@ -26,17 +26,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.filteredPeople.count;
+    return self.filteredCellDataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PeopleCell *cell = (PeopleCell *)[self.tableView dequeueReusableCellWithIdentifier:@"peopleCellId"];
 
-    NSString *userId = self.filteredPeople[indexPath.row];
-    
-    [self configureDetailedCell:cell forUser:userId];
-    
+    [self configureCell:cell forCellData:self.filteredCellDataArray[indexPath.row]];
     return cell;
 }
 

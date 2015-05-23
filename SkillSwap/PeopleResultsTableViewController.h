@@ -17,7 +17,7 @@
 
 @interface PeopleResultsTableViewController : PeopleBaseTableViewController
 
-@property (nonatomic, strong) NSArray *filteredPeople;
+@property (nonatomic, strong) NSArray *filteredCellDataArray;
 
 @property (nonatomic, weak) id<PeopleResultTableDelegate> resultTableDelegate;
 
