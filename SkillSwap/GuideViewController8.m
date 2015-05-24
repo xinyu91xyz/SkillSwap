@@ -81,6 +81,7 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     UIImage *croppedImage = [self squareImageWithImage:image scaledToSize:CGSizeMake(80.0f,80.0f)];
     [self.imageView setImage:croppedImage];
+    self.tapToChangeImg.hidden = YES;
     
     
     

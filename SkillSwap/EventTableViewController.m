@@ -41,20 +41,13 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    
     [self setActivityViewVisible:YES];
+    
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    [query orderByAscending:@"eventDate"];
-    self.events = [query findObjects];
     
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        PFRelation *relation = [currentUser relationForKey:@"myEvent"];
-        PFQuery *queryMyEvent = [relation query];
-        [queryMyEvent selectKeys:[[NSArray alloc]init]];
-        self.myEvents = [queryMyEvent findObjects];
-    }
     
     self.resultsTableViewController = [[EventResultsTableViewController alloc] init];
     self.resultsTableViewController.resultTableDelegate = self;
@@ -69,7 +62,8 @@
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self;
-
+    self.searchController.searchBar.placeholder = @"Search by skills";
+    
     UIColor *lightGray = [UIColor colorWithRed:240/255.0 green:239/255.0 blue:245/255.0 alpha:1];
     UIColor *pink = [UIColor colorWithRed:232/255.0 green:51/255.0 blue:102/255.0 alpha:1];
 
@@ -92,12 +86,31 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+
+
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [self setActivityViewVisible:YES];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query orderByAscending:@"eventDate"];
+    self.events = [query findObjects];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        PFRelation *relation = [currentUser relationForKey:@"myEvent"];
+        PFQuery *queryMyEvent = [relation query];
+        [queryMyEvent selectKeys:[[NSArray alloc]init]];
+        self.myEvents = [queryMyEvent findObjects];
+    }
+    
+    
     
     // restore the searchController's active state
     if (self.searchControllerWasActive) {
@@ -109,7 +122,10 @@
             self.searchControllerSearchFieldWasFirstResponder = NO;
         }
     }
+    [self.tableView reloadData];
     [self setActivityViewVisible:NO];
+    
+    self.tableView.userInteractionEnabled = YES;
 }
 
 #pragma mark - UISearchBarDelegate
@@ -224,6 +240,8 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    tableView.userInteractionEnabled = NO;
     
 }
 

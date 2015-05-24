@@ -10,11 +10,11 @@
 #import "ProfileTableViewCell.h"
 #import "AppDelegate.h"
 
-@interface ProfileTableViewController () <UIAlertViewDelegate> {
+@interface ProfileTableViewController () <UIAlertViewDelegate>
 
-
-}
 @end
+
+
 
 @implementation ProfileTableViewController
 
@@ -23,10 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.tableFooterView.frame.size.width, 8)];
-    self.tableView.tableFooterView.backgroundColor = [UIColor colorWithRed:240/255.0 green:239/255.0 blue:245/255.0 alpha:1];
-    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.tableFooterView.frame.size.width, 20)];
+    self.tableView.tableFooterView.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -56,7 +54,13 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     // Return the number of rows in the section.
     if (section == 0) return 1;
-    else if (section == 1) return 1;
+    else if (section == 1) {
+        NSString *aboutMe = [[PFUser currentUser] objectForKey:@"aboutMe"];
+        if ([aboutMe isEqualToString:@""] || aboutMe == nil) {
+            return 0;
+        }
+        return 1;
+    }
     else if (section == 2) return [appDelegate.mySkills count];
     else if (section == 3) return [appDelegate.wantToLearns count];
     else return 0;
@@ -65,17 +69,19 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0)
-        return 0.0f;
+        return CGFLOAT_MIN;
     return 52.0f;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return 230.0f;
     }
-    else if (indexPath.section == 1) {
-        return 66.0f;
-    } else {
+    else {
         return 44.0f;
     }
 }
@@ -85,6 +91,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ProfileTableViewCell *cell;
+    
+    CGRect frame = tableView.frame;
+    
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
         
@@ -103,45 +112,70 @@
     else if (indexPath.section == 1) {
         PFUser *user = [PFUser currentUser];
         cell = [tableView dequeueReusableCellWithIdentifier:@"AboutCell" forIndexPath:indexPath];
-        UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(8, 0, cell.frame.size.width-16, 66)];
-        cellView.backgroundColor = [UIColor whiteColor];
-        [cell addSubview:cellView];
-        
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(24, 0, cell.frame.size.width-40, 66)];
-        title.lineBreakMode = NSLineBreakByWordWrapping;
-        title.numberOfLines = 3;
-        title.text = [user objectForKey:@"aboutMe"];
-        [cell addSubview:title];
+        [cell setIndentationLevel:1];
+        cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.text = [user objectForKey:@"aboutMe"];
 
         
     }
     else if (indexPath.section == 2) {
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"MySkillCell" forIndexPath:indexPath];
-        UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(8, 0, cell.frame.size.width-16, 44)];
-        cellView.backgroundColor = [UIColor whiteColor];
-        [cell addSubview:cellView];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(24, 11, 200, 22)];
+        NSArray *viewsToRemove = [cell subviews];
+        for (UIView *v in viewsToRemove) {
+            [v removeFromSuperview];
+        }
         
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, 44)];
+
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         title.text = appDelegate.mySkills[indexPath.row][@"skillName"];
         [cell addSubview:title];
+        
+        UILabel *likeCount = [[UILabel alloc] initWithFrame:CGRectMake(frame.size.width -50, 0, 200, 44)];
+
+        likeCount.textColor = [UIColor lightGrayColor];
+        likeCount.font = [UIFont systemFontOfSize:14];
+        
+        likeCount.text = [NSString stringWithFormat: @"%ld", (long)[appDelegate.mySkills[indexPath.row][@"likes"] count]];
+        
+        [cell addSubview:likeCount];
+        
+        
+        UIButton *likeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        likeButton.frame = CGRectMake(frame.size.width -86, 0, 44, 44);
+        
+        UIImage *image = [[UIImage imageNamed:@"thumbUpImg.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [likeButton setImage:image forState:UIControlStateNormal];
+        likeButton.tintColor = [UIColor blackColor];
+        
+        likeButton.imageEdgeInsets = UIEdgeInsetsMake(14,14,14,14);
+        
+        likeButton.enabled = NO;
+        
+        [cell addSubview:likeButton];
+        
+        
+        
+        
         
     }
     else if (indexPath.section == 3) {
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"ToLearnCell" forIndexPath:indexPath];
-        UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(8, 0, cell.frame.size.width-16, 44)];
-        cellView.backgroundColor = [UIColor whiteColor];
-        [cell addSubview:cellView];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(24, 11, 200, 22)];
+        NSArray *viewsToRemove = [cell subviews];
+        for (UIView *v in viewsToRemove) {
+            [v removeFromSuperview];
+        }
         
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, 200, 44)];
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        
         title.text = appDelegate.wantToLearns[indexPath.row][@"skillName"];
         [cell addSubview:title];
-        
         
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
@@ -155,31 +189,32 @@
     
     CGRect frame = tableView.frame;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    headerView.backgroundColor = [UIColor whiteColor];
     
-//    UIColor *pink = [UIColor colorWithRed:232/255.0 green:51/255.0 blue:102/255.0 alpha:1];
     UIColor *gray = [UIColor lightGrayColor];
     
     switch (section) {
         case 1: {
-            UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(8, 8, headerView.frame.size.width-16, 44)];
-            cellView.backgroundColor = [UIColor whiteColor];
-            
-            [headerView addSubview:cellView];
-            
-            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(24, 19, 100, 22)];
+
+            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(25, 8, 100, 44)];
             title.text = @"About Me";
-            title.font = [UIFont boldSystemFontOfSize:18.0f];
+            title.font = [UIFont boldSystemFontOfSize:16.0f];
             title.textColor = gray;
             
             [headerView addSubview:title];
             
             
             UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            addButton.frame = CGRectMake(frame.size.width -60, 8, 44, 44);
+//            addButton.frame = CGRectMake(frame.size.width -55, 8, 44, 44);
+            addButton.frame = CGRectMake(94, 8, 44, 44);
             
             UIImage *image = [[UIImage imageNamed:@"editImg.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [addButton setImage:image forState:UIControlStateNormal];
             addButton.tintColor = gray;
+            
+            addButton.imageEdgeInsets = UIEdgeInsetsMake(14,14,14,14);
+
+            
             [addButton addTarget:self action:@selector(editAboutMe:) forControlEvents:UIControlEventTouchUpInside];
             
             [headerView addSubview:addButton];
@@ -187,20 +222,18 @@
             break;
         }
         case 2: {
-            UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(8, 8, headerView.frame.size.width-16, 44)];
-            cellView.backgroundColor = [UIColor whiteColor];
             
-            [headerView addSubview:cellView];
-            
-            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(24, 19, 100, 22)];
+            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(25, 8, 100, 44)];
             title.text = @"Skills";
-            title.font = [UIFont boldSystemFontOfSize:18.0f];
+            title.font = [UIFont boldSystemFontOfSize:16.0f];
             title.textColor = gray;
             
             [headerView addSubview:title];
             
             UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            addButton.frame = CGRectMake(frame.size.width -60, 8, 44, 44);
+//            addButton.frame = CGRectMake(frame.size.width -55, 8, 44, 44);
+            addButton.frame = CGRectMake(60, 8, 44, 44);
+            addButton.imageEdgeInsets = UIEdgeInsetsMake(14,14,14,14);
             
             UIImage *image = [[UIImage imageNamed:@"addSkillImg.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [addButton setImage:image forState:UIControlStateNormal];
@@ -213,20 +246,18 @@
         
     }
         case 3: {
-            UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake(8, 8, headerView.frame.size.width-16, 44)];
-            cellView.backgroundColor = [UIColor whiteColor];
-            
-            [headerView addSubview:cellView];
-            
-            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(24, 19, 160, 22)];
-            title.text = @"What to Learn";
-            title.font = [UIFont boldSystemFontOfSize:18.0f];
+
+            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(25, 8, 160, 44)];
+            title.text = @"Want to Learn";
+            title.font = [UIFont boldSystemFontOfSize:16.0f];
             title.textColor = gray;
             
             [headerView addSubview:title];
 
             UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            addButton.frame = CGRectMake(frame.size.width -60, 8, 44, 44);
+//            addButton.frame = CGRectMake(frame.size.width -55, 8, 44, 44);
+            addButton.frame = CGRectMake(126, 8, 44, 44);
+            addButton.imageEdgeInsets = UIEdgeInsetsMake(14,14,14,14);
             
             UIImage *image = [[UIImage imageNamed:@"addSkillImg.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [addButton setImage:image forState:UIControlStateNormal];
@@ -238,14 +269,13 @@
         }
         
     }
-    headerView.backgroundColor = [UIColor colorWithRed:240/255.0 green:239/255.0 blue:245/255.0 alpha:1];
-    
+   
     return headerView;
 }
 
 - (void) editAboutMe:(id)sender {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil
-                                                     message:@"Details about you"
+                                                     message:@"About Me"
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles:@"OK", nil];
@@ -262,7 +292,7 @@
 - (void) addKnownSkill:(id)sender {
     
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil
-                                                     message:@"Please enter a skill name"
+                                                     message:@"Add a skill"
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles:@"OK", nil];
@@ -278,7 +308,7 @@
 - (void) addToLearnSkill:(id)sender {
     
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil
-                                                     message:@"Please enter a skill name"
+                                                     message:@"Add a skill"
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles:@"OK", nil];

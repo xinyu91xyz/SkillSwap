@@ -15,10 +15,12 @@
 #import "AppDelegate.h"
 #import "ActivityView.h"
 #import "CellData.h"
+#import "PeoplePopover.h"
+
 
 #define MENU_POPOVER_FRAME  CGRectMake(fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width)-130, 64, 120, 44)
 
-@interface PeopleTableViewController ()<UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,PeopleResultTableDelegate>
+@interface PeopleTableViewController ()<UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating,PeopleResultTableDelegate,PeoplePopoverDelegate>
 
 
 @property (nonatomic, assign) BOOL activityViewVisible;
@@ -33,7 +35,10 @@
 
 @property(nonatomic,strong) PeopleResultsTableViewController *tableViewController;
 
-@property(nonatomic,strong) NSMutableArray *cellDataArray;
+@property(atomic,strong) NSMutableArray *cellDataArray;
+
+@property(nonatomic,strong) PeoplePopover *menuPopover;
+@property(nonatomic,strong) NSArray *menuItems;
 
 //- (IBAction)showMoreOption:(id)sender;
 //@property(nonatomic,strong) EventPopover *menuPopover;
@@ -44,6 +49,10 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    
+    self.menuItems = [NSArray arrayWithObjects:@"Pick for Me!", nil];
+    
+    [self setActivityViewVisible:YES];
     
     self.cellDataArray = [[NSMutableArray alloc] init];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -68,6 +77,7 @@
     self.searchController.searchBar.backgroundColor = [UIColor clearColor];
     self.searchController.searchBar.barTintColor = lightGray;
     self.searchController.searchBar.tintColor = pink;
+    self.searchController.searchBar.placeholder = @"Search by skills";
     
     self.definesPresentationContext = YES;
     
@@ -75,15 +85,42 @@
     self.tableView.contentOffset = offset;
     
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self setActivityViewVisible:YES];
     
+    // restore the searchController's active state
+    if (self.searchControllerWasActive) {
+        self.searchController.active = self.searchControllerWasActive;
+        self.searchControllerWasActive = NO;
+        
+        if (self.searchControllerSearchFieldWasFirstResponder) {
+            [self.searchController.searchBar becomeFirstResponder];
+            self.searchControllerSearchFieldWasFirstResponder = NO;
+        }
+    }
+    if ([self.cellDataArray count] == 0) {
+        [self findAllMatchedPeople];
+        [self.tableView reloadData];
+        
+    }
+
+    [self setActivityViewVisible:NO];
     
+    self.tableView.userInteractionEnabled = YES;
     
 }
 
 
 
 - (void) findAllMatchedPeople {
+    self.cellDataArray = [[NSMutableArray alloc] init];
+    
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     PFUser *user = [PFUser currentUser];
     
@@ -114,7 +151,7 @@
     }
     
     PFQuery *queryPeers = [PFQuery orQueryWithSubqueries:querys];
-    queryPeers.limit = 100;
+    queryPeers.limit = 60;
     
     NSArray *matchedUserSkills = [queryPeers findObjects];
     
@@ -125,17 +162,48 @@
     for (int i = 0; i < [matchedUserSkills count]; i++) {
         NSString *userId = [matchedUserSkills[i] objectForKey:@"userId"];
         
+        BOOL isKnown = false;
+        if ([[matchedUserSkills[i] objectForKey:@"skillType"] isEqualToString:@"known"]) {
+            isKnown = true;
+        }
+        
+        NSInteger likeCount =[[matchedUserSkills[i] objectForKey:@"likes"] count];
+        
         NSNumber *rating;
+        
         if ([dict objectForKey:userId]) {
             rating = [dict objectForKey:userId];
-            rating = [NSNumber numberWithInteger:([rating integerValue]+1)];
+            
+            if (isKnown) {
+                rating = [NSNumber numberWithInteger:([rating integerValue]+(likeCount+1)*5)];
+            } else {
+                rating = [NSNumber numberWithInteger:([rating integerValue]+1)];
+            }
             [dict setValue:rating forKey:userId];
             
         } else {
-            rating = [NSNumber numberWithInteger:1];
+            if (isKnown) {
+                rating = [NSNumber numberWithInteger:(likeCount+1)*5];
+            } else {
+                rating = [NSNumber numberWithInteger:(likeCount+1)];
+            }
+            
             
             [dict setObject:rating forKey:userId];
         }
+        
+        
+//        
+//        if ([dict objectForKey:userId]) {
+//            rating = [dict objectForKey:userId];
+//            rating = [NSNumber numberWithInteger:([rating integerValue]+1)];
+//            [dict setValue:rating forKey:userId];
+//            
+//        } else {
+//            rating = [NSNumber numberWithInteger:1];
+//            
+//            [dict setObject:rating forKey:userId];
+//        }
     }
     
     self.people = [dict keysSortedByValueUsingComparator: ^(id obj1, id obj2) {
@@ -195,27 +263,7 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    // restore the searchController's active state
-    if (self.searchControllerWasActive) {
-        self.searchController.active = self.searchControllerWasActive;
-        self.searchControllerWasActive = NO;
-        
-        if (self.searchControllerSearchFieldWasFirstResponder) {
-            [self.searchController.searchBar becomeFirstResponder];
-            self.searchControllerSearchFieldWasFirstResponder = NO;
-        }
-    }
-    
-    [self findAllMatchedPeople];
-    [self.tableView reloadData];
-    [self setActivityViewVisible:NO];
-    
-    
-    
-}
+
 
 
 
@@ -228,15 +276,25 @@
     [self setActivityViewVisible:YES];
     
     NSString *searchText = searchBar.text;
-    PFQuery *query = [PFQuery queryWithClassName: @"UserSkill"];
-    [query whereKey:@"skillType" equalTo:@"known"];
-    [query whereKey:@"skillName" containsString:searchText];
-    query.limit = 25;
-    NSArray *searchedUserSkills = [query findObjects];
-    
     
 
     
+    NSMutableArray *querys = [[NSMutableArray alloc] init];
+    
+    PFQuery *query1 = [PFQuery queryWithClassName:@"UserSkill"];
+    [query1 whereKey:@"skillType" equalTo:@"known"];
+    [query1 whereKey:@"skillName" containsString:[searchText lowercaseString]];
+    [querys addObject:query1];
+    
+    PFQuery *query2 = [PFQuery queryWithClassName:@"UserSkill"];
+    [query2 whereKey:@"skillType" equalTo:@"known"];
+    [query2 whereKey:@"skillName" containsString:[searchText capitalizedString]];
+    [querys addObject:query2];
+    
+    PFQuery *queryPeers = [PFQuery orQueryWithSubqueries:querys];
+    queryPeers.limit = 30;
+    
+    NSArray *searchedUserSkills = [queryPeers findObjects];
     
     self.tableViewController = (PeopleResultsTableViewController *)self.searchController.searchResultsController;
     self.tableViewController.tableView.rowHeight = 96.0;
@@ -341,6 +399,7 @@
     PeopleDetailTableViewController *detailVC = [storyboard instantiateViewControllerWithIdentifier:@"peopleTableId"];
     detailVC.userId = theUserId;
     [self.navigationController pushViewController:detailVC animated:YES];
+    tableView.userInteractionEnabled = NO;
     
 }
 
@@ -447,5 +506,50 @@ NSString *const SearchBarIsFirstResponderKey1 = @"SearchBarIsFirstResponderKey";
 }
 
 
+
+- (IBAction)showMoreOption:(id)sender {
+    // Hide already showing popover
+    [self.menuPopover dismissMenuPopover];
+    self.tableView.scrollEnabled = NO;
+    [self.tableView setContentOffset:self.tableView.contentOffset animated:NO];
+    self.menuPopover = [[PeoplePopover alloc] initWithFrame:MENU_POPOVER_FRAME menuItems:self.menuItems menuIsSelected:[[NSMutableArray alloc] initWithArray:@[@"N"]]];
+    
+    self.menuPopover.menuPopoverDelegate = self;
+    [self.menuPopover showInView:self.view];
+    self.menuPopover.tableView = self.tableView;
+    self.menuPopover.alpha = 1.0f;
+}
+
+#pragma mark -
+#pragma mark MLKMenuPopoverDelegate
+
+- (void)menuPopover:(PeoplePopover *)menuPopover didSelectMenuItemAtIndex:(NSInteger)selectedIndex
+{
+    [self.menuPopover dismissMenuPopover];
+
+    
+    switch (selectedIndex) {
+        case 0: {
+            [self spawn];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+-(void) spawn
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        [self findAllMatchedPeople];
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            
+        });
+        
+        
+    });
+}
 
 @end

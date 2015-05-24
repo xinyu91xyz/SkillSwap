@@ -11,4 +11,6 @@
 @interface PeopleTableViewController : PeopleBaseTableViewController
 @property (nonatomic, strong) NSArray *people;
 @property (nonatomic, strong) NSArray *filteredPeople;
+- (IBAction)showMoreOption:(id)sender;
+
 @end

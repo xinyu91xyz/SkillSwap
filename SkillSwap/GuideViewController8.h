@@ -17,5 +17,6 @@
 - (IBAction)doneButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(nonatomic, weak) id<Gvc8Delegate> gvc8Delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *tapToChangeImg;
 
 @end

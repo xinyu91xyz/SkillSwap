@@ -71,6 +71,10 @@
 		5F9EEB151ACA49D700D6D23E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9EEB141ACA49D700D6D23E /* SystemConfiguration.framework */; };
 		5F9EEB171ACA49DF00D6D23E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9EEB161ACA49DF00D6D23E /* libz.dylib */; };
 		5F9EEB191ACA49E600D6D23E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9EEB181ACA49E600D6D23E /* libsqlite3.dylib */; };
+		5FA1CE7B1B115425009B6486 /* thumbUpImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FA1CE781B115425009B6486 /* thumbUpImg.png */; };
+		5FA1CE7C1B115425009B6486 /* thumbUpImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FA1CE791B115425009B6486 /* thumbUpImg@2x.png */; };
+		5FA1CE7D1B115425009B6486 /* thumbUpImg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FA1CE7A1B115425009B6486 /* thumbUpImg@3x.png */; };
+		5FA1CE811B124B3E009B6486 /* PeoplePopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1CE801B124B3E009B6486 /* PeoplePopover.m */; };
 		5FBF802D1AE190CC00FA3A16 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF802C1AE190CC00FA3A16 /* ProfileTableViewController.m */; };
 		5FBF80341AE31DD300FA3A16 /* MoreButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF80311AE31DD300FA3A16 /* MoreButton.png */; };
 		5FBF80351AE31DD300FA3A16 /* MoreButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF80321AE31DD300FA3A16 /* MoreButton@2x.png */; };
@@ -244,6 +248,11 @@
 		5F9EEB141ACA49D700D6D23E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F9EEB161ACA49DF00D6D23E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5F9EEB181ACA49E600D6D23E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5FA1CE781B115425009B6486 /* thumbUpImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbUpImg.png; sourceTree = "<group>"; };
+		5FA1CE791B115425009B6486 /* thumbUpImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbUpImg@2x.png"; sourceTree = "<group>"; };
+		5FA1CE7A1B115425009B6486 /* thumbUpImg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbUpImg@3x.png"; sourceTree = "<group>"; };
+		5FA1CE7F1B124B3E009B6486 /* PeoplePopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeoplePopover.h; sourceTree = "<group>"; };
+		5FA1CE801B124B3E009B6486 /* PeoplePopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeoplePopover.m; sourceTree = "<group>"; };
 		5FBF802B1AE190CC00FA3A16 /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
 		5FBF802C1AE190CC00FA3A16 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
 		5FBF80311AE31DD300FA3A16 /* MoreButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoreButton.png; sourceTree = "<group>"; };
@@ -368,6 +377,7 @@
 		4F0675E21AE1B9C1004BB7C1 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				5FA1CE7E1B124B14009B6486 /* PopupView */,
 				5F544C571B046BCD003317BF /* PeopleTableViewController.h */,
 				5F544C581B046BCD003317BF /* PeopleTableViewController.m */,
 				5F544C5A1B057BB4003317BF /* PeopleDetailTableViewController.h */,
@@ -576,6 +586,15 @@
 			path = SkillSwap;
 			sourceTree = "<group>";
 		};
+		5FA1CE7E1B124B14009B6486 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1CE7F1B124B3E009B6486 /* PeoplePopover.h */,
+				5FA1CE801B124B3E009B6486 /* PeoplePopover.m */,
+			);
+			name = PopupView;
+			sourceTree = "<group>";
+		};
 		5FBF802A1AE1909500FA3A16 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +720,9 @@
 				5FFD21121B041DCC00A4DF56 /* editImg.png */,
 				5FFD21131B041DCC00A4DF56 /* editImg@2x.png */,
 				5FFD21141B041DCC00A4DF56 /* editImg@3x.png */,
+				5FA1CE781B115425009B6486 /* thumbUpImg.png */,
+				5FA1CE791B115425009B6486 /* thumbUpImg@2x.png */,
+				5FA1CE7A1B115425009B6486 /* thumbUpImg@3x.png */,
 			);
 			name = ProfileImg;
 			sourceTree = "<group>";
@@ -841,6 +863,7 @@
 				5FFD21041B03F68D00A4DF56 /* defaultProfileImg.png in Resources */,
 				5FF53E111B031F9000FEFC5C /* cameraImg.png in Resources */,
 				5F9EEAE21ACA48C400D6D23E /* LaunchScreen.xib in Resources */,
+				5FA1CE7B1B115425009B6486 /* thumbUpImg.png in Resources */,
 				5FF53E321B0334BB00FEFC5C /* settingImg.png in Resources */,
 				5F4A5D141AF855BD006BBCD0 /* locationImg@2x.png in Resources */,
 				5FC635E11AFC48E7006B5AF4 /* signInImg.png in Resources */,
@@ -851,10 +874,12 @@
 				5D3F22DC1AF2ACAB00CC3D29 /* tabImg.png in Resources */,
 				5FBF80361AE31DD300FA3A16 /* MoreButton@3x.png in Resources */,
 				5F4A5CFC1AF845A4006BBCD0 /* heartFilled@2x.png in Resources */,
+				5FA1CE7D1B115425009B6486 /* thumbUpImg@3x.png in Resources */,
 				5FF53E331B0334BB00FEFC5C /* settingImg@2x.png in Resources */,
 				5F4A5CEC1AF82A90006BBCD0 /* options_pointer.png in Resources */,
 				5FCAFFF21ACCED3C001951E0 /* Icon@2x.png in Resources */,
 				4F2F37AB1B0053300037490B /* PeopleCell.xib in Resources */,
+				5FA1CE7C1B115425009B6486 /* thumbUpImg@2x.png in Resources */,
 				5FC635E41AFC4D24006B5AF4 /* iconLock.png in Resources */,
 				5FFD20FE1B03EB8400A4DF56 /* cseImg.png in Resources */,
 				5FFD20FD1B03EB8400A4DF56 /* artImg.png in Resources */,
@@ -907,6 +932,7 @@
 				5F11082A1AD6345100E47080 /* SignUpViewController.m in Sources */,
 				5DAAB3C61AFEDD0100E9B5D0 /* UpdateNameViewController.m in Sources */,
 				5FC636551AFD8557006B5AF4 /* GuideViewController7.m in Sources */,
+				5FA1CE811B124B3E009B6486 /* PeoplePopover.m in Sources */,
 				5FC635EE1AFC8275006B5AF4 /* GuideViewController3.m in Sources */,
 				5DAAB3CC1AFEDD8500E9B5D0 /* UpdateSchoolViewController.m in Sources */,
 				4F2F37AA1B0053300037490B /* PeopleCell.m in Sources */,

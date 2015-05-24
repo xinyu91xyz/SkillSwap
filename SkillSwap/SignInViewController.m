@@ -353,7 +353,7 @@ Gvc1Delegate>
     
     [imageFile save];
     [currUser setObject:imageFile forKey:@"userImg"];
+    
     [currUser save];
-
 }
 @end
