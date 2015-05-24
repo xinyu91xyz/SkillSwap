@@ -131,8 +131,8 @@
     for(int i = 0; i < [wantToLearns count]; i++) {
         PFQuery *query = [PFQuery queryWithClassName:@"UserSkill"];
         NSString *skillName = [wantToLearns[i] objectForKey:@"skillName"];
-        [query whereKey:@"skillName" containsString:[skillName lowercaseString]];
-        [query whereKey:@"skillName" containsString:[skillName capitalizedString]];
+        [query whereKey:@"skillName" equalTo:[skillName lowercaseString]];
+        [query whereKey:@"skillName" equalTo:[skillName capitalizedString]];
         
         [query whereKey:@"skillType" equalTo:@"known"];
         [query whereKey:@"userId" notEqualTo:[user objectId]];
@@ -142,8 +142,8 @@
     for(int i = 0; i < [knowns count]; i++) {
         PFQuery *query = [PFQuery queryWithClassName:@"UserSkill"];
         NSString *skillName = [knowns[i] objectForKey:@"skillName"];
-        [query whereKey:@"skillName" containsString:[skillName lowercaseString]];
-        [query whereKey:@"skillName" containsString:[skillName capitalizedString]];
+        [query whereKey:@"skillName" equalTo:[skillName lowercaseString]];
+        [query whereKey:@"skillName" equalTo:[skillName capitalizedString]];
         
         [query whereKey:@"skillType" equalTo:@"toLearn"];
         [query whereKey:@"userId" notEqualTo:[user objectId]];
@@ -177,7 +177,7 @@
             if (isKnown) {
                 rating = [NSNumber numberWithInteger:([rating integerValue]+(likeCount+1)*5)];
             } else {
-                rating = [NSNumber numberWithInteger:([rating integerValue]+1)];
+                rating = [NSNumber numberWithInteger:([rating integerValue]+3)];
             }
             [dict setValue:rating forKey:userId];
             
@@ -185,7 +185,7 @@
             if (isKnown) {
                 rating = [NSNumber numberWithInteger:(likeCount+1)*5];
             } else {
-                rating = [NSNumber numberWithInteger:(likeCount+1)];
+                rating = [NSNumber numberWithInteger:(likeCount+3)];
             }
             
             

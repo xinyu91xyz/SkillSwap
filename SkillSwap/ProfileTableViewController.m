@@ -300,8 +300,10 @@
     
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField * alertTextField1 = [alert textFieldAtIndex:0];
+    alertTextField1.autocapitalizationType = UITextAutocapitalizationTypeWords;
     alertTextField1.keyboardType = UIKeyboardTypeDefault;
     [alertTextField1 becomeFirstResponder];
+    
     [alert show];
 }
 
@@ -316,6 +318,7 @@
     
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField * alertTextField1 = [alert textFieldAtIndex:0];
+    alertTextField1.autocapitalizationType = UITextAutocapitalizationTypeWords;
     alertTextField1.keyboardType = UIKeyboardTypeDefault;
     [alertTextField1 becomeFirstResponder];
     [alert show];
