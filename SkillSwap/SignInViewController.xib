@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController">
@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQY-7q-iEj">
+                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQY-7q-iEj">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signInImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="21">
@@ -93,9 +93,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zg-VG-8ef">
-                            <rect key="frame" x="0.0" y="518" width="600" height="62"/>
+                            <rect key="frame" x="190" y="395" width="220" height="44"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="62" id="G4M-qR-Qq2"/>
+                                <constraint firstAttribute="width" constant="220" id="9yf-Kw-ZfC"/>
+                                <constraint firstAttribute="height" constant="44" id="G4M-qR-Qq2"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <state key="normal" title="Not a member yet? Sign Up">
@@ -117,6 +118,7 @@
                         <constraint firstItem="6" firstAttribute="leading" secondItem="f7Z-OF-sSS" secondAttribute="trailing" constant="8" symbolic="YES" id="8Mm-cM-C6C"/>
                         <constraint firstItem="f7Z-OF-sSS" firstAttribute="leading" secondItem="CAi-4g-Lj7" secondAttribute="leading" id="8mQ-g5-d4X"/>
                         <constraint firstItem="8Zg-VG-8ef" firstAttribute="leading" secondItem="tQY-7q-iEj" secondAttribute="leading" id="9EU-sk-bgg"/>
+                        <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" id="9SM-dw-vQz"/>
                         <constraint firstItem="21" firstAttribute="top" secondItem="tQY-7q-iEj" secondAttribute="top" id="9gW-cV-HLm"/>
                         <constraint firstItem="9Lu-d6-VSp" firstAttribute="centerY" secondItem="f7Z-OF-sSS" secondAttribute="centerY" id="Fgr-J8-BfQ"/>
                         <constraint firstItem="XVI-k2-s7P" firstAttribute="top" secondItem="f7Z-OF-sSS" secondAttribute="bottom" constant="15" id="Huw-he-1lB"/>
@@ -128,24 +130,35 @@
                         <constraint firstItem="V9U-As-q4K" firstAttribute="centerX" secondItem="9Lu-d6-VSp" secondAttribute="centerX" id="TOA-EE-Hho"/>
                         <constraint firstItem="XVI-k2-s7P" firstAttribute="leading" secondItem="9Lu-d6-VSp" secondAttribute="leading" id="Vcq-xn-mDa"/>
                         <constraint firstItem="XVI-k2-s7P" firstAttribute="top" secondItem="9Lu-d6-VSp" secondAttribute="bottom" constant="1" id="VkZ-HA-g11"/>
+                        <constraint firstItem="8Zg-VG-8ef" firstAttribute="top" secondItem="IxI-bV-GKa" secondAttribute="bottom" constant="20" id="WFm-9Q-AiV"/>
                         <constraint firstItem="6" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="X5R-0j-L8e"/>
                         <constraint firstItem="IxI-bV-GKa" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="16" id="YDL-Lo-K5O"/>
                         <constraint firstItem="9Lu-d6-VSp" firstAttribute="leading" secondItem="tQY-7q-iEj" secondAttribute="leading" constant="30" id="Zdv-Wa-NBQ"/>
                         <constraint firstItem="IxI-bV-GKa" firstAttribute="leading" secondItem="XVI-k2-s7P" secondAttribute="leading" id="bkd-cb-PWS"/>
                         <constraint firstItem="6BF-bi-RAa" firstAttribute="centerX" secondItem="tQY-7q-iEj" secondAttribute="centerX" id="dHI-ek-nZH"/>
                         <constraint firstItem="6BF-bi-RAa" firstAttribute="top" secondItem="tQY-7q-iEj" secondAttribute="top" constant="61" id="f3f-v5-jdV"/>
-                        <constraint firstItem="21" firstAttribute="bottom" secondItem="8Zg-VG-8ef" secondAttribute="bottom" constant="20" id="fUB-ur-YBm"/>
+                        <constraint firstItem="21" firstAttribute="leading" secondItem="tQY-7q-iEj" secondAttribute="leading" id="fyi-22-QoD"/>
                         <constraint firstItem="IxI-bV-GKa" firstAttribute="trailing" secondItem="XVI-k2-s7P" secondAttribute="trailing" id="k7H-q7-SMQ"/>
                         <constraint firstItem="6" firstAttribute="trailing" secondItem="11" secondAttribute="trailing" id="kGB-2a-nLt"/>
                         <constraint firstItem="11" firstAttribute="leading" secondItem="CAi-4g-Lj7" secondAttribute="trailing" constant="8" symbolic="YES" id="lwy-OZ-kRw"/>
                         <constraint firstItem="11" firstAttribute="top" secondItem="9Lu-d6-VSp" secondAttribute="bottom" constant="8" symbolic="YES" id="oXT-lG-z3z"/>
                         <constraint firstItem="V9U-As-q4K" firstAttribute="centerX" secondItem="6BF-bi-RAa" secondAttribute="centerX" id="qmI-Ma-uUT"/>
                         <constraint firstItem="21" firstAttribute="trailing" secondItem="8Zg-VG-8ef" secondAttribute="trailing" id="qz7-zD-WgI"/>
+                        <constraint firstItem="21" firstAttribute="centerX" secondItem="8Zg-VG-8ef" secondAttribute="centerX" id="rxC-FO-Nj0"/>
+                        <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" id="sDw-Ly-3E1"/>
                         <constraint firstItem="CAi-4g-Lj7" firstAttribute="centerY" secondItem="11" secondAttribute="centerY" id="snF-y2-erL"/>
                         <constraint firstItem="V9U-As-q4K" firstAttribute="top" secondItem="6BF-bi-RAa" secondAttribute="bottom" constant="10" id="u2B-8N-gjx"/>
                         <constraint firstItem="8Zg-VG-8ef" firstAttribute="centerX" secondItem="IxI-bV-GKa" secondAttribute="centerX" id="vGf-dy-jqV"/>
                         <constraint firstItem="XVI-k2-s7P" firstAttribute="trailing" secondItem="9Lu-d6-VSp" secondAttribute="trailing" id="xtq-3e-rFC"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="L6t-8F-jYQ"/>
+                            <exclude reference="qz7-zD-WgI"/>
+                            <exclude reference="6gi-wo-ch2"/>
+                            <exclude reference="9EU-sk-bgg"/>
+                        </mask>
+                    </variation>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

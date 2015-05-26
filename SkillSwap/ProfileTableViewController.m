@@ -224,7 +224,7 @@
         case 2: {
             
             UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(25, 8, 100, 44)];
-            title.text = @"Skills";
+            title.text = @"My Skills";
             title.font = [UIFont boldSystemFontOfSize:16.0f];
             title.textColor = gray;
             
@@ -232,7 +232,7 @@
             
             UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //            addButton.frame = CGRectMake(frame.size.width -55, 8, 44, 44);
-            addButton.frame = CGRectMake(60, 8, 44, 44);
+            addButton.frame = CGRectMake(88, 8, 44, 44);
             addButton.imageEdgeInsets = UIEdgeInsetsMake(14,14,14,14);
             
             UIImage *image = [[UIImage imageNamed:@"addSkillImg.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -275,7 +275,7 @@
 
 - (void) editAboutMe:(id)sender {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil
-                                                     message:@"About Me"
+                                                     message:@"About me"
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles:@"OK", nil];

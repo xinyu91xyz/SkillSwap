@@ -124,8 +124,8 @@
     }
     [self.tableView reloadData];
     [self setActivityViewVisible:NO];
-    
     self.tableView.userInteractionEnabled = YES;
+    self.tableViewController.tableView.userInteractionEnabled = YES;
 }
 
 #pragma mark - UISearchBarDelegate
@@ -171,7 +171,7 @@
             
         }
         [self setActivityViewVisible:NO];
-        
+        self.tableViewController.tableView.userInteractionEnabled = YES;
     }];
     
     

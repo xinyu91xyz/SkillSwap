@@ -111,8 +111,8 @@
     }
 
     [self setActivityViewVisible:NO];
-    
     self.tableView.userInteractionEnabled = YES;
+    self.tableViewController.tableView.userInteractionEnabled = YES;
     
 }
 
@@ -151,7 +151,7 @@
     }
     
     PFQuery *queryPeers = [PFQuery orQueryWithSubqueries:querys];
-    queryPeers.limit = 60;
+    queryPeers.limit = 20;
     
     NSArray *matchedUserSkills = [queryPeers findObjects];
     
@@ -348,6 +348,7 @@
     [self setActivityViewVisible:NO];
     [self.tableViewController.tableView reloadData];
     
+    self.tableViewController.tableView.userInteractionEnabled = YES;
     
 }
 
@@ -363,6 +364,7 @@
 
 - (void)didPresentSearchController:(UISearchController *)searchController {
     // do something after the search controller is presented
+    
 }
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
